@@ -2,7 +2,7 @@
 export const edc = {
   slug: 'edc',
   meta: {
-    title: 'EDC — Electronic Data Capture | SclinTech',
+    title: 'EDC — Electronic Data Capture | SclinNexus',
     breadcrumbSection: 'Solutions',
     breadcrumbLabel: 'EDC',
   },
@@ -11,12 +11,12 @@ export const edc = {
     eyebrow: { icon: 'database', label: 'Electronic Data Capture' },
     title: 'Clean data from first entry to database lock',
     description:
-      'SclinTech EDC puts study build, data capture and cleaning in one validated system. Design forms without programmers, catch errors at the point of entry, and reach lock with your queries already closed.',
+      'SclinNexus EDC puts study build, data capture and cleaning in one validated system. Design forms without programmers, catch errors at the point of entry, and reach lock with your queries already closed.',
     primaryCta: { label: 'Explore capabilities', targetId: 'capabilities' },
     secondaryCta: { label: 'Download the factsheet', href: '#resources' },
     media: {
       label: 'EDC study dashboard — screenshot placeholder',
-      videoTitle: 'SclinTech EDC in 3 minutes',
+      videoTitle: 'SclinNexus EDC in 3 minutes',
     },
   },
 
@@ -42,7 +42,7 @@ export const edc = {
       { value: 14, suffix: '', label: 'Median days to database lock' },
     ],
     context:
-      'Counted across production studies on the platform since 2019. Database lock is measured from last patient visit to final lock, and the median includes teams running their first study on SclinTech.',
+      'Counted across production studies on the platform since 2019. Database lock is measured from last patient visit to final lock, and the median includes teams running their first study on SclinNexus.',
   },
 
   capabilities: {
@@ -130,7 +130,7 @@ export const edc = {
   },
 
   process: {
-    title: 'How a study runs on SclinTech EDC',
+    title: 'How a study runs on SclinNexus EDC',
     sub: 'Four stages, one system, no hand-offs between tools.',
     steps: [
       {
@@ -211,7 +211,7 @@ export const edc = {
 
   integration: {
     title: 'One platform, one data model',
-    body: 'EDC is the system of record for the whole SclinTech suite. Randomisation, patient-reported outcomes, consent and monitoring all read and write the same subject data, so there is no nightly sync to break and no reconciliation step before lock.',
+    body: 'EDC is the system of record for the whole SclinNexus suite. Randomisation, patient-reported outcomes, consent and monitoring all read and write the same subject data, so there is no nightly sync to break and no reconciliation step before lock.',
     primaryCta: { label: 'Explore the platform', href: '/' },
     secondaryCta: { label: 'Talk to our team', href: '/request-demo' },
   },
@@ -239,7 +239,7 @@ export const edc = {
     factsheets: [
       {
         thumbnail: 'EDC factsheet cover — image placeholder',
-        title: 'SclinTech EDC — product factsheet',
+        title: 'SclinNexus EDC — product factsheet',
         href: '#',
       },
       {
@@ -312,7 +312,7 @@ export const edc = {
   },
 
   whyUs: {
-    title: 'Why teams choose SclinTech',
+    title: 'Why teams choose SclinNexus',
     items: [
       {
         icon: 'shieldCheck',
@@ -338,7 +338,7 @@ export const edc = {
   },
 
   cta: {
-    title: 'See your next study on SclinTech EDC',
+    title: 'See your next study on SclinNexus EDC',
     tagline:
       'A 45-minute walkthrough with a solutions engineer, built around a study design like yours.',
     button: { label: 'Request a demo', href: '/request-demo' },

@@ -1,6 +1,6 @@
-# SclinTech marketing site
+# SclinNexus marketing site
 
-Public marketing site for the SclinTech clinical trial platform. React 18 + Vite +
+Public marketing site for the SclinNexus clinical trial platform. React 18 + Vite +
 Tailwind CSS + Framer Motion. No backend — all form submissions are mocked.
 
 ## Run

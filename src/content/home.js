@@ -1,36 +1,17 @@
 export const home = {
-  heroSlides: [
-    {
-      eyebrow: { icon: 'activity', label: 'Clinical trial platform' },
-      title: 'One platform for running compliant clinical trials',
-      description:
-        'Capture, operations and oversight for sponsors, CROs and sites — validated, audited and running in 28 countries.',
-      primaryCta: { label: 'Explore EDC', to: '/solutions/edc' },
-      secondaryCta: { label: 'Explore CTMS', to: '/solutions/ctms' },
-      media: { label: 'Platform overview — screenshot placeholder' },
-    },
-    {
-      eyebrow: { icon: 'database', label: 'Electronic Data Capture' },
-      title: 'Clean data from first entry to database lock',
-      description:
-        'Design forms without programmers, catch errors at the point of entry, and reach lock with your queries already closed.',
-      primaryCta: { label: 'See SclinTech EDC', to: '/solutions/edc' },
-      secondaryCta: { label: 'Request a demo', href: '/request-demo' },
-      media: { label: 'EDC study dashboard — screenshot placeholder' },
-    },
-    {
-      eyebrow: { icon: 'calendarRange', label: 'Clinical Trial Management' },
-      title: 'Every study, site and milestone in one working view',
-      description:
-        'Site activation, monitoring visits and payments tracked where the work happens, so status is never a stale spreadsheet.',
-      primaryCta: { label: 'See SclinTech CTMS', to: '/solutions/ctms' },
-      secondaryCta: { label: 'Request a demo', href: '/request-demo' },
-      media: { label: 'CTMS portfolio dashboard — screenshot placeholder' },
-    },
-  ],
+  hero: {
+    eyebrow: 'Clinical Trial Data Platform',
+    titleLead: 'Run every study',
+    titleTail: 'with',
+    titleAccent: 'confidence.',
+    description:
+      'SclinNexus connects electronic data capture, study operations, randomization, consent and patient data into one compliant clinical trial platform.',
+    primaryCta: { label: 'Request a Demo', href: '/request-demo' },
+    secondaryCta: { label: 'Explore the Platform', href: '#platform' },
+  },
 
   compliance: {
-    label: 'Built for regulated research',
+    label: 'Built for regulated clinical research',
     items: [
       'GDPR',
       'HIPAA',
@@ -41,6 +22,27 @@ export const home = {
       'CDISC',
       'GAMP 5',
     ],
+  },
+
+  platform: {
+    titleLead: 'One platform.',
+    titleTail: 'Every workflow. Connected.',
+    sub: 'Everything your clinical team needs, connected to the same study record.',
+    // Bullets sourced from the approved EDC product content.
+    edcHighlights: [
+      'Drag-and-drop form designer, no programming queue',
+      'Edit checks fire at entry, not in an overnight batch',
+      'Field-level audit trail with reason for change',
+      'CDISC ODM export for downstream systems',
+    ],
+  },
+
+  edcShowcase: {
+    eyebrow: 'Electronic Data Capture',
+    titleLead: 'Electronic Data Capture,',
+    titleTail: 'built for real clinical studies.',
+    sub: 'Design forms, capture data, manage queries and maintain a complete audit trail from one secure workspace.',
+    cta: { label: 'Explore EDC', to: '/solutions/edc' },
   },
 
   stats: {
@@ -54,8 +56,144 @@ export const home = {
       'Counted across production studies on the platform since 2019. Every product reads and writes the same study record, so these numbers come from one database, not six.',
   },
 
+  roles: {
+    title: 'Built for every role in clinical research.',
+    sub: 'Powerful tools for the people who power progress.',
+    items: [
+      {
+        icon: 'briefcase',
+        title: 'Sponsors',
+        body: 'See the full picture across studies, sites and timelines.',
+      },
+      {
+        icon: 'network',
+        title: 'CROs',
+        body: 'Centralize operations and deliver studies on time.',
+      },
+      {
+        icon: 'stethoscope',
+        title: 'Sites',
+        body: 'Intuitive tools for data entry, tasks and compliance.',
+      },
+      {
+        icon: 'clipboardList',
+        title: 'Data Managers',
+        body: 'Clean data, fewer queries, faster database lock.',
+      },
+    ],
+  },
+
+  why: {
+    title: 'Why SclinNexus?',
+    sub: 'One connected platform designed to make clinical research simpler, more connected and easier to manage.',
+    hub: {
+      title: 'SclinNexus',
+      caption: 'One study. One connected platform.',
+      products: ['EDC', 'CTMS', 'IWRS / RTSM', 'ePRO', 'eConsent', 'rSDV'],
+    },
+    items: [
+      {
+        icon: 'workflow',
+        title: 'One connected study record',
+        body: 'Keep clinical data and workflows connected instead of managing disconnected systems.',
+        meta: 'EDC · CTMS · IWRS/RTSM · ePRO · eConsent · rSDV',
+      },
+      {
+        icon: 'calendarRange',
+        title: 'Designed around clinical workflows',
+        body: 'From study setup and site activation to data capture, review and database lock, SclinNexus supports the way clinical teams actually work.',
+        meta: 'Setup → Activation → Enrollment → Capture → Review → Lock',
+      },
+      {
+        icon: 'badgeCheck',
+        title: 'Data you can trust',
+        body: 'Built to support high-quality, traceable clinical data throughout the study lifecycle.',
+        meta: 'Validation · Query management · Audit trail · Data review',
+      },
+      {
+        icon: 'shieldCheck',
+        title: 'Built for regulated research',
+        body: 'Designed with security, traceability and controlled clinical workflows in mind.',
+        meta: 'Role-based access · E-signatures · Audit trail · Data integrity',
+      },
+      {
+        icon: 'activity',
+        title: 'Visibility when you need it',
+        body: 'Give sponsors, CROs and study teams a clearer view of study progress, data quality and operational performance.',
+        meta: 'Enrollment · Data quality · Open queries · Site performance',
+      },
+      {
+        icon: 'network',
+        title: 'One platform that grows with your study',
+        body: 'Start with the capabilities you need and connect additional clinical workflows as your study evolves.',
+        meta: 'Start with EDC — connect more as your study evolves',
+      },
+    ],
+    closing: {
+      statement: 'Clinical research is complex. Your technology shouldn’t make it harder.',
+      cta: { label: 'Explore the SclinNexus Platform', href: '#platform' },
+    },
+  },
+
+  journey: {
+    title: 'From first subject to database lock.',
+    sub: 'One connected journey for every study.',
+    steps: [
+      {
+        title: 'Study Setup',
+        description: 'Build protocols, design eCRFs and configure workflows.',
+      },
+      {
+        title: 'Site Activation',
+        description: 'Onboard sites, set permissions and train teams.',
+      },
+      {
+        title: 'Subject Enrollment',
+        description: 'Screen, enroll and randomize with confidence.',
+      },
+      {
+        title: 'Data Capture',
+        description: 'Capture high-quality data with real-time validations.',
+      },
+      {
+        title: 'Data Review',
+        description: 'Resolve queries and monitor data quality.',
+      },
+      {
+        title: 'Database Lock',
+        description: 'Audit, approve and lock with a complete audit trail.',
+      },
+    ],
+  },
+
+  intelligence: {
+    titleLead: 'Real-time intelligence.',
+    titleTail: 'Better decisions.',
+    sub: 'Dashboards and reports that help you stay ahead of issues and keep studies on track.',
+    cta: { label: 'Explore dashboards', to: '/solutions/edc' },
+  },
+
+  complianceSpotlight: {
+    title: 'Compliance and traceability built in.',
+    sub: 'SclinNexus is designed for regulated research with security, traceability and compliance at every step.',
+    // Each bullet is backed by approved product content (EDC capabilities & validation pack).
+    bullets: [
+      'Role-based access and permissions',
+      'Electronic signatures and a field-level audit trail',
+      'Data integrity and traceability, entry to export',
+      'Validation workflows with IQ/OQ/PQ documentation',
+    ],
+    cta: { label: 'See compliance overview', to: '/solutions/edc' },
+    satellites: [
+      { icon: 'badgeCheck', title: 'Validation', body: 'Real-time checks' },
+      { icon: 'fingerprint', title: 'Traceable Record', body: 'Data traceability' },
+      { icon: 'history', title: 'Audit Trail', body: 'Every action recorded' },
+      { icon: 'penLine', title: 'E-Signature', body: 'Secure approvals' },
+    ],
+  },
+
   testimonials: {
-    title: 'What teams run on SclinTech',
+    title: 'What teams run on SclinNexus',
     items: [
       {
         quote:
@@ -85,9 +223,9 @@ export const home = {
   },
 
   cta: {
-    title: 'Bring your next study to SclinTech',
+    title: 'Bring your next study to SclinNexus',
     tagline:
       'A 45-minute walkthrough with a solutions engineer, built around a study design like yours.',
-    button: { label: 'Request a demo', href: '/request-demo' },
+    button: { label: 'Request a Demo', href: '/request-demo' },
   },
 }

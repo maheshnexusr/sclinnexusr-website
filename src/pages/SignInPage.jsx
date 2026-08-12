@@ -7,7 +7,7 @@ import { Button } from '../components/ui/Button'
 
 export function SignInPage() {
   useEffect(() => {
-    document.title = 'Sign In | SclinTech'
+    document.title = 'Sign In | SclinNexus'
     const id = window.setTimeout(() => {
       window.location.replace(site.appUrl)
     }, 1200)
@@ -19,7 +19,7 @@ export function SignInPage() {
       <div className="mx-auto flex w-full max-w-content items-center justify-between px-6 py-5 lg:px-8">
         <Link
           to="/"
-          aria-label="SclinTech home"
+          aria-label="SclinNexus home"
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
         >
           <Logo />

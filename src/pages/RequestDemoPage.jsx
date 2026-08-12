@@ -42,7 +42,7 @@ export function RequestDemoPage() {
   const consentId = useId()
 
   useEffect(() => {
-    document.title = 'Request a Demo | SclinTech'
+    document.title = 'Request a Demo | SclinNexus'
     window.scrollTo(0, 0)
   }, [])
 
@@ -72,7 +72,7 @@ export function RequestDemoPage() {
         <div>
           <Badge icon="calendarRange">Request a demo</Badge>
           <h1 className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight text-stone-900 sm:text-5xl">
-            See SclinTech on a study like yours
+            See SclinNexus on a study like yours
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-stone-600">
             Tell us a little about your work and we&rsquo;ll set up a session that shows the
@@ -187,7 +187,7 @@ export function RequestDemoPage() {
                     className="mt-0.5 h-4 w-4 rounded border-stone-300 text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
                   />
                   <label htmlFor={consentId} className="text-sm text-stone-600">
-                    SclinTech can contact me about this request. No newsletters unless I opt in.
+                    SclinNexus can contact me about this request. No newsletters unless I opt in.
                   </label>
                 </div>
                 {errors.consent && <p className="mt-1.5 text-sm text-red-600">{errors.consent}</p>}

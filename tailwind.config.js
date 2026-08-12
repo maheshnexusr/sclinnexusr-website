@@ -13,6 +13,20 @@ export default {
           800: 'rgb(var(--c-primary-800) / <alpha-value>)',
           900: 'rgb(var(--c-primary-900) / <alpha-value>)',
         },
+        /* SclinNexus navy, derived from the dark facets of the brand logo */
+        navy: {
+          50: '#F3F6F8',
+          100: '#E5EBEF',
+          200: '#C8D4DC',
+          300: '#A2B5C1',
+          400: '#74909F',
+          500: '#52707F',
+          600: '#3E5665',
+          700: '#2F4350',
+          800: '#22333F',
+          900: '#1A2831',
+          950: '#111B22',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],

@@ -1,9 +1,10 @@
 import { Reveal } from '../ui/Reveal'
 import { StatCounter } from '../ui/StatCounter'
+import { cn } from '../../utils/cn'
 
-export function StatsBand({ content }) {
+export function StatsBand({ content, background = 'bg-white' }) {
   return (
-    <section className="bg-white py-20">
+    <section className={cn(background, 'py-20')}>
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal>
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">

@@ -8,7 +8,7 @@
 export const ctms = {
   slug: 'ctms',
   meta: {
-    title: 'CTMS — Clinical Trial Management | SclinTech',
+    title: 'CTMS — Clinical Trial Management | SclinNexus',
     breadcrumbSection: 'Solutions',
     breadcrumbLabel: 'CTMS',
   },
@@ -17,12 +17,12 @@ export const ctms = {
     eyebrow: { icon: 'calendarRange', label: 'Clinical Trial Management' },
     title: 'Every study, site and milestone in one working view',
     description:
-      'SclinTech CTMS is the operational backbone of the trial: site activation, monitoring visits, milestones and payments tracked in one place, with status that is current because it is where the work happens.',
+      'SclinNexus CTMS is the operational backbone of the trial: site activation, monitoring visits, milestones and payments tracked in one place, with status that is current because it is where the work happens.',
     primaryCta: { label: 'Explore capabilities', targetId: 'capabilities' },
     secondaryCta: { label: 'Talk to our team', href: '/request-demo' },
     media: {
       label: 'CTMS portfolio dashboard — screenshot placeholder',
-      videoTitle: 'SclinTech CTMS in 3 minutes',
+      videoTitle: 'SclinNexus CTMS in 3 minutes',
     },
   },
 
@@ -102,7 +102,7 @@ export const ctms = {
   },
 
   process: {
-    title: 'How a study runs on SclinTech CTMS',
+    title: 'How a study runs on SclinNexus CTMS',
     sub: 'From plan to close-out, the status is a by-product of the work.',
     steps: [
       {
@@ -126,13 +126,13 @@ export const ctms = {
 
   integration: {
     title: 'CTMS that reads the trial, not a spreadsheet about it',
-    body: 'Because CTMS shares a platform with SclinTech EDC, enrolment and data-quality numbers arrive from the study database itself. Monitoring plans respond to real site activity, and no one spends Friday reconciling two systems that should have agreed all along.',
-    primaryCta: { label: 'See SclinTech EDC', href: '/solutions/edc' },
+    body: 'Because CTMS shares a platform with SclinNexus EDC, enrolment and data-quality numbers arrive from the study database itself. Monitoring plans respond to real site activity, and no one spends Friday reconciling two systems that should have agreed all along.',
+    primaryCta: { label: 'See SclinNexus EDC', href: '/solutions/edc' },
     secondaryCta: { label: 'Talk to our team', href: '/request-demo' },
   },
 
   cta: {
-    title: 'Run your portfolio on SclinTech CTMS',
+    title: 'Run your portfolio on SclinNexus CTMS',
     tagline:
       'A walkthrough with a solutions engineer, using a portfolio shaped like yours.',
     button: { label: 'Request a demo', href: '/request-demo' },

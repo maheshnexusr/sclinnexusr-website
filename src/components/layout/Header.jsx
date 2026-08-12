@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { ChevronDown, Menu, Search } from 'lucide-react'
+import { ArrowRight, ChevronDown, Menu, Search } from 'lucide-react'
 import { site } from '../../content/site'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import { Button } from '../ui/Button'
@@ -34,7 +34,7 @@ export function Header() {
   }, [])
 
   const navLinkCls =
-    'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-stone-700 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+    'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
 
   return (
     <header
@@ -44,7 +44,7 @@ export function Header() {
       <div className="relative mx-auto flex h-16 max-w-content items-center gap-4 px-6 lg:px-8">
         <Link
           to="/"
-          aria-label="SclinTech home"
+          aria-label="SclinNexus home"
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
         >
           <Logo />
@@ -82,7 +82,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <div className="ml-auto flex items-center gap-1.5 lg:ml-0">
           <button
             type="button"
             aria-label="Search"
@@ -95,7 +95,19 @@ export function Header() {
           >
             <Search className="h-5 w-5" aria-hidden="true" />
           </button>
-          <Button href={site.appUrl}>Sign In</Button>
+          <a
+            href={site.appUrl}
+            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 md:inline-flex"
+          >
+            Sign In
+          </a>
+          <Button href="/request-demo" className="group hidden sm:inline-flex">
+            Request a Demo
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Button>
           <button
             type="button"
             aria-label="Open menu"

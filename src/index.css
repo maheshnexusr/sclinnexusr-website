@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  /* Marketing theme: Octalsoft-style orange (default) */
+  /* Marketing theme: SclinNexus green, derived from the brand logo (default) */
   :root {
-    --c-primary-50: 255 244 237; /* #FFF4ED */
-    --c-primary-100: 255 230 213; /* #FFE6D5 */
-    --c-primary-200: 254 205 170; /* #FECDAA */
-    --c-primary-600: 255 100 0; /* #FF6400 */
-    --c-primary-700: 194 76 0; /* #C24C00 */
-    --c-primary-800: 160 62 0; /* #A03E00 */
-    --c-primary-900: 124 48 0; /* #7C3000 */
+    --c-primary-50: 240 251 244; /* #F0FBF4 */
+    --c-primary-100: 219 246 229; /* #DBF6E5 */
+    --c-primary-200: 178 235 203; /* #B2EBCB */
+    --c-primary-600: 29 191 97; /* #1DBF61 — logo green */
+    --c-primary-700: 17 128 64; /* #118040 — AA on white */
+    --c-primary-800: 14 104 54; /* #0E6836 */
+    --c-primary-900: 11 79 42; /* #0B4F2A */
   }
 
   /* Application theme: deep clinical blue, used on the sign-in page */

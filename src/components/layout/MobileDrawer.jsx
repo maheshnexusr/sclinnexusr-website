@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { site } from '../../content/site'
 import { getIcon } from '../../utils/icons'
+import { Button } from '../ui/Button'
 
 export function MobileDrawer({ open, onClose }) {
   const reduced = useReducedMotion()
@@ -57,7 +58,7 @@ export function MobileDrawer({ open, onClose }) {
             </div>
 
             <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-stone-400">
-              Solutions
+              Platform
             </p>
             <ul className="mt-2 space-y-1">
               {site.solutions.map((solution) => {
@@ -93,6 +94,15 @@ export function MobileDrawer({ open, onClose }) {
                     </li>
                   ))}
               </ul>
+            </div>
+
+            <div className="mt-auto flex flex-col gap-2.5 border-t border-stone-200 pt-5">
+              <Button href="/request-demo" onClick={onClose}>
+                Request a Demo
+              </Button>
+              <Button variant="secondary" href={site.appUrl} onClick={onClose}>
+                Sign In
+              </Button>
             </div>
           </motion.nav>
         </motion.div>

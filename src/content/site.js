@@ -1,13 +1,12 @@
 export const site = {
-  name: 'SclinTech',
+  name: 'SclinNexus',
   appUrl: 'https://sandbox.sclinnexus.com/',
-  supportEmail: 'support@sclintech.com',
-  contactEmail: 'hello@sclintech.com',
+  supportEmail: 'support@sclinnexus.com',
+  contactEmail: 'hello@sclinnexus.com',
   nav: [
-    { label: 'Solutions', megaMenu: true },
+    { label: 'Platform', megaMenu: true },
     { label: 'Industries', href: '#' },
     { label: 'Resources', href: '#' },
-    { label: 'Articles', href: '#' },
     { label: 'Company', href: '#' },
   ],
   solutions: [
@@ -50,10 +49,10 @@ export const site = {
   ],
   footer: {
     description:
-      'SclinTech builds validated software for running clinical trials. One platform for capture, operations and oversight, used by sponsors, CROs and sites in 28 countries.',
+      'SclinNexus builds validated software for running clinical trials. One platform for capture, operations and oversight, used by sponsors, CROs and sites in 28 countries.',
     columns: [
       {
-        heading: 'Solutions',
+        heading: 'Platform',
         links: [
           { label: 'EDC', to: '/solutions/edc' },
           { label: 'CTMS', to: '/solutions/ctms' },
@@ -83,7 +82,7 @@ export const site = {
       },
     ],
     contact: {
-      email: 'hello@sclintech.com',
+      email: 'hello@sclinnexus.com',
       phones: ['+1 (617) 555-0146', '+91 40 4455 0199'],
       offices: ['Boston, MA, United States', 'Hyderabad, India'],
     },
