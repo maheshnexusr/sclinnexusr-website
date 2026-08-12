@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Marketing theme: Octalsoft-style orange (default) */
+  :root {
+    --c-primary-50: 255 244 237; /* #FFF4ED */
+    --c-primary-100: 255 230 213; /* #FFE6D5 */
+    --c-primary-200: 254 205 170; /* #FECDAA */
+    --c-primary-600: 255 100 0; /* #FF6400 */
+    --c-primary-700: 194 76 0; /* #C24C00 */
+    --c-primary-800: 160 62 0; /* #A03E00 */
+    --c-primary-900: 124 48 0; /* #7C3000 */
+  }
+
+  /* Application theme: deep clinical blue, used on the sign-in page */
+  .theme-signin {
+    --c-primary-50: 239 246 255; /* #EFF6FF */
+    --c-primary-100: 219 234 254; /* #DBEAFE */
+    --c-primary-200: 191 219 254; /* #BFDBFE */
+    --c-primary-600: 37 99 235; /* #2563EB */
+    --c-primary-700: 29 78 216; /* #1D4ED8 */
+    --c-primary-800: 30 64 175; /* #1E40AF */
+    --c-primary-900: 30 58 138; /* #1E3A8A */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-white font-sans text-[17px] leading-relaxed text-stone-700 antialiased;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
