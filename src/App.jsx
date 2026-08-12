@@ -5,6 +5,12 @@ import { HomePage } from './pages/HomePage'
 import { ProductPage } from './pages/ProductPage'
 import { RequestDemoPage } from './pages/RequestDemoPage'
 import { SignInPage } from './pages/SignInPage'
+import { CompanyPage } from './pages/CompanyPage'
+import { OurStoryPage } from './pages/OurStoryPage'
+import { LeadershipPage } from './pages/LeadershipPage'
+import { CareersPage } from './pages/CareersPage'
+import { NewsPage } from './pages/NewsPage'
+import { ContactPage } from './pages/ContactPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
 function MarketingLayout() {
@@ -26,6 +32,12 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/solutions/:slug" element={<ProductPage />} />
         <Route path="/request-demo" element={<RequestDemoPage />} />
+        <Route path="/company" element={<CompanyPage />} />
+        <Route path="/company/our-story" element={<OurStoryPage />} />
+        <Route path="/company/leadership" element={<LeadershipPage />} />
+        <Route path="/company/careers" element={<CareersPage />} />
+        <Route path="/company/news" element={<NewsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/signin" element={<SignInPage />} />

@@ -93,32 +93,28 @@ const modules = [
 
 export function StudyIntelligence({ content }) {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section className="bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
-        <Reveal>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight text-navy-900 sm:text-4xl lg:text-5xl">
-                {content.titleLead}
-                <br />
-                <span className="text-primary-700">{content.titleTail}</span>
-              </h2>
-              <p className="mt-5 text-lg text-stone-600">{content.sub}</p>
-            </div>
-            <Link
-              to={content.cta.to}
-              className="group inline-flex w-fit items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-            >
-              {content.cta.label}
-              <ArrowRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-navy-900 sm:text-4xl lg:text-5xl">
+            {content.titleLead}
+            <br />
+            <span className="text-primary-700">{content.titleTail}</span>
+          </h2>
+          <p className="mt-4 text-lg text-stone-600">{content.sub}</p>
+          <Link
+            to={content.cta.to}
+            className="group mt-4 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+          >
+            {content.cta.label}
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {modules.map((mod, index) => {
             const Chart = mod.chart
             return (

@@ -1,26 +1,60 @@
 export const home = {
   hero: {
     eyebrow: 'Clinical Trial Data Platform',
-    titleLead: 'Run every study',
-    titleTail: 'with',
-    titleAccent: 'confidence.',
+    titleLead: 'One connected platform',
+    titleTail: 'for',
+    titleAccent: 'clinical trials.',
     description:
-      'SclinNexus connects electronic data capture, study operations, randomization, consent and patient data into one compliant clinical trial platform.',
+      'Capture, manage and connect clinical trial data across the study lifecycle with SclinNexus.',
+    products: ['EDC', 'CTMS', 'IWRS / RTSM', 'ePRO', 'eConsent', 'rSDV'],
     primaryCta: { label: 'Request a Demo', href: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', href: '#platform' },
+    strip: [
+      { icon: 'database', name: 'EDC', desc: 'Electronic Data Capture', featured: true },
+      { icon: 'calendarRange', name: 'CTMS', desc: 'Clinical Trial Management' },
+      { icon: 'shuffle', name: 'IWRS / RTSM', desc: 'Randomization & Trial Supply' },
+      { icon: 'smartphone', name: 'ePRO', desc: 'Patient Reported Outcomes' },
+      { icon: 'fileCheck', name: 'eConsent', desc: 'Digital Consent & eSignature' },
+      { icon: 'scanSearch', name: 'rSDV', desc: 'Remote Source Data Verification' },
+    ],
+  },
+
+  whyChoose: {
+    title: 'Why Choose SclinNexus?',
+    sub: 'Connected. Simple. Built for Clinical Research.',
+    items: [
+      {
+        icon: 'network',
+        title: 'Connected Platform',
+        body: 'EDC, CTMS, IWRS/RTSM, ePRO, eConsent and rSDV in one unified platform.',
+      },
+      {
+        icon: 'fileCheck',
+        title: 'Better Data Quality',
+        body: 'Capture, validate and manage clinical data with accuracy and confidence.',
+      },
+      {
+        icon: 'users',
+        title: 'Simple for Teams',
+        body: 'Intuitive workflows for sponsors, CROs, sites and data managers.',
+      },
+      {
+        icon: 'shieldCheck',
+        title: 'Compliance Ready',
+        body: 'Built around traceability, controlled workflows and auditability.',
+      },
+    ],
   },
 
   compliance: {
     label: 'Built for regulated clinical research',
     items: [
-      'GDPR',
-      'HIPAA',
-      'FDA 21 CFR Part 11',
-      'ICH-GCP',
-      'GxP',
-      'MedDRA',
-      'CDISC',
-      'GAMP 5',
+      { value: '21', caption: 'CFR Part 11' },
+      { value: 'ICH', caption: 'GCP' },
+      { value: 'HIPAA', caption: 'Compliant' },
+      { value: 'GDPR', caption: 'Compliant' },
+      { value: 'CDISC', caption: 'Standards' },
+      { value: 'GxP', caption: 'Ready' },
     ],
   },
 
@@ -227,5 +261,12 @@ export const home = {
     tagline:
       'A 45-minute walkthrough with a solutions engineer, built around a study design like yours.',
     button: { label: 'Request a Demo', href: '/request-demo' },
+  },
+
+  support: {
+    title: 'Have questions about SclinNexus?',
+    sub: 'Our team is here to help.',
+    email: 'support@sclinnexus.com',
+    cta: { label: 'Contact Support' },
   },
 }

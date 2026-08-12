@@ -1,50 +1,92 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
-import { ArrowRight, ChevronDown, Menu, Search } from 'lucide-react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { ChevronDown, Menu } from 'lucide-react'
 import { site } from '../../content/site'
+import { getIcon } from '../../utils/icons'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import { Button } from '../ui/Button'
 import { Logo } from './Logo'
-import { MegaMenu } from './MegaMenu'
 import { MobileDrawer } from './MobileDrawer'
 import { cn } from '../../utils/cn'
 
+const navLinkCls =
+  'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#22333F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+
+function DropdownPanel({ children, wide = false }) {
+  const reduced = useReducedMotion()
+  return (
+    <motion.div
+      initial={reduced ? false : { opacity: 0, y: -6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={reduced ? undefined : { opacity: 0, y: -6 }}
+      transition={{ duration: 0.16, ease: 'easeOut' }}
+      className={cn(
+        'absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 rounded-2xl border border-stone-200 bg-white p-3 shadow-card',
+        wide ? 'w-[34rem] max-w-[calc(100vw-2rem)]' : 'w-80 max-w-[calc(100vw-2rem)]',
+      )}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+function MenuItem({ to, icon, title, desc, onNavigate }) {
+  const Icon = getIcon(icon)
+  const inner = (
+    <>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-700">
+        <Icon className="h-4 w-4" aria-hidden="true" />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-semibold text-[#1A2831]">{title}</span>
+        <span className="mt-0.5 block truncate text-xs text-stone-500">{desc}</span>
+      </span>
+    </>
+  )
+  const cls =
+    'flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-primary-50/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+  if (to && to !== '#') {
+    return (
+      <Link to={to} onClick={onNavigate} className={cls}>
+        {inner}
+      </Link>
+    )
+  }
+  return (
+    <a href="#" onClick={onNavigate} className={cls}>
+      {inner}
+    </a>
+  )
+}
+
 export function Header() {
-  const [megaOpen, setMegaOpen] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState(null) // 'platform' | 'company' | null
   const [drawerOpen, setDrawerOpen] = useState(false)
-  const [query, setQuery] = useState('')
   const headerRef = useRef(null)
 
-  useClickOutside(headerRef, () => {
-    setMegaOpen(false)
-    setSearchOpen(false)
-  })
+  useClickOutside(headerRef, () => setOpenMenu(null))
 
   useEffect(() => {
     const onKey = (event) => {
-      if (event.key === 'Escape') {
-        setMegaOpen(false)
-        setSearchOpen(false)
-      }
+      if (event.key === 'Escape') setOpenMenu(null)
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [])
 
-  const navLinkCls =
-    'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+  const close = () => setOpenMenu(null)
 
   return (
     <header
       ref={headerRef}
       className="sticky top-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur"
     >
-      <div className="relative mx-auto flex h-16 max-w-content items-center gap-4 px-6 lg:px-8">
+      <div className="mx-auto flex h-[72px] max-w-content items-center gap-4 px-6 lg:px-8">
         <Link
           to="/"
           aria-label="SclinNexus home"
+          onClick={close}
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
         >
           <Logo />
@@ -53,29 +95,70 @@ export function Header() {
         <nav aria-label="Main" className="hidden flex-1 lg:block">
           <ul className="flex justify-center">
             {site.nav.map((item) =>
-              item.megaMenu ? (
-                <li key={item.label}>
+              item.menu ? (
+                <li key={item.label} className="relative">
                   <button
                     type="button"
-                    aria-expanded={megaOpen}
-                    onClick={() => {
-                      setMegaOpen((open) => !open)
-                      setSearchOpen(false)
-                    }}
-                    className={cn(navLinkCls, megaOpen && 'text-primary-700')}
+                    aria-expanded={openMenu === item.menu}
+                    onClick={() => setOpenMenu((m) => (m === item.menu ? null : item.menu))}
+                    className={cn(navLinkCls, openMenu === item.menu && 'text-primary-700')}
                   >
                     {item.label}
                     <ChevronDown
-                      className={cn('h-4 w-4 transition-transform', megaOpen && 'rotate-180')}
+                      className={cn(
+                        'h-4 w-4 transition-transform',
+                        openMenu === item.menu && 'rotate-180',
+                      )}
                       aria-hidden="true"
                     />
                   </button>
+
+                  <AnimatePresence>
+                    {openMenu === item.menu && item.menu === 'platform' && (
+                      <DropdownPanel wide>
+                        <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-widest text-stone-400">
+                          Platform
+                        </p>
+                        <div className="grid sm:grid-cols-2">
+                          {site.solutions.map((solution) => (
+                            <MenuItem
+                              key={solution.name}
+                              to={solution.to}
+                              icon={solution.icon}
+                              title={solution.name}
+                              desc={solution.short}
+                              onNavigate={close}
+                            />
+                          ))}
+                        </div>
+                      </DropdownPanel>
+                    )}
+                    {openMenu === item.menu && item.menu === 'company' && (
+                      <DropdownPanel>
+                        <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-widest text-stone-400">
+                          Company
+                        </p>
+                        <div>
+                          {site.companyMenu.map((entry) => (
+                            <MenuItem
+                              key={entry.label}
+                              to={entry.to}
+                              icon={entry.icon}
+                              title={entry.label}
+                              desc={entry.desc}
+                              onNavigate={close}
+                            />
+                          ))}
+                        </div>
+                      </DropdownPanel>
+                    )}
+                  </AnimatePresence>
                 </li>
               ) : (
                 <li key={item.label}>
-                  <a href={item.href} className={navLinkCls}>
+                  <Link to={item.href} onClick={close} className={navLinkCls}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ),
             )}
@@ -83,30 +166,15 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5 lg:ml-0">
-          <button
-            type="button"
-            aria-label="Search"
-            aria-expanded={searchOpen}
-            onClick={() => {
-              setSearchOpen((open) => !open)
-              setMegaOpen(false)
-            }}
-            className="rounded-lg p-2 text-stone-600 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-          >
-            <Search className="h-5 w-5" aria-hidden="true" />
-          </button>
-          <a
-            href={site.appUrl}
-            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-navy-800 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 md:inline-flex"
+          <Link
+            to="/signin"
+            onClick={close}
+            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-[#22333F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 md:inline-flex"
           >
             Sign In
-          </a>
-          <Button href="/request-demo" className="group hidden sm:inline-flex">
-            Request a Demo
-            <ArrowRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-              aria-hidden="true"
-            />
+          </Link>
+          <Button href={site.appUrl} className="hidden sm:inline-flex">
+            Sign Up
           </Button>
           <button
             type="button"
@@ -117,27 +185,6 @@ export function Header() {
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-
-        <AnimatePresence>{megaOpen && <MegaMenu onNavigate={() => setMegaOpen(false)} />}</AnimatePresence>
-
-        {searchOpen && (
-          <div className="absolute right-6 top-full mt-2 w-80 max-w-[calc(100vw-3rem)] rounded-xl border border-stone-200 bg-white p-4 shadow-card lg:right-8">
-            <label htmlFor="site-search" className="text-sm font-medium text-stone-700">
-              Search the site
-            </label>
-            <input
-              id="site-search"
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Products, resources, articles…"
-              className="mt-1.5 w-full rounded-lg border border-stone-300 px-3.5 py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-            />
-            <p className="mt-2 text-xs text-stone-500">
-              Search is limited in this preview build.
-            </p>
-          </div>
-        )}
       </div>
 
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />

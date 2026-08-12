@@ -60,7 +60,7 @@ export function ConnectedPlatform({ content, solutions }) {
   const EdcIcon = getIcon(edc.icon)
 
   return (
-    <section id="platform" className="scroll-mt-20 bg-white py-20 lg:py-24">
+    <section id="platform" className="scroll-mt-20 bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
           <Badge icon="workflow">The Platform</Badge>
@@ -73,7 +73,7 @@ export function ConnectedPlatform({ content, solutions }) {
         </Reveal>
 
         {/* EDC — the core product, visually dominant */}
-        <Reveal className="mt-14">
+        <Reveal className="mt-11">
           <div className="group relative overflow-hidden rounded-2xl border border-primary-200 bg-gradient-to-br from-primary-50/80 via-white to-white p-7 transition-colors duration-300 hover:border-primary-600 sm:p-9 lg:p-10">
             <div className="grid items-center gap-9 lg:grid-cols-[1.15fr_1fr]">
               <div>

@@ -6,7 +6,7 @@ import { Reveal } from '../ui/Reveal'
 export function FeaturedTestimonial({ content }) {
   const [featured, ...others] = content.items
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section className="bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">

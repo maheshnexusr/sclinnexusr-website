@@ -1,14 +1,61 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { X } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import { site } from '../../content/site'
 import { getIcon } from '../../utils/icons'
 import { Button } from '../ui/Button'
+import { cn } from '../../utils/cn'
+
+function Group({ label, open, onToggle, children }) {
+  return (
+    <div className="border-b border-stone-100">
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={onToggle}
+        className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#1A2831] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+      >
+        {label}
+        <ChevronDown
+          className={cn('h-4 w-4 text-stone-400 transition-transform', open && 'rotate-180')}
+          aria-hidden="true"
+        />
+      </button>
+      {open && <ul className="space-y-0.5 pb-3">{children}</ul>}
+    </div>
+  )
+}
+
+function DrawerLink({ to, icon, label, onClose }) {
+  const Icon = getIcon(icon)
+  const cls =
+    'flex items-center gap-3 rounded-lg px-2 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+  const inner = (
+    <>
+      <Icon className="h-4 w-4 text-primary-700" aria-hidden="true" />
+      {label}
+    </>
+  )
+  return (
+    <li>
+      {to && to !== '#' ? (
+        <Link to={to} onClick={onClose} className={cls}>
+          {inner}
+        </Link>
+      ) : (
+        <a href="#" onClick={onClose} className={cls}>
+          {inner}
+        </a>
+      )}
+    </li>
+  )
+}
 
 export function MobileDrawer({ open, onClose }) {
   const reduced = useReducedMotion()
+  const [openGroup, setOpenGroup] = useState('platform')
 
   useEffect(() => {
     if (!open) return
@@ -57,50 +104,53 @@ export function MobileDrawer({ open, onClose }) {
               </button>
             </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-stone-400">
-              Platform
-            </p>
-            <ul className="mt-2 space-y-1">
-              {site.solutions.map((solution) => {
-                const Icon = getIcon(solution.icon)
-                return (
-                  <li key={solution.name}>
-                    <Link
-                      to={solution.to}
-                      onClick={onClose}
-                      className="flex items-center gap-3 rounded-lg px-2 py-2.5 text-stone-700 hover:bg-stone-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-                    >
-                      <Icon className="h-4 w-4 text-primary-700" aria-hidden="true" />
-                      <span className="text-sm font-medium">{solution.name}</span>
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
+            <div className="mt-4">
+              <Group
+                label="Platform"
+                open={openGroup === 'platform'}
+                onToggle={() => setOpenGroup((g) => (g === 'platform' ? null : 'platform'))}
+              >
+                {site.solutions.map((solution) => (
+                  <DrawerLink
+                    key={solution.name}
+                    to={solution.to}
+                    icon={solution.icon}
+                    label={solution.name}
+                    onClose={onClose}
+                  />
+                ))}
+              </Group>
 
-            <div className="mt-6 border-t border-stone-200 pt-4">
-              <ul className="space-y-1">
-                {site.nav
-                  .filter((item) => !item.megaMenu)
-                  .map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.href}
-                        onClick={onClose}
-                        className="block rounded-lg px-2 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
+              <Group
+                label="Company"
+                open={openGroup === 'company'}
+                onToggle={() => setOpenGroup((g) => (g === 'company' ? null : 'company'))}
+              >
+                {site.companyMenu.map((entry) => (
+                  <DrawerLink
+                    key={entry.label}
+                    to={entry.to}
+                    icon={entry.icon}
+                    label={entry.label}
+                    onClose={onClose}
+                  />
+                ))}
+              </Group>
+
+              <Link
+                to="/contact"
+                onClick={onClose}
+                className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#1A2831] hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+              >
+                Contact
+              </Link>
             </div>
 
             <div className="mt-auto flex flex-col gap-2.5 border-t border-stone-200 pt-5">
-              <Button href="/request-demo" onClick={onClose}>
-                Request a Demo
+              <Button href={site.appUrl} onClick={onClose}>
+                Sign Up
               </Button>
-              <Button variant="secondary" href={site.appUrl} onClick={onClose}>
+              <Button variant="secondary" to="/signin" onClick={onClose}>
                 Sign In
               </Button>
             </div>

@@ -6,10 +6,10 @@ import { SectionHeading } from '../ui/SectionHeading'
 /** Four-role grid for the homepage: sponsors, CROs, sites and data managers. */
 export function RoleGrid({ content }) {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section className="bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <SectionHeading title={content.title} sub={content.sub} />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {content.items.map((role, index) => {
             const Icon = getIcon(role.icon)
             return (

@@ -20,7 +20,7 @@ function Node({ Icon }) {
 
 export function TrialJourney({ content }) {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-[#1A2831] py-14 lg:py-16">
       {/* subtle brand pattern */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(29,191,97,0.12),transparent_70%)]" />
@@ -35,11 +35,11 @@ export function TrialJourney({ content }) {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {content.title}
           </h2>
-          <p className="mt-4 text-lg text-navy-300">{content.sub}</p>
+          <p className="mt-4 text-lg text-[#A2B5C1]">{content.sub}</p>
         </Reveal>
 
         {/* Desktop: horizontal timeline */}
-        <Reveal className="mt-16 hidden lg:block">
+        <Reveal className="mt-12 hidden lg:block">
           <ol className="relative grid grid-cols-6 gap-6">
             <div
               aria-hidden="true"
@@ -54,7 +54,7 @@ export function TrialJourney({ content }) {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <h3 className="mt-1.5 font-semibold text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-navy-300">{step.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[#A2B5C1]">{step.description}</p>
                 </li>
               )
             })}
@@ -62,7 +62,7 @@ export function TrialJourney({ content }) {
         </Reveal>
 
         {/* Mobile / tablet: vertical timeline */}
-        <Reveal className="mt-12 lg:hidden">
+        <Reveal className="mt-10 lg:hidden">
           <ol className="relative space-y-10">
             <div
               aria-hidden="true"
@@ -78,7 +78,7 @@ export function TrialJourney({ content }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <h3 className="mt-1 font-semibold text-white">{step.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-navy-300">
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#A2B5C1]">
                       {step.description}
                     </p>
                   </div>

@@ -85,7 +85,7 @@ export function WhySclinNexus({ content }) {
   const right = content.items.slice(3)
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-white py-14 lg:py-16">
       {/* very subtle green background shape */}
       <div
         aria-hidden="true"

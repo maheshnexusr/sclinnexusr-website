@@ -19,7 +19,7 @@ function TraceabilityVisual({ satellites }) {
 
       {/* center shield */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-navy-900 shadow-[0_0_0_10px_rgba(29,191,97,0.12),0_16px_40px_-12px_rgba(17,27,34,0.4)]">
+        <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#1A2831] shadow-[0_0_0_10px_rgba(29,191,97,0.12),0_16px_40px_-12px_rgba(17,27,34,0.4)]">
           <ShieldCheck className="h-11 w-11 text-primary-600" />
         </div>
       </div>
@@ -46,7 +46,7 @@ function TraceabilityVisual({ satellites }) {
 
 export function ComplianceSpotlight({ content }) {
   return (
-    <section className="border-y border-primary-100 bg-primary-50/60 py-20 lg:py-24">
+    <section className="border-y border-primary-100 bg-primary-50/60 py-14 lg:py-16">
       <div className="mx-auto grid max-w-content items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
         <Reveal className="order-2 lg:order-1">
           <TraceabilityVisual satellites={content.satellites} />

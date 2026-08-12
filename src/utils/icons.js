@@ -19,6 +19,7 @@ import {
   Smartphone,
   Stethoscope,
   Timer,
+  Users,
   Workflow,
 } from 'lucide-react'
 
@@ -42,6 +43,7 @@ const icons = {
   smartphone: Smartphone,
   stethoscope: Stethoscope,
   timer: Timer,
+  users: Users,
   workflow: Workflow,
 }
 

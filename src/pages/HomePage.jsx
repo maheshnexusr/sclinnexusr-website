@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { home } from '../content/home'
 import { site } from '../content/site'
 import { HomeHero } from '../components/sections/HomeHero'
+import { WhyChoose } from '../components/sections/WhyChoose'
 import { TrustStrip } from '../components/sections/TrustStrip'
 import { ConnectedPlatform } from '../components/sections/ConnectedPlatform'
 import { EdcShowcase } from '../components/sections/EdcShowcase'
@@ -12,7 +13,7 @@ import { TrialJourney } from '../components/sections/TrialJourney'
 import { StudyIntelligence } from '../components/sections/StudyIntelligence'
 import { ComplianceSpotlight } from '../components/sections/ComplianceSpotlight'
 import { FeaturedTestimonial } from '../components/sections/FeaturedTestimonial'
-import { CtaBand } from '../components/sections/CtaBand'
+import { SupportStrip } from '../components/sections/SupportStrip'
 
 export function HomePage() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export function HomePage() {
     <>
       {/* Brand → message → action → product */}
       <HomeHero content={home.hero} />
+      <WhyChoose content={home.whyChoose} />
       <TrustStrip content={home.compliance} />
 
       {/* One connected platform, EDC first */}
@@ -34,16 +36,16 @@ export function HomePage() {
       <RoleGrid content={home.roles} />
 
       {/* Why teams choose the platform */}
-      <WhySclinNexus content={home.why} />
+      {/* <WhySclinNexus content={home.why} /> */}
 
       {/* The clinical workflow, end to end */}
       <TrialJourney content={home.journey} />
       <StudyIntelligence content={home.intelligence} />
       <ComplianceSpotlight content={home.complianceSpotlight} />
 
-      {/* Trust → conversion */}
-      <FeaturedTestimonial content={home.testimonials} />
-      <CtaBand content={home.cta} />
+      {/* Trust → quiet support strip before the footer */}
+      {/* <FeaturedTestimonial content={home.testimonials} /> */}
+      <SupportStrip content={home.support} />
     </>
   )
 }

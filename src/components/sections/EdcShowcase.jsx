@@ -174,7 +174,7 @@ function AuditPanel() {
 
 export function EdcShowcase({ content }) {
   return (
-    <section className="border-y border-stone-200 bg-stone-50 py-20 lg:py-24">
+    <section className="border-y border-stone-200 bg-stone-50 py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -197,7 +197,7 @@ export function EdcShowcase({ content }) {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
+        <Reveal delay={0.1} className="mt-10">
           <Tabs
             items={[
               { id: 'subjects', label: 'Subject List', panel: <SubjectsPanel /> },

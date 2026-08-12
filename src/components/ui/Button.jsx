@@ -10,6 +10,7 @@ const variants = {
 export function Button({
   variant = 'primary',
   size = 'md',
+  type = 'button',
   to,
   href,
   className,
@@ -46,7 +47,7 @@ export function Button({
     )
   }
   return (
-    <button type="button" className={cls} {...rest}>
+    <button type={type} className={cls} {...rest}>
       {children}
     </button>
   )
