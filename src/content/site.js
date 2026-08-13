@@ -11,42 +11,42 @@ export const site = {
   solutions: [
     {
       name: 'EDC',
-      to: '/solutions/edc',
+      to: '/platform/edc',
       icon: 'database',
       short: 'Electronic Data Capture',
       tagline: 'Electronic data capture for clean, inspection-ready study data.',
     },
     {
       name: 'CTMS',
-      to: '/solutions/ctms',
+      to: '/platform/ctms',
       icon: 'calendarRange',
       short: 'Clinical Trial Management',
       tagline: 'Operational tracking for studies, sites, visits and milestones.',
     },
     {
       name: 'IWRS / RTSM',
-      to: '#',
+      to: '/platform/iwrs-rtsm',
       icon: 'shuffle',
       short: 'Randomization & Trial Supply',
       tagline: 'Randomisation and trial supply, driven by the same subject record.',
     },
     {
       name: 'ePRO',
-      to: '#',
+      to: '/platform/epro',
       icon: 'smartphone',
       short: 'Patient Reported Outcomes',
       tagline: 'Patient-reported outcomes on the patient’s own device.',
     },
     {
       name: 'eConsent',
-      to: '#',
+      to: '/platform/econsent',
       icon: 'fileCheck',
       short: 'Electronic Consent',
       tagline: 'Remote and on-site consent with a full signature trail.',
     },
     {
       name: 'rSDV',
-      to: '#',
+      to: '/platform/rsdv',
       icon: 'scanSearch',
       short: 'Remote Source Data Verification',
       tagline: 'Remote source data verification without shipping binders.',
@@ -72,12 +72,12 @@ export const site = {
       {
         heading: 'Platform',
         links: [
-          { label: 'EDC', to: '/solutions/edc' },
-          { label: 'CTMS', to: '/solutions/ctms' },
-          { label: 'IWRS / RTSM', to: '#' },
-          { label: 'ePRO', to: '#' },
-          { label: 'eConsent', to: '#' },
-          { label: 'rSDV', to: '#' },
+          { label: 'EDC', to: '/platform/edc' },
+          { label: 'CTMS', to: '/platform/ctms' },
+          { label: 'IWRS / RTSM', to: '/platform/iwrs-rtsm' },
+          { label: 'ePRO', to: '/platform/epro' },
+          { label: 'eConsent', to: '/platform/econsent' },
+          { label: 'rSDV', to: '/platform/rsdv' },
         ],
       },
       {
@@ -92,9 +92,9 @@ export const site = {
       {
         heading: 'Legal',
         links: [
-          { label: 'Privacy Policy', to: '#' },
-          { label: 'Terms of Use', to: '#' },
-          { label: 'Cookie Notice', to: '#' },
+          { label: 'Privacy Policy', to: '/privacy-policy' },
+          { label: 'Terms of Use', to: '/terms-of-service' },
+          { label: 'Cookie Notice', to: '/cookie-policy' },
         ],
       },
     ],
@@ -102,9 +102,9 @@ export const site = {
       email: 'hello@sclinnexus.com',
     },
     legal: [
-      { label: 'Privacy Policy', to: '#' },
-      { label: 'Terms of Use', to: '#' },
-      { label: 'Cookie Notice', to: '#' },
+      { label: 'Privacy Policy', to: '/privacy-policy' },
+      { label: 'Terms of Use', to: '/terms-of-service' },
+      { label: 'Cookie Notice', to: '/cookie-policy' },
     ],
   },
 }

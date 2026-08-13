@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from 'react'
-import { Check, CheckCircle2, Loader2, Quote, TriangleAlert } from 'lucide-react'
+import { ArrowRight, Check, MailCheck, Quote } from 'lucide-react'
 import { site } from '../content/site'
+import { openEmailCompose } from '../utils/composeEmail'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
@@ -38,7 +39,7 @@ export function RequestDemoPage() {
   })
   const [consent, setConsent] = useState(false)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+  const [prepared, setPrepared] = useState(false)
   const consentId = useId()
 
   useEffect(() => {
@@ -46,7 +47,13 @@ export function RequestDemoPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const set = (key) => (event) => setForm((f) => ({ ...f, [key]: event.target.value }))
+  // Writes the value and clears that field's error as soon as the user
+  // starts fixing it.
+  const set = (key) => (event) => {
+    const value = event.target.value
+    setForm((f) => ({ ...f, [key]: value }))
+    setErrors((e) => (e[key] ? { ...e, [key]: '' } : e))
+  }
 
   const submit = () => {
     const next = {}
@@ -59,11 +66,41 @@ export function RequestDemoPage() {
     setErrors(next)
     if (Object.keys(next).length > 0) return
 
-    setStatus('submitting')
-    // Mock submission: an email containing "fail" demonstrates the error state.
-    window.setTimeout(() => {
-      setStatus(form.email.toLowerCase().includes('fail') ? 'error' : 'success')
-    }, 900)
+    // Open a pre-filled Gmail compose tab (mailto: fallback if the popup is
+    // blocked). Nothing is sent or stored by the website — the user reviews
+    // the email and clicks Send themselves.
+    const interestLabel =
+      interestOptions.find((option) => option.value === form.interest)?.label ?? form.interest
+    const subject = `SclinNexus Demo Request - ${form.company.trim()}`
+    const body = [
+      'Hello SclinNexus Team,',
+      '',
+      'I would like to book a demo of SclinNexus.',
+      '',
+      `Name: ${form.name.trim()}`,
+      `Work Email: ${form.email.trim()}`,
+      `Company: ${form.company.trim()}`,
+      form.role.trim() ? `Job Title: ${form.role.trim()}` : null,
+      `Interested In: ${interestLabel}`,
+      form.message.trim() ? '' : null,
+      form.message.trim() ? 'What to prepare:' : null,
+      form.message.trim() ? form.message.trim() : null,
+      '',
+      'Regards,',
+      form.name.trim(),
+    ]
+      .filter((line) => line !== null)
+      .join('\n')
+
+    openEmailCompose({ to: site.contactEmail, subject, body })
+    setPrepared(true)
+  }
+
+  const resetForm = () => {
+    setForm({ name: '', email: '', company: '', role: '', interest: 'platform', message: '' })
+    setConsent(false)
+    setErrors({})
+    setPrepared(false)
   }
 
   return (
@@ -112,18 +149,32 @@ export function RequestDemoPage() {
         </div>
 
         <Card className="h-fit p-8">
-          {status === 'success' ? (
+          {prepared ? (
             <div className="py-6 text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-primary-700" aria-hidden="true" />
-              <h2 className="mt-4 text-xl font-semibold text-stone-900">Request received</h2>
-              <p className="mt-2 text-sm leading-relaxed text-stone-600">
-                A solutions engineer will email you at{' '}
-                <span className="font-medium">{form.email}</span> within one business day to find
-                a time that works.
+              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-700">
+                <MailCheck className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <h2 className="mt-4 text-xl font-semibold text-stone-900">Demo Request Prepared</h2>
+              <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-stone-600">
+                Your demo request has been prepared successfully. Please review the opened email
+                and click Send to complete your request.
               </p>
-              <Button className="mt-6" to="/">
-                Back to the homepage
+              <Button className="group mt-6" onClick={resetForm}>
+                Submit Another Request
+                <ArrowRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
               </Button>
+              <div className="mt-3">
+                <button
+                  type="button"
+                  onClick={() => setPrepared(false)}
+                  className="rounded text-sm font-medium text-primary-700 transition-colors hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+                >
+                  Review or edit your details
+                </button>
+              </div>
             </div>
           ) : (
             <div className="space-y-4">
@@ -193,32 +244,18 @@ export function RequestDemoPage() {
                 {errors.consent && <p className="mt-1.5 text-sm text-red-600">{errors.consent}</p>}
               </div>
 
-              {status === 'error' && (
-                <div
-                  role="alert"
-                  className="flex items-start gap-2.5 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700"
-                >
-                  <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                  <span>Something went wrong sending your request. Try again in a moment.</span>
-                </div>
-              )}
-
-              <Button
-                className="w-full"
-                size="lg"
-                onClick={submit}
-                disabled={status === 'submitting'}
-                aria-busy={status === 'submitting'}
-              >
-                {status === 'submitting' ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-                    Sending…
-                  </>
-                ) : (
-                  'Request a demo'
-                )}
+              <Button className="group w-full" size="lg" onClick={submit}>
+                Request a demo
+                <ArrowRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
               </Button>
+
+              <p className="text-xs leading-relaxed text-stone-500">
+                Clicking &ldquo;Request a demo&rdquo; opens a pre-filled email for you to review
+                and send — nothing is sent or stored by this website.
+              </p>
             </div>
           )}
         </Card>

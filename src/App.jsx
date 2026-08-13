@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { HomePage } from './pages/HomePage'
@@ -11,7 +11,15 @@ import { LeadershipPage } from './pages/LeadershipPage'
 import { CareersPage } from './pages/CareersPage'
 import { NewsPage } from './pages/NewsPage'
 import { ContactPage } from './pages/ContactPage'
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
+import { TermsOfServicePage } from './pages/TermsOfServicePage'
+import { CookiePolicyPage } from './pages/CookiePolicyPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+
+function SolutionsRedirect() {
+  const { slug } = useParams()
+  return <Navigate to={`/platform/${slug}`} replace />
+}
 
 function MarketingLayout() {
   return (
@@ -30,7 +38,8 @@ export function App() {
     <Routes>
       <Route element={<MarketingLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/solutions/:slug" element={<ProductPage />} />
+        <Route path="/platform/:slug" element={<ProductPage />} />
+        <Route path="/solutions/:slug" element={<SolutionsRedirect />} />
         <Route path="/request-demo" element={<RequestDemoPage />} />
         <Route path="/company" element={<CompanyPage />} />
         <Route path="/company/our-story" element={<OurStoryPage />} />
@@ -38,6 +47,9 @@ export function App() {
         <Route path="/company/careers" element={<CareersPage />} />
         <Route path="/company/news" element={<NewsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/signin" element={<SignInPage />} />

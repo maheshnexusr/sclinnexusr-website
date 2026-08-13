@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Mail, MailCheck } from 'lucide-react'
 import { company } from '../content/company'
+import { openEmailCompose } from '../utils/composeEmail'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Input } from '../components/ui/Input'
@@ -26,12 +27,15 @@ const blankForm = {
   message: '',
 }
 
-/** Builds a fully URL-encoded mailto link from the form values. No data leaves the browser. */
-function buildContactMailto(form) {
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+/** Builds the subject and body for the contact email. Optional fields that
+ * are empty are dropped entirely so the email has no blank lines. */
+function buildContactEmail(form) {
   const interestLabel =
     contact.interests.find((option) => option.value === form.interest)?.label ?? form.interest
 
-  const subject = `SclinNexus Contact Request - ${form.firstName} ${form.lastName}`
+  const subject = `SclinNexus Contact Request - ${form.firstName.trim()} ${form.lastName.trim()}`
   const body = [
     'Hello SclinNexus Team,',
     '',
@@ -39,27 +43,30 @@ function buildContactMailto(form) {
     '',
     'Contact Details:',
     '',
-    `First Name: ${form.firstName}`,
-    `Last Name: ${form.lastName}`,
-    `Work Email: ${form.email}`,
-    `Company: ${form.company}`,
-    `Job Title: ${form.role}`,
-    `Country: ${form.country}`,
+    `First Name: ${form.firstName.trim()}`,
+    `Last Name: ${form.lastName.trim()}`,
+    `Work Email: ${form.email.trim()}`,
+    form.company.trim() ? `Company: ${form.company.trim()}` : null,
+    form.role.trim() ? `Job Title: ${form.role.trim()}` : null,
+    form.country.trim() ? `Country: ${form.country.trim()}` : null,
     `Interested In: ${interestLabel}`,
     '',
     'Message:',
     '',
-    form.message,
+    form.message.trim(),
     '',
     'Regards,',
-    `${form.firstName} ${form.lastName}`,
-  ].join('\n')
+    `${form.firstName.trim()} ${form.lastName.trim()}`,
+  ]
+    .filter((line) => line !== null)
+    .join('\n')
 
-  return `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  return { subject, body }
 }
 
 export function ContactPage() {
   const [form, setForm] = useState(blankForm)
+  const [errors, setErrors] = useState({})
   const [opened, setOpened] = useState(false)
 
   useEffect(() => {
@@ -67,26 +74,39 @@ export function ContactPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const set = (key) => (event) => setForm((f) => ({ ...f, [key]: event.target.value }))
+  // Writes the value and clears that field's error the moment the user
+  // starts fixing it — no waiting for the next submit.
+  const set = (key) => (event) => {
+    const value = event.target.value
+    setForm((f) => ({ ...f, [key]: value }))
+    setErrors((e) => (e[key] ? { ...e, [key]: '' } : e))
+  }
+
+  const validate = () => {
+    const next = {}
+    if (!form.firstName.trim()) next.firstName = 'First name is required'
+    if (!form.lastName.trim()) next.lastName = 'Last name is required'
+    if (!form.email.trim()) next.email = 'Work email is required'
+    else if (!EMAIL_RE.test(form.email)) next.email = 'Please enter a valid work email address'
+    if (!form.interest) next.interest = 'Please select what you are interested in'
+    if (!form.message.trim()) next.message = 'Please enter a short message'
+    return next
+  }
 
   const handleSubmit = (event) => {
     // Stop the browser's native form submission — nothing is posted anywhere.
     event.preventDefault()
 
-    // Build the encoded mailto URL from the form values.
-    const mailto = buildContactMailto(form)
-
-    if (import.meta.env.DEV) {
-      // Development-only diagnostics (never logs full form contents).
-      console.log('Contact form submitted')
-      console.log('Recipient:', contact.email)
-      console.log('Mailto starts with:', mailto.slice(0, 60))
+    const next = validate()
+    if (Object.keys(next).length > 0) {
+      setErrors(next)
+      return
     }
 
-    // 5. Invoke the OS/browser default mail handler. The website itself
-    // does not send the email — the user reviews and clicks Send in
-    // their own email application.
-    window.location.href = mailto
+    // Open a pre-filled Gmail compose tab (mailto: fallback if the popup is
+    // blocked). The user reviews the email and clicks Send themselves.
+    const { subject, body } = buildContactEmail(form)
+    openEmailCompose({ to: contact.email, subject, body })
     setOpened(true)
   }
 
@@ -133,13 +153,14 @@ export function ContactPage() {
                 </span>
                 <h2 className="mt-4 text-xl font-semibold text-[#1A2831]">Message Prepared</h2>
                 <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-stone-600">
-                  Your email application has been opened with your message pre-filled. Please
-                  review it and click Send in your email application to complete your inquiry.
+                  Your message has been prepared successfully. Please review the opened email
+                  and click Send to complete your inquiry.
                 </p>
                 <Button
                   className="group mt-6"
                   onClick={() => {
                     setForm(blankForm)
+                    setErrors({})
                     setOpened(false)
                   }}
                 >
@@ -167,6 +188,7 @@ export function ContactPage() {
                   label="First Name"
                   value={form.firstName}
                   onChange={set('firstName')}
+                  error={errors.firstName}
                   required
                   autoComplete="given-name"
                   placeholder="Jordan"
@@ -175,6 +197,7 @@ export function ContactPage() {
                   label="Last Name"
                   value={form.lastName}
                   onChange={set('lastName')}
+                  error={errors.lastName}
                   required
                   autoComplete="family-name"
                   placeholder="Rivera"
@@ -185,6 +208,7 @@ export function ContactPage() {
                 type="email"
                 value={form.email}
                 onChange={set('email')}
+                error={errors.email}
                 required
                 autoComplete="email"
                 placeholder="name@company.com"
@@ -217,12 +241,14 @@ export function ContactPage() {
                 value={form.interest}
                 onChange={set('interest')}
                 options={interestOptions}
+                error={errors.interest}
                 required
               />
               <Textarea
                 label="Message"
                 value={form.message}
                 onChange={set('message')}
+                error={errors.message}
                 required
                 placeholder="Tell us about your study, workflow or what you'd like to improve…"
                 rows={4}

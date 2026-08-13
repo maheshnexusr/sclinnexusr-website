@@ -1,346 +1,146 @@
-/** @type {import('./schema').ProductContent} */
 export const edc = {
   slug: 'edc',
   meta: {
-    title: 'EDC — Electronic Data Capture | SclinNexus',
-    breadcrumbSection: 'Solutions',
-    breadcrumbLabel: 'EDC',
+    title: 'SclinNexus EDC | Electronic Data Capture',
+    description: 'Capture, validate and manage clinical trial data with SclinNexus EDC.',
   },
-
+  breadcrumb: 'EDC',
   hero: {
-    eyebrow: { icon: 'database', label: 'Electronic Data Capture' },
-    title: 'Clean data from first entry to database lock',
-    description:
-      'SclinNexus EDC puts study build, data capture and cleaning in one validated system. Design forms without programmers, catch errors at the point of entry, and reach lock with your queries already closed.',
-    primaryCta: { label: 'Explore capabilities', targetId: 'capabilities' },
-    secondaryCta: { label: 'Download the factsheet', href: '#resources' },
-    media: {
-      label: 'EDC study dashboard — screenshot placeholder',
-      videoTitle: 'SclinNexus EDC in 3 minutes',
-    },
+    eyebrow: 'Electronic Data Capture',
+    headline: ['Capture clinical data', 'with confidence.'],
+    sub: 'SclinNexus EDC helps clinical teams design, capture, validate and review study data through a connected electronic data capture workflow.',
+    secondaryLabel: 'Explore EDC',
   },
-
-  compliance: {
-    label: 'Built for regulated research',
-    items: [
-      'GDPR',
-      'HIPAA',
-      'FDA 21 CFR Part 11',
-      'ICH-GCP',
-      'GxP',
-      'MedDRA',
-      'CDISC',
-      'GAMP 5',
+  why: {
+    heading: 'Built for cleaner clinical data.',
+    sub: 'Bring study forms, validation, subject data and data review into one controlled environment.',
+    cards: [
+      { title: 'Study Build', desc: 'Configure study forms and workflows efficiently.' },
+      { title: 'Data Validation', desc: 'Apply validation rules to support accurate data capture.' },
+      { title: 'Query Management', desc: 'Identify, manage and resolve data issues efficiently.' },
+      { title: 'Data Review', desc: 'Give clinical teams better visibility into study data.' },
     ],
   },
-
-  stats: {
-    items: [
-      { value: 140, suffix: '+', label: 'Studies deployed' },
-      { value: 28, suffix: '', label: 'Countries with active sites' },
-      { value: 61000, suffix: '+', label: 'Subjects enrolled' },
-      { value: 14, suffix: '', label: 'Median days to database lock' },
-    ],
-    context:
-      'Counted across production studies on the platform since 2019. Database lock is measured from last patient visit to final lock, and the median includes teams running their first study on SclinNexus.',
-  },
-
   capabilities: {
-    eyebrow: 'Core capabilities',
-    title: 'Everything between protocol and lock',
-    sub: 'Five areas of the product carry a study from first form to final export. Each one is built for the person who actually does the work.',
-    cta: { label: 'See EDC in a live demo', href: '/request-demo' },
-    tabs: [
-      {
-        id: 'data-capture',
-        label: 'Data Capture',
-        title: 'Entry that works the way sites do',
-        intro:
-          'Coordinators enter data between patients, not at a desk. Forms respond instantly and flag problems before anyone moves on.',
-        bullets: [
-          'Dynamic forms with skip logic and calculated fields',
-          'Edit checks fire at entry, not in an overnight batch',
-          'Field-level audit trail with reason for change',
-          'Role-based views so site staff see only their pages',
-          'Works on tablets in clinic without a separate app',
-        ],
-        screenshot: 'Data capture form with inline edit check — screenshot placeholder',
-      },
-      {
-        id: 'study-build',
-        label: 'Study Build',
-        title: 'From protocol to first patient in weeks',
-        intro:
-          'Data managers build studies themselves with a visual designer, a reusable form library and a validation report before go-live.',
-        bullets: [
-          'Drag-and-drop form designer, no programming queue',
-          'Versioned form and study libraries for reuse across trials',
-          'CDASH-aligned starting templates for common domains',
-          'Automated build validation report before activation',
-          'Sandbox preview of the study as any role, on any device',
-        ],
-        screenshot: 'Visual form designer — screenshot placeholder',
-      },
-      {
-        id: 'validation-cleaning',
-        label: 'Validation & Cleaning',
-        title: 'Queries closed as the study runs',
-        intro:
-          'Cleaning happens continuously instead of piling up before lock. Every open issue has an owner, an age and a place in one queue.',
-        bullets: [
-          'Programmable edit checks with plain-language messages',
-          'Queries raised, assigned and closed in a single manager',
-          'Risk-based SDV worklists instead of 100% review',
-          'Data review dashboards by site, form and subject',
-          'Clean-status tracking per subject, export-ready at lock',
-        ],
-        screenshot: 'Query manager with ageing queue — screenshot placeholder',
-      },
-      {
-        id: 'mid-study-changes',
-        label: 'Mid-Study Changes',
-        title: 'Amendments without downtime',
-        intro:
-          'Protocol amendments are a fact of life. EDC versions the change, shows you the blast radius, and rolls it out on your schedule.',
-        bullets: [
-          'Versioned form changes with a migration preview',
-          'Site-by-site rollout, no all-or-nothing switch',
-          'Impact report listing every affected field and subject',
-          'Existing data carried forward, never re-entered',
-          'A change log written for auditors, not just developers',
-        ],
-        screenshot: 'Amendment impact report — screenshot placeholder',
-      },
-      {
-        id: 'reporting',
-        label: 'Reporting',
-        title: 'Answers without a request to IT',
-        intro:
-          'Enrolment, data quality and site performance are live views, and every export format your statisticians expect is built in.',
-        bullets: [
-          'Live enrolment and data-quality dashboards',
-          'Scheduled extracts in CSV and SAS transport formats',
-          'CDISC ODM export for downstream systems',
-          'Custom listings built in the browser, no SQL',
-          'REST API access for your own reporting stack',
-        ],
-        screenshot: 'Enrolment and quality dashboard — screenshot placeholder',
-      },
+    heading: 'Everything you need to manage study data.',
+    items: [
+      { icon: 'clipboardList', title: 'Study Designer', desc: 'Build and configure electronic case report forms.' },
+      { icon: 'users', title: 'Subject Management', desc: 'Manage subject records and study visits.' },
+      { icon: 'badgeCheck', title: 'Edit Checks', desc: 'Validate data during capture.' },
+      { icon: 'listChecks', title: 'Query Management', desc: 'Track and resolve data discrepancies.' },
+      { icon: 'eye', title: 'Data Review', desc: 'Review study data across subjects and visits.' },
+      { icon: 'history', title: 'Audit Trail', desc: 'Maintain traceability of important study actions.' },
     ],
   },
-
-  process: {
-    title: 'How a study runs on SclinNexus EDC',
-    sub: 'Four stages, one system, no hand-offs between tools.',
+  features: [
+    {
+      heading: 'Build studies without unnecessary complexity.',
+      sub: 'Configure forms, visits and fields in a structured study build workflow, with validation rules defined alongside the data they protect.',
+      points: [
+        'Structured study and form configuration',
+        'Visit schedules mapped to study design',
+        'Field-level settings and validation rules',
+      ],
+      panel: {
+        title: 'Study Build · ONC-2026-01',
+        badge: { text: 'Draft', tone: 'gray' },
+        rows: [
+          { label: 'Screening Visit', sub: '4 forms · 32 fields', badge: { text: 'Configured', tone: 'green' } },
+          { label: 'Week 4 Visit', sub: '6 forms · 48 fields', badge: { text: 'Configured', tone: 'green' } },
+          { label: 'Week 12 Visit', sub: '5 forms · 41 fields', badge: { text: 'In review', tone: 'amber' } },
+          { label: 'Validation Rules', sub: 'Range, required, consistency', value: '87 rules' },
+        ],
+      },
+    },
+    {
+      heading: 'Validate data as it is captured.',
+      sub: 'Edit checks run while data is entered, so issues surface at the point of capture and queries follow a clear, trackable status.',
+      points: [
+        'Edit checks applied during data entry',
+        'Clear validation messages for site users',
+        'Queries created, tracked and resolved in one place',
+      ],
+      panel: {
+        title: 'Edit Checks · Week 4 Vitals',
+        badge: { text: 'Live', tone: 'green' },
+        rows: [
+          { label: 'Systolic BP', value: '128 mmHg', badge: { text: 'Valid', tone: 'green' } },
+          { label: 'Diastolic BP', value: '210 mmHg', badge: { text: 'Out of range', tone: 'red' } },
+          { label: 'Query #Q-118', sub: 'Value outside expected range', badge: { text: 'Open', tone: 'amber' } },
+          { label: 'Query #Q-104', sub: 'Missing visit date', badge: { text: 'Resolved', tone: 'green' } },
+        ],
+      },
+    },
+    {
+      heading: 'Review the study with greater clarity.',
+      sub: 'Follow subjects, data quality, query status and completion from a review view designed for clinical teams.',
+      points: [
+        'Subject overview across visits and forms',
+        'Completion and data-quality status at a glance',
+        'Query workload visible per site and subject',
+      ],
+      panel: {
+        title: 'Data Review · Subject SCR-1024',
+        badge: { text: 'Week 12', tone: 'navy' },
+        rows: [
+          { label: 'Forms Complete', value: '18 / 19', badge: { text: '95%', tone: 'green' } },
+          { label: 'Open Queries', value: '1', badge: { text: 'Action needed', tone: 'amber' } },
+          { label: 'Signatures', value: '17 / 19', badge: { text: 'Pending', tone: 'gray' } },
+          { label: 'Last Activity', value: '04 Aug 2026' },
+        ],
+      },
+    },
+    {
+      heading: 'Keep every change traceable.',
+      sub: 'The audit trail records who changed what and when, with previous and new values preserved for review.',
+      points: [
+        'Timestamped record of study actions',
+        'User, action, previous value and new value',
+        'Traceability designed for inspection readiness',
+      ],
+      panel: {
+        title: 'Audit Trail · Vitals Form',
+        badge: { text: 'Read-only', tone: 'navy' },
+        rows: [
+          { label: 'Weight changed', sub: '74.6 kg → 74.2 kg · j.moore', value: '10:42' },
+          { label: 'Query answered', sub: 'Q-118 · site coordinator', value: '09:15' },
+          { label: 'Form signed', sub: 'Week 4 Vitals · Dr. Patel', value: 'Yesterday' },
+          { label: 'Value entered', sub: 'Heart rate 78 bpm · j.moore', value: 'Yesterday' },
+        ],
+      },
+    },
+  ],
+  workflow: {
+    heading: 'From study setup to database lock.',
     steps: [
-      {
-        title: 'Design forms',
-        description: 'Build and validate the study in the visual designer.',
-      },
-      {
-        title: 'Enter data',
-        description: 'Sites capture visits with checks firing at entry.',
-      },
-      {
-        title: 'Resolve queries',
-        description: 'Data managers clean continuously in one queue.',
-      },
-      {
-        title: 'Lock database',
-        description: 'Freeze, sign and export with a full audit trail.',
-      },
+      { title: 'Study Setup' },
+      { title: 'Form Configuration' },
+      { title: 'Subject Enrollment' },
+      { title: 'Data Capture' },
+      { title: 'Data Review' },
+      { title: 'Database Lock' },
     ],
   },
-
-  roles: {
-    title: 'Built for every side of the study',
-    sub: 'The same study, three very different jobs. Each role gets a view shaped around its work.',
-    items: [
-      {
-        icon: 'briefcase',
-        title: 'Sponsors',
-        body: 'Portfolio-level oversight without asking for status decks. Live enrolment, data quality and site performance across every study, with read-only access that never touches the data.',
-      },
-      {
-        icon: 'network',
-        title: 'CROs',
-        body: 'Run many studies without rebuilding each one. Shared form libraries, per-study permissions and a build process fast enough to win bids on start-up timelines.',
-      },
-      {
-        icon: 'stethoscope',
-        title: 'Site Teams',
-        body: 'An hour of training, not a week. Clear visit worklists, forms that explain their own edit checks, and fewer queries coming back a month later.',
-      },
-    ],
-  },
-
-  addOns: {
-    title: 'Products that pair with EDC',
-    sub: 'Each add-on shares the EDC subject record, so nothing is reconciled between systems.',
-    items: [
-      {
-        image: 'IWRS / RTSM module — image placeholder',
-        title: 'IWRS / RTSM',
-        description:
-          'Randomisation and trial supply driven by the same subject record the EDC holds.',
-        href: '#',
-      },
-      {
-        image: 'ePRO module — image placeholder',
-        title: 'ePRO',
-        description:
-          'Patient-reported outcomes captured on the patient’s own device, flowing straight into the study database.',
-        href: '#',
-      },
-      {
-        image: 'eConsent module — image placeholder',
-        title: 'eConsent',
-        description:
-          'Remote and on-site consent with versioned documents and a complete signature trail.',
-        href: '#',
-      },
-      {
-        image: 'rSDV module — image placeholder',
-        title: 'rSDV',
-        description:
-          'Remote source data verification so monitors review documents without travelling to site.',
-        href: '#',
-      },
-    ],
-  },
-
-  integration: {
-    title: 'One platform, one data model',
-    body: 'EDC is the system of record for the whole SclinNexus suite. Randomisation, patient-reported outcomes, consent and monitoring all read and write the same subject data, so there is no nightly sync to break and no reconciliation step before lock.',
-    primaryCta: { label: 'Explore the platform', href: '/' },
-    secondaryCta: { label: 'Talk to our team', href: '/request-demo' },
-  },
-
-  resources: {
-    title: 'Go deeper',
-    sub: 'Evidence first: how real studies ran, what the system does, and what our team has learned.',
-    caseStudies: [
-      {
-        thumbnail: 'Oncology case study cover — image placeholder',
-        title: 'A phase II oncology study locked 11 days after last patient visit',
-        href: '#',
-      },
-      {
-        thumbnail: 'CRO case study cover — image placeholder',
-        title: 'How a mid-size CRO cut study build time from 12 weeks to 4',
-        href: '#',
-      },
-      {
-        thumbnail: 'Amendment case study cover — image placeholder',
-        title: 'Three protocol amendments, zero days of downtime',
-        href: '#',
-      },
-    ],
-    factsheets: [
-      {
-        thumbnail: 'EDC factsheet cover — image placeholder',
-        title: 'SclinNexus EDC — product factsheet',
-        href: '#',
-      },
-      {
-        thumbnail: 'Validation factsheet cover — image placeholder',
-        title: 'Validation pack: IQ, OQ and PQ documentation',
-        href: '#',
-      },
-      {
-        thumbnail: 'Security factsheet cover — image placeholder',
-        title: 'Security, hosting and Part 11 compliance overview',
-        href: '#',
-      },
-    ],
-    articles: [
-      {
-        thumbnail: 'Article thumbnail — image placeholder',
-        title: 'Why most database lock delays are created at study build',
-        readMinutes: 7,
-        excerpt:
-          'The last month before lock is where delays surface, but rarely where they start. The edit checks you skip in week one become the queries you chase in month nine.',
-        href: '#',
-      },
-      {
-        thumbnail: 'Article thumbnail — image placeholder',
-        title: 'A practical guide to risk-based SDV',
-        readMinutes: 9,
-        excerpt:
-          '100% source verification is expensive and doesn’t catch what matters. Here is how teams decide what to verify, and how to defend that decision to an inspector.',
-        href: '#',
-      },
-      {
-        thumbnail: 'Article thumbnail — image placeholder',
-        title: 'What auditors actually look for in an EDC audit trail',
-        readMinutes: 6,
-        excerpt:
-          'Having an audit trail is table stakes. Being able to answer a specific question from it in under a minute is what ends an inspection finding before it starts.',
-        href: '#',
-      },
-    ],
-  },
-
-  testimonials: {
-    title: 'What study teams say',
-    items: [
-      {
-        quote:
-          'We locked our first database eleven days after last patient visit. Our previous system averaged six weeks.',
-        role: 'Director of Clinical Data Management',
-        org: 'Mid-size CRO',
-      },
-      {
-        quote:
-          'Site coordinators stopped calling us about the system. That is the highest compliment EDC software can get.',
-        role: 'Clinical Data Lead',
-        org: 'Oncology sponsor',
-      },
-      {
-        quote:
-          'Mid-study amendments used to mean a weekend of downtime. Now we roll them out site by site on a Tuesday.',
-        role: 'Study Build Manager',
-        org: 'Global CRO',
-      },
-      {
-        quote:
-          'The audit trail answered every question our inspector asked, on the spot, during the inspection.',
-        role: 'Head of Quality Assurance',
-        org: 'Biotech sponsor',
-      },
-    ],
-  },
-
-  whyUs: {
-    title: 'Why teams choose SclinNexus',
-    items: [
-      {
-        icon: 'shieldCheck',
-        title: 'Validation-ready',
-        body: 'Every release ships with an IQ/OQ/PQ documentation pack. Your validation team reviews and signs, they do not start from a blank page.',
-      },
-      {
-        icon: 'timer',
-        title: 'Fast to first patient',
-        body: 'Reusable libraries and a build validation report mean typical studies go live in weeks. Your timeline stops depending on a vendor’s programming queue.',
-      },
-      {
-        icon: 'headphones',
-        title: 'A named human',
-        body: 'Every account has a named data manager who knows your studies, not a ticket queue. Median response during business hours is under an hour.',
-      },
-      {
-        icon: 'lock',
-        title: 'Your data stays yours',
-        body: 'Full exports in open formats at any time, including after you leave. No export fees, no held-hostage archives, no proprietary lock-in.',
-      },
-    ],
-  },
-
-  cta: {
-    title: 'See your next study on SclinNexus EDC',
-    tagline:
-      'A 45-minute walkthrough with a solutions engineer, built around a study design like yours.',
-    button: { label: 'Request a demo', href: '/request-demo' },
-  },
+  faq: [
+    {
+      q: 'What is SclinNexus EDC?',
+      a: 'SclinNexus EDC is an electronic data capture system for clinical studies. It gives study teams a controlled environment to design study forms, capture subject data, apply validation and review the study as it progresses.',
+    },
+    {
+      q: 'How does SclinNexus support study setup?',
+      a: 'Studies are configured through a structured build workflow covering forms, visits, fields and validation rules, so the study design is in place before data capture begins.',
+    },
+    {
+      q: 'How are validation rules managed?',
+      a: 'Validation rules are defined during study build and applied as edit checks while data is entered, helping surface issues at the point of capture.',
+    },
+    {
+      q: 'How are queries handled?',
+      a: 'Data discrepancies can raise queries that are tracked through a clear status flow — from creation to response to resolution — visible to the teams responsible for them.',
+    },
+    {
+      q: 'How is the audit trail maintained?',
+      a: 'Important study actions are recorded with the user, timestamp, action and — for data changes — the previous and new values, providing traceability throughout the study.',
+    },
+  ],
 }

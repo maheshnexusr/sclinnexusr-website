@@ -76,7 +76,7 @@ export const home = {
     titleLead: 'Electronic Data Capture,',
     titleTail: 'built for real clinical studies.',
     sub: 'Design forms, capture data, manage queries and maintain a complete audit trail from one secure workspace.',
-    cta: { label: 'Explore EDC', to: '/solutions/edc' },
+    cta: { label: 'Explore EDC', to: '/platform/edc' },
   },
 
   stats: {
@@ -204,7 +204,7 @@ export const home = {
     titleLead: 'Real-time intelligence.',
     titleTail: 'Better decisions.',
     sub: 'Dashboards and reports that help you stay ahead of issues and keep studies on track.',
-    cta: { label: 'Explore dashboards', to: '/solutions/edc' },
+    cta: { label: 'Explore dashboards', to: '/platform/edc' },
   },
 
   complianceSpotlight: {
@@ -217,7 +217,7 @@ export const home = {
       'Data integrity and traceability, entry to export',
       'Validation workflows with IQ/OQ/PQ documentation',
     ],
-    cta: { label: 'See compliance overview', to: '/solutions/edc' },
+    cta: { label: 'See compliance overview', to: '/platform/edc' },
     satellites: [
       { icon: 'badgeCheck', title: 'Validation', body: 'Real-time checks' },
       { icon: 'fingerprint', title: 'Traceable Record', body: 'Data traceability' },
