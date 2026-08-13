@@ -147,8 +147,8 @@ export function MobileDrawer({ open, onClose }) {
             </div>
 
             <div className="mt-auto flex flex-col gap-2.5 border-t border-stone-200 pt-5">
-              <Button href={site.appUrl} onClick={onClose}>
-                Sign Up
+              <Button to="/request-demo" onClick={onClose}>
+                Request a Demo
               </Button>
               <Button variant="secondary" to="/signin" onClick={onClose}>
                 Sign In

@@ -173,8 +173,8 @@ export function Header() {
           >
             Sign In
           </Link>
-          <Button href={site.appUrl} className="hidden sm:inline-flex">
-            Sign Up
+          <Button to="/request-demo" onClick={close} className="hidden sm:inline-flex">
+            Request a Demo
           </Button>
           <button
             type="button"

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { getIcon } from '../../utils/icons'
+import logoSrc from '../../assets/logo/SclinNexus_color_logo.png'
 import { Reveal } from '../ui/Reveal'
 
 const positions = [
@@ -17,10 +18,10 @@ function TraceabilityVisual({ satellites }) {
       <div className="absolute inset-[15%] rounded-full border border-dashed border-primary-600/30" />
       <div className="absolute inset-[30%] rounded-full border border-primary-600/15" />
 
-      {/* center shield */}
+      {/* center logo */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#1A2831] shadow-[0_0_0_10px_rgba(29,191,97,0.12),0_16px_40px_-12px_rgba(17,27,34,0.4)]">
-          <ShieldCheck className="h-11 w-11 text-primary-600" />
+        <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-white ring-1 ring-stone-200 shadow-[0_0_0_10px_rgba(29,191,97,0.12),0_16px_40px_-12px_rgba(17,27,34,0.4)]">
+          <img src={logoSrc} alt="" className="h-14 w-14 object-contain" />
         </div>
       </div>
 
