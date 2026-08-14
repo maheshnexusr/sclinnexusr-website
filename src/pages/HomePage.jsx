@@ -8,7 +8,7 @@ import { ConnectedPlatform } from '../components/sections/ConnectedPlatform'
 import { EdcShowcase } from '../components/sections/EdcShowcase'
 import { StatsBand } from '../components/sections/StatsBand'
 import { RoleGrid } from '../components/sections/RoleGrid'
-import { WhySclinNexus } from '../components/sections/WhySclinNexus'
+import { WhyProEDC } from '../components/sections/WhyProEDC'
 import { TrialJourney } from '../components/sections/TrialJourney'
 import { StudyIntelligence } from '../components/sections/StudyIntelligence'
 import { ComplianceSpotlight } from '../components/sections/ComplianceSpotlight'
@@ -17,7 +17,7 @@ import { SupportStrip } from '../components/sections/SupportStrip'
 
 export function HomePage() {
   useEffect(() => {
-    document.title = 'SclinNexus — Clinical Trial Software'
+    document.title = 'ProEDC — One Platform. Every Clinical Trial.'
   }, [])
 
   return (
@@ -36,7 +36,7 @@ export function HomePage() {
       <RoleGrid content={home.roles} />
 
       {/* Why teams choose the platform */}
-      {/* <WhySclinNexus content={home.why} /> */}
+      {/* <WhyProEDC content={home.why} /> */}
 
       {/* The clinical workflow, end to end */}
       <TrialJourney content={home.journey} />

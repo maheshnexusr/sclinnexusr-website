@@ -8,8 +8,8 @@ function EnrollmentSpark() {
     <svg viewBox="0 0 260 80" className="mt-5 h-20 w-full" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="si-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1DBF61" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#1DBF61" stopOpacity="0" />
+          <stop offset="0%" stopColor="#0878F9" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#0878F9" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path
@@ -19,11 +19,11 @@ function EnrollmentSpark() {
       <path
         d="M0 72 C30 66 45 60 70 52 C100 43 115 44 145 33 C175 23 200 22 230 14 L260 9"
         fill="none"
-        stroke="#1DBF61"
+        stroke="#0878F9"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="260" cy="9" r="3.5" fill="#1DBF61" />
+      <circle cx="260" cy="9" r="3.5" fill="#0878F9" />
     </svg>
   )
 }
@@ -40,7 +40,7 @@ function QualityBars() {
           width="20"
           height={(v / 100) * 76}
           rx="4"
-          fill={i === bars.length - 1 ? '#1DBF61' : '#C8D4DC'}
+          fill={i === bars.length - 1 ? '#0878F9' : '#D9E8F5'}
         />
       ))}
     </svg>
@@ -51,18 +51,18 @@ function QueriesTrend() {
   return (
     <svg viewBox="0 0 260 80" className="mt-5 h-20 w-full" preserveAspectRatio="none" aria-hidden="true">
       {[20, 40, 60].map((y) => (
-        <line key={y} x1="0" x2="260" y1={y} y2={y} stroke="#E7EBEE" strokeWidth="1" />
+        <line key={y} x1="0" x2="260" y1={y} y2={y} stroke="#E8F1FA" strokeWidth="1" />
       ))}
       <path
         d="M0 18 C25 24 40 30 65 28 C95 26 110 40 140 44 C170 48 195 52 225 58 L260 62"
         fill="none"
-        stroke="#22333F"
+        stroke="#142642"
         strokeWidth="2"
         strokeDasharray="1 0"
         strokeLinecap="round"
         opacity="0.85"
       />
-      <circle cx="260" cy="62" r="3.5" fill="#1DBF61" />
+      <circle cx="260" cy="62" r="3.5" fill="#0878F9" />
     </svg>
   )
 }

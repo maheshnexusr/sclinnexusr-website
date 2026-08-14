@@ -5,7 +5,7 @@ export function PrivacyPolicyPage() {
   return (
     <LegalDoc
       md={policyMd}
-      pageTitle="Privacy Policy | SclinNexus"
+      pageTitle="Privacy Policy | ProEDC"
       breadcrumbLabel="Privacy Policy"
     />
   )

@@ -1,14 +1,14 @@
 export const rtsm = {
   slug: 'iwrs-rtsm',
   meta: {
-    title: 'SclinNexus IWRS / RTSM | Randomization & Trial Supply',
-    description: 'Manage subject randomization and investigational product supply with SclinNexus IWRS / RTSM.',
+    title: 'ProEDC IWRS / RTSM | Randomization & Trial Supply',
+    description: 'Manage subject randomization and investigational product supply with ProEDC IWRS / RTSM.',
   },
   breadcrumb: 'IWRS / RTSM',
   hero: {
     eyebrow: 'Randomization & Trial Supply',
     headline: ['Randomize subjects.', 'Keep trial supply in control.'],
-    sub: 'SclinNexus IWRS / RTSM helps study teams manage subject randomization and investigational product supply through a controlled, traceable workflow.',
+    sub: 'ProEDC IWRS / RTSM helps study teams manage subject randomization and investigational product supply through a controlled, traceable workflow.',
     secondaryLabel: 'Explore IWRS / RTSM',
   },
   why: {
@@ -121,7 +121,7 @@ export const rtsm = {
     },
     {
       q: 'Can RTSM work with EDC?',
-      a: 'SclinNexus IWRS / RTSM is part of the same connected platform as SclinNexus EDC, so randomization and supply can work around the same subject record as data capture.',
+      a: 'ProEDC IWRS / RTSM is part of the same connected platform as ProEDC EDC, so randomization and supply can work around the same subject record as data capture.',
     },
   ],
 }

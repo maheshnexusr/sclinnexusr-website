@@ -11,7 +11,7 @@ import { MobileDrawer } from './MobileDrawer'
 import { cn } from '../../utils/cn'
 
 const navLinkCls =
-  'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#22333F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
+  'inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-[#24344F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600'
 
 function DropdownPanel({ children, wide = false }) {
   const reduced = useReducedMotion()
@@ -39,7 +39,7 @@ function MenuItem({ to, icon, title, desc, onNavigate }) {
         <Icon className="h-4 w-4" aria-hidden="true" />
       </span>
       <span className="min-w-0">
-        <span className="block text-sm font-semibold text-[#1A2831]">{title}</span>
+        <span className="block text-sm font-semibold text-[#0B1730]">{title}</span>
         <span className="mt-0.5 block truncate text-xs text-stone-500">{desc}</span>
       </span>
     </>
@@ -85,7 +85,7 @@ export function Header() {
       <div className="mx-auto flex h-[72px] max-w-content items-center gap-4 px-6 lg:px-8">
         <Link
           to="/"
-          aria-label="SclinNexus home"
+          aria-label="ProEDC home"
           onClick={close}
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
         >
@@ -169,7 +169,7 @@ export function Header() {
           <Link
             to="/signin"
             onClick={close}
-            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-[#22333F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 md:inline-flex"
+            className="hidden rounded-lg px-3 py-2 text-sm font-medium text-[#24344F] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 md:inline-flex"
           >
             Sign In
           </Link>

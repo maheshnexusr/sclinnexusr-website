@@ -42,7 +42,7 @@ export function ProductPage() {
       <WorkflowTimeline content={content.workflow} />
       <ConnectedPlatform currentSlug={content.slug} />
       <ComplianceCompact />
-      <FaqAccordion items={content.faq} productName={`SclinNexus ${content.breadcrumb}`} />
+      <FaqAccordion items={content.faq} productName={`ProEDC ${content.breadcrumb}`} />
       <FinalCta />
     </>
   )

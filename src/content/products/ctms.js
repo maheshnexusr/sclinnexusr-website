@@ -1,14 +1,14 @@
 export const ctms = {
   slug: 'ctms',
   meta: {
-    title: 'SclinNexus CTMS | Clinical Trial Management',
-    description: 'Manage study operations, sites, milestones and trial activities with SclinNexus CTMS.',
+    title: 'ProEDC CTMS | Clinical Trial Management',
+    description: 'Manage study operations, sites, milestones and trial activities with ProEDC CTMS.',
   },
   breadcrumb: 'CTMS',
   hero: {
     eyebrow: 'Clinical Trial Management',
     headline: ['See the entire study.', 'Manage every milestone.'],
-    sub: 'SclinNexus CTMS gives sponsors, CROs and study teams a centralized view of study operations, sites, milestones, visits and activities.',
+    sub: 'ProEDC CTMS gives sponsors, CROs and study teams a centralized view of study operations, sites, milestones, visits and activities.',
     secondaryLabel: 'Explore CTMS',
   },
   why: {
@@ -127,8 +127,8 @@ export const ctms = {
       a: 'A clinical trial management system (CTMS) is software for managing the operational side of a study — sites, milestones, visits, tasks and overall progress — as opposed to the clinical data itself.',
     },
     {
-      q: 'Who uses SclinNexus CTMS?',
-      a: 'Sponsors, CROs and study teams use SclinNexus CTMS to plan and track study operations, from site selection and activation through conduct and closeout.',
+      q: 'Who uses ProEDC CTMS?',
+      a: 'Sponsors, CROs and study teams use ProEDC CTMS to plan and track study operations, from site selection and activation through conduct and closeout.',
     },
     {
       q: 'How does CTMS support site management?',
@@ -140,7 +140,7 @@ export const ctms = {
     },
     {
       q: 'Can CTMS connect with EDC?',
-      a: 'SclinNexus CTMS is part of the same connected platform as SclinNexus EDC, so operational tracking and clinical data capture can work around a shared study context.',
+      a: 'ProEDC CTMS is part of the same connected platform as ProEDC EDC, so operational tracking and clinical data capture can work around a shared study context.',
     },
   ],
 }

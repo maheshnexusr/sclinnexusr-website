@@ -35,7 +35,7 @@ export function LeadershipPage() {
                         className="h-24 w-24 rounded-xl object-cover"
                       />
                     )}
-                    <h2 className="mt-4 text-lg font-semibold text-[#1A2831]">{person.name}</h2>
+                    <h2 className="mt-4 text-lg font-semibold text-[#0B1730]">{person.name}</h2>
                     <p className="text-sm font-medium text-primary-700">{person.title}</p>
                     {person.bio && (
                       <p className="mt-3 text-sm leading-relaxed text-stone-600">{person.bio}</p>

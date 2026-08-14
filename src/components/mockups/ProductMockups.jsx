@@ -1,4 +1,4 @@
-import logoSrc from '../../assets/logo/SclinNexus_color_logo.png'
+import logoSrc from '../../assets/logo/proedc-mark.png'
 
 /* ------------------------------------------------------------------ */
 /* Primitives                                                          */
@@ -9,7 +9,7 @@ const badgeTones = {
   amber: 'bg-amber-50 text-amber-700 ring-amber-600/20',
   red: 'bg-red-50 text-red-700 ring-red-600/20',
   gray: 'bg-stone-100 text-stone-600 ring-stone-400/20',
-  navy: 'bg-[#1A2831]/5 text-[#1A2831] ring-[#1A2831]/10',
+  navy: 'bg-[#091A33]/5 text-[#0B1730] ring-[#0B1730]/10',
 }
 
 export function MockBadge({ tone = 'gray', children }) {
@@ -26,14 +26,14 @@ function Wordmark() {
   return (
     <span className="flex items-center gap-1.5">
       <img src={logoSrc} alt="" className="h-4 w-4 object-contain" />
-      <span className="text-[11px] font-bold tracking-tight text-[#1A2831]">
-        Sclin<span className="text-primary-600">Nexus</span>
+      <span className="text-[11px] font-bold tracking-tight text-[#0B1730]">
+        Pro<span className="text-primary-600">EDC</span>
       </span>
     </span>
   )
 }
 
-export function MockWindow({ url = 'app.sclinnexus.com', nav = [], active, children }) {
+export function MockWindow({ url = 'app.proedc.com', nav = [], active, children }) {
   return (
     <div className="select-none overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-xl shadow-stone-900/5">
       <div className="flex items-center gap-2 border-b border-stone-200 bg-stone-50 px-3.5 py-2">
@@ -77,7 +77,7 @@ export function MockStat({ label, value, badge }) {
     <div className="rounded-xl border border-stone-200 bg-white p-2.5">
       <p className="text-[10px] font-medium uppercase tracking-wide text-stone-400">{label}</p>
       <div className="mt-1 flex items-center gap-1.5">
-        {value != null && <p className="text-base font-bold text-[#1A2831]">{value}</p>}
+        {value != null && <p className="text-base font-bold text-[#0B1730]">{value}</p>}
         {badge && <MockBadge tone={badge.tone}>{badge.text}</MockBadge>}
       </div>
     </div>
@@ -121,7 +121,7 @@ export function MockBars({ title, values, labels }) {
   const max = Math.max(...values)
   return (
     <div className="rounded-xl border border-stone-200 bg-white p-3">
-      <p className="text-[11px] font-semibold text-[#1A2831]">{title}</p>
+      <p className="text-[11px] font-semibold text-[#0B1730]">{title}</p>
       <div className="mt-2 flex h-20 gap-1.5">
         {values.map((v, i) => (
           <div key={i} className="flex h-full flex-1 flex-col items-center justify-end gap-1">
@@ -144,7 +144,7 @@ export function FeaturePanel({ panel }) {
       <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-50/80 px-4 py-2.5">
         <span className="flex items-center gap-2">
           <img src={logoSrc} alt="" className="h-3.5 w-3.5 object-contain" />
-          <span className="text-xs font-semibold text-[#1A2831]">{panel.title}</span>
+          <span className="text-xs font-semibold text-[#0B1730]">{panel.title}</span>
         </span>
         {panel.badge && <MockBadge tone={panel.badge.tone}>{panel.badge.text}</MockBadge>}
       </div>
@@ -152,7 +152,7 @@ export function FeaturePanel({ panel }) {
         {panel.rows.map((row, i) => (
           <div key={i} className="flex items-center justify-between gap-3 px-4 py-2.5">
             <div className="min-w-0">
-              <p className="truncate text-xs font-medium text-[#1A2831]">{row.label}</p>
+              <p className="truncate text-xs font-medium text-[#0B1730]">{row.label}</p>
               {row.sub && <p className="truncate text-[11px] text-stone-400">{row.sub}</p>}
             </div>
             <div className="flex shrink-0 items-center gap-2">
@@ -179,7 +179,7 @@ function EdcMock() {
   return (
     <MockWindow nav={['Dashboard', 'Subjects', 'Sites', 'Queries', 'Data Quality']} active="Dashboard">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-bold text-[#1A2831]">
+        <p className="text-xs font-bold text-[#0B1730]">
           Study: ONC-2026-01 <span className="ml-1 font-normal text-stone-400">Oncology · Phase II</span>
         </p>
         <MockBadge tone="green">Active</MockBadge>
@@ -214,7 +214,7 @@ function CtmsMock() {
   return (
     <MockWindow nav={['Study Overview', 'Sites', 'Milestones', 'Visits', 'Action Items']} active="Study Overview">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-bold text-[#1A2831]">Study Overview · CARD-2026-03</p>
+        <p className="text-xs font-bold text-[#0B1730]">Study Overview · CARD-2026-03</p>
         <MockBadge tone="green">On Track</MockBadge>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -224,7 +224,7 @@ function CtmsMock() {
         <MockStat label="Action Items" value="7" badge={{ text: '2 overdue', tone: 'amber' }} />
       </div>
       <div className="mt-3 rounded-xl border border-stone-200 bg-white p-3">
-        <p className="text-[11px] font-semibold text-[#1A2831]">Milestones</p>
+        <p className="text-[11px] font-semibold text-[#0B1730]">Milestones</p>
         <div className="mt-3 flex items-center">
           {milestones.map((m, i) => (
             <div key={m} className="flex flex-1 flex-col items-center gap-1.5">
@@ -258,7 +258,7 @@ function RtsmMock() {
   return (
     <MockWindow nav={['Randomization', 'Treatments', 'Inventory', 'Shipments']} active="Randomization">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-bold text-[#1A2831]">Randomization Dashboard · NEU-2026-07</p>
+        <p className="text-xs font-bold text-[#0B1730]">Randomization Dashboard · NEU-2026-07</p>
         <MockBadge tone="green">Blinded</MockBadge>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -291,13 +291,13 @@ function EproMock() {
   ]
   return (
     <div className="mx-auto w-64 select-none">
-      <div className="overflow-hidden rounded-[2rem] border-[6px] border-[#1A2831] bg-white shadow-2xl shadow-stone-900/15">
-        <div className="flex justify-center bg-[#1A2831] pb-1.5">
+      <div className="overflow-hidden rounded-[2rem] border-[6px] border-[#091A33] bg-white shadow-2xl shadow-stone-900/15">
+        <div className="flex justify-center bg-[#091A33] pb-1.5">
           <span className="h-1 w-16 rounded-full bg-white/20" />
         </div>
         <div className="p-4">
           <Wordmark />
-          <p className="mt-3 text-sm font-bold text-[#1A2831]">Today’s Assessments</p>
+          <p className="mt-3 text-sm font-bold text-[#0B1730]">Today’s Assessments</p>
           <p className="text-[11px] text-stone-400">Tuesday · Week 12</p>
           <div className="mt-2.5 space-y-1.5">
             {items.map((item) => (
@@ -307,7 +307,7 @@ function EproMock() {
                   item.done ? 'border-primary-600/20 bg-primary-50/60' : 'border-stone-200 bg-white'
                 }`}
               >
-                <span className="text-[11px] font-medium text-[#1A2831]">{item.label}</span>
+                <span className="text-[11px] font-medium text-[#0B1730]">{item.label}</span>
                 <MockBadge tone={item.done ? 'green' : 'gray'}>{item.done ? 'Done' : 'To do'}</MockBadge>
               </div>
             ))}
@@ -339,7 +339,7 @@ function EconsentMock() {
     <MockWindow nav={['Consent Forms', 'Participants', 'Versions', 'Audit Trail']} active="Consent Forms">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <p className="text-xs font-bold text-[#1A2831]">Informed Consent · Subject 1024</p>
+          <p className="text-xs font-bold text-[#0B1730]">Informed Consent · Subject 1024</p>
           <p className="text-[11px] text-stone-400">Main ICF · Version 3.1</p>
         </div>
         <MockBadge tone="amber">Pending Signature</MockBadge>
@@ -352,7 +352,7 @@ function EconsentMock() {
               s.done ? 'border-primary-600/20 bg-primary-50/50' : 'border-stone-200 bg-white'
             }`}
           >
-            <span className="text-[11px] font-medium text-[#1A2831]">{s.label}</span>
+            <span className="text-[11px] font-medium text-[#0B1730]">{s.label}</span>
             <MockBadge tone={s.done ? 'green' : 'gray'}>{s.done ? 'Reviewed' : 'Awaiting'}</MockBadge>
           </div>
         ))}
@@ -371,7 +371,7 @@ function RsdvMock() {
   return (
     <MockWindow nav={['Source Review', 'Subjects', 'Discrepancies', 'Audit Trail']} active="Source Review">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs font-bold text-[#1A2831]">
+        <p className="text-xs font-bold text-[#0B1730]">
           Source Review · Subject 1024 <span className="font-normal text-stone-400">· Visit: Week 12</span>
         </p>
         <MockBadge tone="green">Reviewer access</MockBadge>

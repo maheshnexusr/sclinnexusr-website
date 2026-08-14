@@ -30,7 +30,7 @@ export function CareersPage() {
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
-                    <h2 className="mt-4 text-sm font-bold uppercase tracking-wide text-[#1A2831]">
+                    <h2 className="mt-4 text-sm font-bold uppercase tracking-wide text-[#0B1730]">
                       {value.title}
                     </h2>
                     <p className="mt-2 text-sm leading-relaxed text-stone-600">{value.body}</p>
@@ -45,7 +45,7 @@ export function CareersPage() {
       <section className="border-t border-stone-200 bg-stone-50 py-14 lg:py-16">
         <div className="mx-auto max-w-content px-6 lg:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-[#1A2831] sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-[#0B1730] sm:text-4xl">
               {careers.openings.title}
             </h2>
           </Reveal>
@@ -56,7 +56,7 @@ export function CareersPage() {
                 <Reveal key={job.title}>
                   <Card className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <h3 className="font-semibold text-[#1A2831]">{job.title}</h3>
+                      <h3 className="font-semibold text-[#0B1730]">{job.title}</h3>
                       <p className="mt-1 text-sm text-stone-500">
                         {job.location} · {job.type}
                       </p>
@@ -80,7 +80,7 @@ export function CareersPage() {
             </div>
           ) : (
             <Reveal className="mx-auto mt-10 max-w-lg text-center">
-              <p className="text-lg font-semibold text-[#1A2831]">
+              <p className="text-lg font-semibold text-[#0B1730]">
                 {careers.openings.emptyTitle}
               </p>
               <p className="mt-3 leading-relaxed text-stone-600">{careers.openings.emptyBody}</p>

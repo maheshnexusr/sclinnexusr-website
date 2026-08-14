@@ -1,14 +1,14 @@
 export const epro = {
   slug: 'epro',
   meta: {
-    title: 'SclinNexus ePRO | Patient-Reported Outcomes',
-    description: 'Capture patient-reported outcomes through simple digital assessments with SclinNexus ePRO.',
+    title: 'ProEDC ePRO | Patient-Reported Outcomes',
+    description: 'Capture patient-reported outcomes through simple digital assessments with ProEDC ePRO.',
   },
   breadcrumb: 'ePRO',
   hero: {
     eyebrow: 'Electronic Patient-Reported Outcomes',
     headline: ['Capture the patient perspective,', 'wherever the study takes place.'],
-    sub: 'SclinNexus ePRO enables participants to complete digital questionnaires and report outcomes through a simple, study-focused experience.',
+    sub: 'ProEDC ePRO enables participants to complete digital questionnaires and report outcomes through a simple, study-focused experience.',
     secondaryLabel: 'Explore ePRO',
   },
   why: {
@@ -121,7 +121,7 @@ export const epro = {
     },
     {
       q: 'Can ePRO connect with EDC?',
-      a: 'SclinNexus ePRO is part of the same connected platform as SclinNexus EDC, so patient-reported information can connect with the broader study workflow where supported.',
+      a: 'ProEDC ePRO is part of the same connected platform as ProEDC EDC, so patient-reported information can connect with the broader study workflow where supported.',
     },
   ],
 }

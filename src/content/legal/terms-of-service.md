@@ -4,7 +4,7 @@ Last updated: 06-Jun-2026
 
 ## 1. Agreement to Terms
 
-Welcome to SclinNexus ("Company," "we," "our," "us"). These Terms of Service ("Terms") govern your access to and use of our Clinical Trial Management System (CTMS) platform, website, and related services (collectively, the "Platform").
+Welcome to ProEDC ("Company," "we," "our," "us"). These Terms of Service ("Terms") govern your access to and use of our Clinical Trial Management System (CTMS) platform, website, and related services (collectively, the "Platform").
 
 By registering for an account, accessing, or using the Platform, you ("Subscriber," "Client," "you") agree to be bound by these Terms. If you are entering into these Terms on behalf of a company or other legal entity (e.g., a Sponsor, CRO, or Research Site), you represent that you have the authority to bind such entity to these Terms.
 
@@ -17,11 +17,11 @@ By using the Platform, you represent and warrant that:
 - You are at least 18 years of age (or the age of legal majority in your jurisdiction).
 - You have the legal capacity to enter into a binding contract.
 - You are not located in a country that is subject to a U.S. or other applicable government embargo.
-- You are not a competitor of SclinNexus and are not using the Platform for reasons that are competitive with us.
+- You are not a competitor of ProEDC and are not using the Platform for reasons that are competitive with us.
 
 ## 3. Description of the Service
 
-SclinNexus provides a cloud-based software-as-a-service (SaaS) platform designed to assist clinical research Sponsors, CROs, and site staff in managing clinical trials. Features may include, but are not limited to:
+ProEDC provides a cloud-based software-as-a-service (SaaS) platform designed to assist clinical research Sponsors, CROs, and site staff in managing clinical trials. Features may include, but are not limited to:
 
 - Study planning and tracking
 - Site management and monitoring
@@ -41,7 +41,7 @@ We reserve the right to modify, update, or discontinue features of the Platform 
 
 - Not share your password or account access with anyone else.
 - Not permit any third party to access the Platform using your credentials.
-- Notify us immediately of any unauthorized use of your account or any other breach of security at [security@sclinnexus.com](mailto:security@sclinnexus.com).
+- Notify us immediately of any unauthorized use of your account or any other breach of security at [security@proedc.com](mailto:security@proedc.com).
 
 **4.3 Account Types and Roles** — We offer different account types to reflect the hierarchical nature of clinical research:
 
@@ -78,9 +78,9 @@ You agree not to use the Platform to:
 - CROs may act as Data Processors for the Sponsor and must adhere to the Sponsor's instructions regarding the data.
 - Sites enter data on behalf of the Sponsor/CRO.
 
-**7.2 SclinNexus IP** — We retain all right, title, and interest in and to the Platform, our software, our trademarks, and our logos. These Terms do not grant you any ownership rights in our IP.
+**7.2 ProEDC IP** — We retain all right, title, and interest in and to the Platform, our software, our trademarks, and our logos. These Terms do not grant you any ownership rights in our IP.
 
-**7.3 Data Processing Agreement (DPA)** — As SclinNexus processes clinical trial data on behalf of Sponsors and CROs, our relationship regarding data privacy and security is governed by a separate Data Processing Agreement (DPA), which is incorporated into these Terms by reference. The DPA sets out our obligations regarding the processing of Personal Data, including security measures, sub-processor notifications, and assistance with data subject rights.
+**7.3 Data Processing Agreement (DPA)** — As ProEDC processes clinical trial data on behalf of Sponsors and CROs, our relationship regarding data privacy and security is governed by a separate Data Processing Agreement (DPA), which is incorporated into these Terms by reference. The DPA sets out our obligations regarding the processing of Personal Data, including security measures, sub-processor notifications, and assistance with data subject rights.
 
 **7.4 Aggregate/Anonymized Data** — We may collect and use aggregated and anonymized data derived from your use of the Platform for the purpose of improving our services, benchmarking, and product development. This data cannot identify you, your CRO partners, or your Trial Subjects.
 
@@ -100,13 +100,13 @@ We do not warrant that the Platform will be uninterrupted, error-free, secure, o
 
 ## 11. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SCLINNEXUS, ITS AFFILIATES, OFFICERS, EMPLOYEES, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES (WHETHER INCURRED BY A SPONSOR, CRO, OR SITE), WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR USE OR INABILITY TO USE THE PLATFORM; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PLATFORM; OR (III) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL PROEDC, ITS AFFILIATES, OFFICERS, EMPLOYEES, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES (WHETHER INCURRED BY A SPONSOR, CRO, OR SITE), WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR USE OR INABILITY TO USE THE PLATFORM; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE PLATFORM; OR (III) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT.
 
 OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATING TO THESE TERMS OR THE PLATFORM SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO US DURING THE TWELVE (12) MONTHS PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY.
 
 ## 12. Indemnification
 
-You (the Sponsor or CRO) agree to defend, indemnify, and hold harmless SclinNexus and its employees, contractors, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from: (i) your use of and access to the Platform; (ii) your violation of any term of these Terms; (iii) your violation of any third-party right, including any privacy right or intellectual property right; or (iv) your violation of any applicable law or regulation governing the conduct of clinical trials.
+You (the Sponsor or CRO) agree to defend, indemnify, and hold harmless ProEDC and its employees, contractors, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from: (i) your use of and access to the Platform; (ii) your violation of any term of these Terms; (iii) your violation of any third-party right, including any privacy right or intellectual property right; or (iv) your violation of any applicable law or regulation governing the conduct of clinical trials.
 
 ## 13. Termination
 
@@ -122,15 +122,15 @@ You (the Sponsor or CRO) agree to defend, indemnify, and hold harmless SclinNexu
 
 ## 14. Governing Law and Dispute Resolution
 
-These Terms shall be governed by the applicable laws of the jurisdiction in which SclinNexus is incorporated, without regard to its conflict of law provisions. Any disputes arising out of or relating to these Terms or the Platform shall be resolved through binding arbitration in accordance with the applicable arbitration rules, except that either party may seek injunctive or other equitable relief in court to protect its intellectual property rights.
+These Terms shall be governed by the applicable laws of the jurisdiction in which ProEDC is incorporated, without regard to its conflict of law provisions. Any disputes arising out of or relating to these Terms or the Platform shall be resolved through binding arbitration in accordance with the applicable arbitration rules, except that either party may seek injunctive or other equitable relief in court to protect its intellectual property rights.
 
 ## 15. General Provisions
 
-- **Entire Agreement:** These Terms, together with the Privacy Policy, Cookie Policy, and DPA, constitute the entire agreement between you (the Sponsor/CRO) and SclinNexus regarding the use of the Platform.
+- **Entire Agreement:** These Terms, together with the Privacy Policy, Cookie Policy, and DPA, constitute the entire agreement between you (the Sponsor/CRO) and ProEDC regarding the use of the Platform.
 - **Waiver:** Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
 - **Severability:** If any provision of these Terms is held to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
 - **Assignment:** You may not assign these Terms without our prior written consent. We may assign these Terms without restriction.
 
 ## 16. Contact Information
 
-For questions about these Terms, please contact us at SclinNexus, Legal Department — [legal@sclinnexus.com](mailto:legal@sclinnexus.com).
+For questions about these Terms, please contact us at ProEDC, Legal Department — [legal@proedc.com](mailto:legal@proedc.com).

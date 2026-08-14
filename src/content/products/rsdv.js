@@ -1,14 +1,14 @@
 export const rsdv = {
   slug: 'rsdv',
   meta: {
-    title: 'SclinNexus rSDV | Remote Source Data Verification',
-    description: 'Review source data remotely with controlled access and traceability using SclinNexus rSDV.',
+    title: 'ProEDC rSDV | Remote Source Data Verification',
+    description: 'Review source data remotely with controlled access and traceability using ProEDC rSDV.',
   },
   breadcrumb: 'rSDV',
   hero: {
     eyebrow: 'Remote Source Data Verification',
     headline: ['Review source data without', 'unnecessary site visits.'],
-    sub: 'SclinNexus rSDV helps authorized study teams review source information remotely while maintaining controlled access, traceability and study oversight.',
+    sub: 'ProEDC rSDV helps authorized study teams review source information remotely while maintaining controlled access, traceability and study oversight.',
     secondaryLabel: 'Explore rSDV',
   },
   why: {

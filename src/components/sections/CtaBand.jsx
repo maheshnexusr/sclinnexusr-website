@@ -5,9 +5,9 @@ import { Reveal } from '../ui/Reveal'
 export function CtaBand({ content }) {
   return (
     <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
-      {/* subtle green data/network pattern */}
+      {/* subtle blue data/network pattern */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_100%,rgba(29,191,97,0.14),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_100%,rgba(8,120,249,0.14),transparent_70%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px]" />
         <svg
           className="absolute -left-10 top-8 hidden h-44 w-56 text-primary-600/30 lg:block"

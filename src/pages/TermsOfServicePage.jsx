@@ -5,7 +5,7 @@ export function TermsOfServicePage() {
   return (
     <LegalDoc
       md={termsMd}
-      pageTitle="Terms of Service | SclinNexus"
+      pageTitle="Terms of Service | ProEDC"
       breadcrumbLabel="Terms of Service"
     />
   )

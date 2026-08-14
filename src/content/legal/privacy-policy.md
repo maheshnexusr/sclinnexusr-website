@@ -4,7 +4,7 @@ Last updated: 06-Jun-2026
 
 ## 1. Introduction
 
-Welcome to SclinNexus ("Company," "we," "our," "us"). We are committed to protecting the privacy and security of your information. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our Clinical Trial Management System (CTMS) platform, website, and related services (collectively, the "Platform").
+Welcome to ProEDC ("Company," "we," "our," "us"). We are committed to protecting the privacy and security of your information. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our Clinical Trial Management System (CTMS) platform, website, and related services (collectively, the "Platform").
 
 This Platform is designed specifically for use by Clinical Research Sponsors, Contract Research Organizations (CROs), site staff, investigators, and regulators involved in the management of clinical trials ("Authorized Users").
 
@@ -23,11 +23,11 @@ Please read this Privacy Policy carefully. By accessing or using the Platform, y
 
 A critical distinction in clinical research is the difference between a Controller and a Processor.
 
-**For Trial Subject Data:** SclinNexus acts as a **Data Processor** on behalf of our Clients (the Sponsors and the CROs acting on their behalf). Our Clients are the **Data Controllers** (or may be Co-Controllers). They determine the purposes and means of processing the data.
+**For Trial Subject Data:** ProEDC acts as a **Data Processor** on behalf of our Clients (the Sponsors and the CROs acting on their behalf). Our Clients are the **Data Controllers** (or may be Co-Controllers). They determine the purposes and means of processing the data.
 
-If you are a Trial Subject, your relationship is with the clinical trial Sponsor and the Investigational Site; you should refer to their Informed Consent Form (ICF) and privacy notices for information on how your data is handled. SclinNexus processes this data strictly according to our Clients' documented instructions.
+If you are a Trial Subject, your relationship is with the clinical trial Sponsor and the Investigational Site; you should refer to their Informed Consent Form (ICF) and privacy notices for information on how your data is handled. ProEDC processes this data strictly according to our Clients' documented instructions.
 
-**For Authorized User Data:** SclinNexus acts as a **Data Controller** for the contact information and account details of our Users (personnel from Sponsors, CROs, and Sites). This section governs how we handle that specific information.
+**For Authorized User Data:** ProEDC acts as a **Data Controller** for the contact information and account details of our Users (personnel from Sponsors, CROs, and Sites). This section governs how we handle that specific information.
 
 ## 4. Information We Collect
 
@@ -77,7 +77,7 @@ We respect the confidentiality of clinical trial data. We do not sell, rent, or 
 
 ## 7. International Data Transfers
 
-SclinNexus operates globally. Your information may be transferred to, stored, and processed in countries outside of your own, including the United States and the European Economic Area (EEA). This is often necessary for Sponsors and CROs who operate multinational trials.
+ProEDC operates globally. Your information may be transferred to, stored, and processed in countries outside of your own, including the United States and the European Economic Area (EEA). This is often necessary for Sponsors and CROs who operate multinational trials.
 
 Where we transfer data from the EEA to countries not deemed adequate by the European Commission, we rely on appropriate safeguards, such as:
 
@@ -113,9 +113,9 @@ Depending on your jurisdiction (e.g., EU/UK under GDPR, California under CCPA), 
 - The right to restrict processing.
 - The right to data portability.
 
-**For Trial Subjects:** If you are a Trial Subject and wish to exercise any of these rights regarding your clinical trial data, you must contact the clinical trial site, the CRO managing the trial, or the study Sponsor directly. As a Data Processor, SclinNexus cannot modify or delete clinical trial data without instructions from the Controller (Sponsor or CRO). We will assist our Clients in responding to such requests where legally required.
+**For Trial Subjects:** If you are a Trial Subject and wish to exercise any of these rights regarding your clinical trial data, you must contact the clinical trial site, the CRO managing the trial, or the study Sponsor directly. As a Data Processor, ProEDC cannot modify or delete clinical trial data without instructions from the Controller (Sponsor or CRO). We will assist our Clients in responding to such requests where legally required.
 
-To exercise your rights regarding your Account Data, please contact us at [privacy@sclinnexus.com](mailto:privacy@sclinnexus.com).
+To exercise your rights regarding your Account Data, please contact us at [privacy@proedc.com](mailto:privacy@proedc.com).
 
 ## 11. Children's Privacy
 
@@ -127,4 +127,4 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 
 ## 13. Contact Us
 
-If you have any questions about this Privacy Policy or our privacy practices, please contact our Data Protection Officer (DPO) at SclinNexus, Data Protection Officer — [privacy@sclinnexus.com](mailto:privacy@sclinnexus.com).
+If you have any questions about this Privacy Policy or our privacy practices, please contact our Data Protection Officer (DPO) at ProEDC, Data Protection Officer — [privacy@proedc.com](mailto:privacy@proedc.com).

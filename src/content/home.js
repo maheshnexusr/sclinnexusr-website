@@ -1,11 +1,11 @@
 export const home = {
   hero: {
     eyebrow: 'Clinical Trial Data Platform',
-    titleLead: 'One connected platform',
-    titleTail: 'for',
-    titleAccent: 'clinical trials.',
+    titleLead: 'One platform.',
+    titleTail: 'Every',
+    titleAccent: 'clinical trial.',
     description:
-      'Capture, manage and connect clinical trial data across the study lifecycle with SclinNexus.',
+      'ProEDC brings clinical data capture, trial operations, and oversight together in one connected platform.',
     products: ['EDC', 'CTMS', 'IWRS / RTSM', 'ePRO', 'eConsent', 'rSDV'],
     primaryCta: { label: 'Request a Demo', href: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', href: '#platform' },
@@ -20,7 +20,7 @@ export const home = {
   },
 
   whyChoose: {
-    title: 'Why Choose SclinNexus?',
+    title: 'Why Choose ProEDC?',
     sub: 'Connected. Simple. Built for Clinical Research.',
     items: [
       {
@@ -118,10 +118,10 @@ export const home = {
   },
 
   why: {
-    title: 'Why SclinNexus?',
+    title: 'Why ProEDC?',
     sub: 'One connected platform designed to make clinical research simpler, more connected and easier to manage.',
     hub: {
-      title: 'SclinNexus',
+      title: 'ProEDC',
       caption: 'One study. One connected platform.',
       products: ['EDC', 'CTMS', 'IWRS / RTSM', 'ePRO', 'eConsent', 'rSDV'],
     },
@@ -135,7 +135,7 @@ export const home = {
       {
         icon: 'calendarRange',
         title: 'Designed around clinical workflows',
-        body: 'From study setup and site activation to data capture, review and database lock, SclinNexus supports the way clinical teams actually work.',
+        body: 'From study setup and site activation to data capture, review and database lock, ProEDC supports the way clinical teams actually work.',
         meta: 'Setup → Activation → Enrollment → Capture → Review → Lock',
       },
       {
@@ -165,7 +165,7 @@ export const home = {
     ],
     closing: {
       statement: 'Clinical research is complex. Your technology shouldn’t make it harder.',
-      cta: { label: 'Explore the SclinNexus Platform', href: '#platform' },
+      cta: { label: 'Explore the ProEDC Platform', href: '#platform' },
     },
   },
 
@@ -209,7 +209,7 @@ export const home = {
 
   complianceSpotlight: {
     title: 'Compliance and traceability built in.',
-    sub: 'SclinNexus is designed for regulated research with security, traceability and compliance at every step.',
+    sub: 'ProEDC is designed for regulated research with security, traceability and compliance at every step.',
     // Each bullet is backed by approved product content (EDC capabilities & validation pack).
     bullets: [
       'Role-based access and permissions',
@@ -227,7 +227,7 @@ export const home = {
   },
 
   testimonials: {
-    title: 'What teams run on SclinNexus',
+    title: 'What teams run on ProEDC',
     items: [
       {
         quote:
@@ -257,16 +257,16 @@ export const home = {
   },
 
   cta: {
-    title: 'Bring your next study to SclinNexus',
+    title: 'Bring your next study to ProEDC',
     tagline:
       'A 45-minute walkthrough with a solutions engineer, built around a study design like yours.',
     button: { label: 'Request a Demo', href: '/request-demo' },
   },
 
   support: {
-    title: 'Have questions about SclinNexus?',
+    title: 'Have questions about ProEDC?',
     sub: 'Our team is here to help.',
-    email: 'support@sclinnexus.com',
+    email: 'support@proedc.com',
     cta: { label: 'Contact Support' },
   },
 }

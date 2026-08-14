@@ -1,8 +1,8 @@
 export const site = {
-  name: 'SclinNexus',
-  appUrl: 'https://sandbox.sclinnexus.com/',
-  supportEmail: 'support@sclinnexus.com',
-  contactEmail: 'hello@sclinnexus.com',
+  name: 'ProEDC',
+  appUrl: 'https://sandbox.proedc.com/',
+  supportEmail: 'support@proedc.com',
+  contactEmail: 'hello@proedc.com',
   nav: [
     { label: 'Platform', menu: 'platform' },
     { label: 'Company', menu: 'company' },
@@ -54,7 +54,7 @@ export const site = {
   ],
   companyMenu: [
     {
-      label: 'About SclinNexus',
+      label: 'About ProEDC',
       to: '/company',
       icon: 'network',
       desc: 'Who we are and what we build',
@@ -99,7 +99,7 @@ export const site = {
       },
     ],
     contact: {
-      email: 'hello@sclinnexus.com',
+      email: 'hello@proedc.com',
     },
     legal: [
       { label: 'Privacy Policy', to: '/privacy-policy' },

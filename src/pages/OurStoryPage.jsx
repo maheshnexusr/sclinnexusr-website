@@ -38,7 +38,7 @@ export function OurStoryPage() {
                     </span>
                   </span>
                   <div className="pt-3">
-                    <h2 className="text-lg font-semibold tracking-tight text-[#1A2831]">
+                    <h2 className="text-lg font-semibold tracking-tight text-[#0B1730]">
                       {milestone.title}
                     </h2>
                     <p className="mt-2 leading-relaxed text-stone-600">{milestone.body}</p>

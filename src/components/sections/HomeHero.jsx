@@ -61,7 +61,7 @@ function MoleculeCluster({ className, flip = false }) {
           y1={nodes[a][1]}
           x2={nodes[b][0]}
           y2={nodes[b][1]}
-          stroke="#22333F"
+          stroke="#142642"
           strokeOpacity="0.10"
           strokeWidth="1"
         />
@@ -72,8 +72,8 @@ function MoleculeCluster({ className, flip = false }) {
           cx={x}
           cy={y}
           r={i % 3 === 0 ? 7 : 4.5}
-          fill={i % 2 === 0 ? '#E9F9F0' : '#F1F5F4'}
-          stroke={i % 2 === 0 ? '#1DBF61' : '#22333F'}
+          fill={i % 2 === 0 ? '#E8F4FF' : '#F0F5FA'}
+          stroke={i % 2 === 0 ? '#0878F9' : '#142642'}
           strokeOpacity={i % 2 === 0 ? 0.22 : 0.14}
           strokeWidth="1.2"
         />
@@ -100,7 +100,7 @@ function GridWaveField({ uid, className, style }) {
         {/* static perspective verticals */}
         <g>
           {VERT_PATHS.map((d, j) => (
-            <path key={j} d={d} stroke="#1DBF61" strokeOpacity="0.10" strokeWidth="0.7" />
+            <path key={j} d={d} stroke="#0878F9" strokeOpacity="0.10" strokeWidth="0.7" />
           ))}
         </g>
         {/* drifting wave lines — translateX loops one full wavelength */}
@@ -110,7 +110,7 @@ function GridWaveField({ uid, className, style }) {
               key={i}
               id={`${uid}-wave-${i}`}
               d={d}
-              stroke={i % 3 === 2 ? '#0d9488' : '#1DBF61'}
+              stroke={i % 3 === 2 ? '#16C7E8' : '#0878F9'}
               strokeOpacity={0.07 + (i / H_LINES) * 0.13}
               strokeWidth={i > H_LINES - 4 ? 0.9 : 0.6}
             />
@@ -118,12 +118,12 @@ function GridWaveField({ uid, className, style }) {
           {/* glow points traveling along grid lines */}
           {dotLines.map(({ line, dur, begin }) => (
             <g key={line}>
-              <circle r="5" fill="#1DBF61" fillOpacity="0.12">
+              <circle r="5" fill="#0878F9" fillOpacity="0.12">
                 <animateMotion dur={dur} begin={begin} repeatCount="indefinite">
                   <mpath href={`#${uid}-wave-${line}`} />
                 </animateMotion>
               </circle>
-              <circle r="1.8" fill="#1DBF61" fillOpacity="0.55">
+              <circle r="1.8" fill="#0878F9" fillOpacity="0.55">
                 <animateMotion dur={dur} begin={begin} repeatCount="indefinite">
                   <mpath href={`#${uid}-wave-${line}`} />
                 </animateMotion>
@@ -197,14 +197,14 @@ function HeroBackdrop() {
         }
       `}</style>
 
-      {/* gradient mesh base: soft washes of the logo green */}
+      {/* gradient mesh base: soft washes of the logo blue */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-50/90 via-primary-50/40 to-primary-50/80" />
       <div ref={glowRef} className="absolute inset-0 will-change-transform">
         <div className="absolute -top-44 left-[12%] h-[480px] w-[640px] rounded-full bg-primary-300/30 blur-[120px]" />
         <div className="absolute -top-32 right-[-8%] h-[440px] w-[600px] rounded-full bg-primary-200/40 blur-[110px]" />
         <div className="absolute bottom-[-120px] left-[38%] h-[380px] w-[560px] rounded-full bg-primary-200/30 blur-[120px]" />
         {/* radial glow behind the hero content */}
-        <div className="absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(ellipse_50%_50%_at_50%_18%,rgba(29,191,97,0.12),transparent_70%)]" />
+        <div className="absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(ellipse_50%_50%_at_50%_18%,rgba(8,120,249,0.12),transparent_70%)]" />
       </div>
 
       {/* faint molecular clusters in the top corners */}
@@ -255,7 +255,7 @@ function ProductStrip({ items }) {
               className={cn(
                 'flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 text-left transition-colors',
                 item.featured
-                  ? 'border-primary-600 bg-primary-50 shadow-[0_0_0_4px_rgba(29,191,97,0.10)]'
+                  ? 'border-primary-600 bg-primary-50 shadow-[0_0_0_4px_rgba(8,120,249,0.10)]'
                   : 'border-transparent',
               )}
             >

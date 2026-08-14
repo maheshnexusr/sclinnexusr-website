@@ -1,6 +1,6 @@
-# SclinNexus marketing site
+# ProEDC marketing site
 
-Public marketing site for the SclinNexus clinical trial platform. React 18 + Vite +
+Public marketing site for the ProEDC clinical trial platform. React 18 + Vite +
 Tailwind CSS + Framer Motion. No backend — all form submissions are mocked.
 
 ## Run
@@ -18,7 +18,7 @@ npm run preview  # serve the production build
 - `/solutions/edc` — EDC product page
 - `/solutions/ctms` — CTMS product page (proves the template: same components, different content)
 - `/request-demo` — demo request form (mocked submission); every "Request a demo" / "Talk to our team" CTA links here
-- `/signin` — hands off to the real application at https://sandbox.sclinnexus.com/ (header Sign In links there directly)
+- `/signin` — hands off to the real application at https://sandbox.proedc.com/ (header Sign In links there directly)
 
 ## How product pages work
 
@@ -35,5 +35,5 @@ at the correct aspect ratio — swap in real assets later.
 
 - Gated download modal and demo request form: submit after ~1s; an email
   containing `fail` demonstrates the error state, anything else succeeds.
-- Sign in: redirects to the SclinNexus sandbox portal (no local auth).
+- Sign in: redirects to the ProEDC sandbox portal (no local auth).
 - Header search: display only.

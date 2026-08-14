@@ -12,7 +12,7 @@ const stepIcons = [ClipboardList, Building2, UserPlus, Database, SearchCheck, Lo
 
 function Node({ Icon }) {
   return (
-    <span className="z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_0_0_6px_rgba(29,191,97,0.15)]">
+    <span className="z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_0_0_6px_rgba(8,120,249,0.15)]">
       <Icon className="h-5 w-5 text-primary-700" aria-hidden="true" />
     </span>
   )
@@ -20,10 +20,10 @@ function Node({ Icon }) {
 
 export function TrialJourney({ content }) {
   return (
-    <section className="relative overflow-hidden bg-[#1A2831] py-14 lg:py-16">
+    <section className="relative overflow-hidden bg-[#091A33] py-14 lg:py-16">
       {/* subtle brand pattern */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(29,191,97,0.12),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(8,120,249,0.12),transparent_70%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:56px_56px]" />
       </div>
 
@@ -35,7 +35,7 @@ export function TrialJourney({ content }) {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {content.title}
           </h2>
-          <p className="mt-4 text-lg text-[#A2B5C1]">{content.sub}</p>
+          <p className="mt-4 text-lg text-[#A9C2DB]">{content.sub}</p>
         </Reveal>
 
         {/* Desktop: horizontal timeline */}
@@ -54,7 +54,7 @@ export function TrialJourney({ content }) {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <h3 className="mt-1.5 font-semibold text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#A2B5C1]">{step.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[#A9C2DB]">{step.description}</p>
                 </li>
               )
             })}
@@ -78,7 +78,7 @@ export function TrialJourney({ content }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <h3 className="mt-1 font-semibold text-white">{step.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[#A2B5C1]">
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#A9C2DB]">
                       {step.description}
                     </p>
                   </div>

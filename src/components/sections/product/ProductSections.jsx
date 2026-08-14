@@ -7,7 +7,7 @@ import { Button } from '../../ui/Button'
 import { Reveal } from '../../ui/Reveal'
 import { FeaturePanel, heroMocks } from '../../mockups/ProductMockups'
 
-const NAVY = 'text-[#1A2831]'
+const NAVY = 'text-[#0B1730]'
 
 function SectionHeading({ eyebrow, heading, sub, center = true }) {
   return (
@@ -30,7 +30,7 @@ export function ProductHero({ content, slug }) {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary-50/80 via-white to-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_0%,rgba(29,191,97,0.08),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_0%,rgba(8,120,249,0.08),transparent_70%)]"
       />
       <div className="relative mx-auto max-w-content px-6 pb-14 pt-14 lg:px-8 lg:pt-16">
         <Reveal>
@@ -80,7 +80,7 @@ export function ProductHero({ content, slug }) {
   )
 }
 
-/* 03 — Why SclinNexus [product] */
+/* 03 — Why ProEDC [product] */
 export function WhySection({ content }) {
   return (
     <section className="bg-primary-50/40 py-16 lg:py-20">
@@ -213,15 +213,15 @@ export function ConnectedPlatform({ currentSlug }) {
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal>
           <SectionHeading
-            heading="Connected by SclinNexus."
-            sub="Your clinical trial should not be a collection of disconnected systems. SclinNexus connects the workflows that matter across the study lifecycle."
+            heading="Connected by ProEDC."
+            sub="Your clinical trial should not be a collection of disconnected systems. ProEDC connects the workflows that matter across the study lifecycle."
           />
         </Reveal>
 
         <Reveal delay={0.1}>
           <div className="mx-auto mt-10 hidden max-w-3xl flex-col items-center sm:flex">
             <span className={`rounded-full border border-primary-600/25 bg-white px-5 py-1.5 text-sm font-bold ${NAVY}`}>
-              Sclin<span className="text-primary-600">Nexus</span>
+              Pro<span className="text-primary-600">EDC</span>
             </span>
             <span aria-hidden="true" className="h-5 w-0.5 bg-primary-600/25" />
             <span aria-hidden="true" className="h-0.5 w-4/5 bg-primary-600/25" />
@@ -356,10 +356,10 @@ export function FinalCta() {
         <Reveal>
           <div className="rounded-3xl border border-primary-600/15 bg-primary-50/60 px-6 py-10 text-center sm:px-10">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-              Ready to explore SclinNexus?
+              Ready to explore ProEDC?
             </p>
             <h2 className={`mt-3 text-2xl font-bold tracking-tight sm:text-3xl ${NAVY}`}>
-              See how SclinNexus can fit your clinical workflow.
+              See how ProEDC can fit your clinical workflow.
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-stone-600 sm:text-base">
               Talk with our team about your study requirements and explore the platform.

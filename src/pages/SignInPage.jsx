@@ -7,7 +7,7 @@ import { Button } from '../components/ui/Button'
 
 export function SignInPage() {
   useEffect(() => {
-    document.title = 'Sign In | SclinNexus'
+    document.title = 'Sign In | ProEDC'
     const id = window.setTimeout(() => {
       window.location.replace(site.appUrl)
     }, 1200)
@@ -19,7 +19,7 @@ export function SignInPage() {
       <div className="mx-auto flex w-full max-w-content items-center justify-between px-6 py-5 lg:px-8">
         <Link
           to="/"
-          aria-label="SclinNexus home"
+          aria-label="ProEDC home"
           className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
         >
           <Logo />
@@ -43,7 +43,7 @@ export function SignInPage() {
             Taking you to sign in
           </h1>
           <p className="mt-2 text-sm text-slate-500">
-            You&rsquo;ll sign in on the secure SclinNexus portal. If nothing happens, use the
+            You&rsquo;ll sign in on the secure ProEDC portal. If nothing happens, use the
             button below.
           </p>
           <Button className="mt-6 w-full" size="lg" href={site.appUrl}>

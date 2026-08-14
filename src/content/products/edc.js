@@ -1,14 +1,14 @@
 export const edc = {
   slug: 'edc',
   meta: {
-    title: 'SclinNexus EDC | Electronic Data Capture',
-    description: 'Capture, validate and manage clinical trial data with SclinNexus EDC.',
+    title: 'ProEDC EDC | Electronic Data Capture',
+    description: 'Capture, validate and manage clinical trial data with ProEDC EDC.',
   },
   breadcrumb: 'EDC',
   hero: {
     eyebrow: 'Electronic Data Capture',
     headline: ['Capture clinical data', 'with confidence.'],
-    sub: 'SclinNexus EDC helps clinical teams design, capture, validate and review study data through a connected electronic data capture workflow.',
+    sub: 'ProEDC EDC helps clinical teams design, capture, validate and review study data through a connected electronic data capture workflow.',
     secondaryLabel: 'Explore EDC',
   },
   why: {
@@ -123,11 +123,11 @@ export const edc = {
   },
   faq: [
     {
-      q: 'What is SclinNexus EDC?',
-      a: 'SclinNexus EDC is an electronic data capture system for clinical studies. It gives study teams a controlled environment to design study forms, capture subject data, apply validation and review the study as it progresses.',
+      q: 'What is ProEDC EDC?',
+      a: 'ProEDC EDC is an electronic data capture system for clinical studies. It gives study teams a controlled environment to design study forms, capture subject data, apply validation and review the study as it progresses.',
     },
     {
-      q: 'How does SclinNexus support study setup?',
+      q: 'How does ProEDC support study setup?',
       a: 'Studies are configured through a structured build workflow covering forms, visits, fields and validation rules, so the study design is in place before data capture begins.',
     },
     {

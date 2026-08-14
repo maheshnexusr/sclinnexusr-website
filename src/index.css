@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  /* Marketing theme: SclinNexus green, derived from the brand logo (default) */
+  /* Marketing theme: ProEDC blue/cyan, derived from the brand logo (default) */
   :root {
-    --c-primary-50: 240 251 244; /* #F0FBF4 */
-    --c-primary-100: 219 246 229; /* #DBF6E5 */
-    --c-primary-200: 178 235 203; /* #B2EBCB */
-    --c-primary-600: 29 191 97; /* #1DBF61 — logo green */
-    --c-primary-700: 17 128 64; /* #118040 — AA on white */
-    --c-primary-800: 14 104 54; /* #0E6836 */
-    --c-primary-900: 11 79 42; /* #0B4F2A */
+    --c-primary-50: 245 250 255; /* #F5FAFF */
+    --c-primary-100: 223 244 255; /* #DFF4FF */
+    --c-primary-200: 178 220 252; /* #B2DCFC */
+    --c-primary-600: 8 120 249; /* #0878F9 — logo blue */
+    --c-primary-700: 12 98 208; /* #0C62D0 — AA on white */
+    --c-primary-800: 10 79 166; /* #0A4FA6 */
+    --c-primary-900: 9 58 122; /* #093A7A */
   }
 
   /* Application theme: deep clinical blue, used on the sign-in page */

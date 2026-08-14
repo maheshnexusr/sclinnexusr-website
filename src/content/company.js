@@ -1,18 +1,18 @@
 export const company = {
   about: {
-    meta: 'About SclinNexus | Clinical Research Technology',
+    meta: 'About ProEDC | Clinical Research Technology',
     hero: {
-      eyebrow: 'About SclinNexus',
+      eyebrow: 'About ProEDC',
       title: 'Clinical research, connected.',
-      sub: 'SclinNexus is the clinical research technology platform from Sclintech, bringing connected digital workflows together to help sponsors, CROs and research teams manage clinical studies with greater clarity, control and confidence.',
+      sub: 'ProEDC is the clinical research technology platform from Sclintech, bringing connected digital workflows together to help sponsors, CROs and research teams manage clinical studies with greater clarity, control and confidence.',
       primaryCta: { label: 'Explore the Platform', href: '/' },
       secondaryCta: { label: 'Contact Us', href: '/contact' },
     },
     story: {
       title: 'From clinical expertise to connected technology.',
       body: [
-        'SclinNexus builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
-        'Sclintech was established in 2015 and has experience across clinical research services. SclinNexus represents the technology-focused evolution of that experience.',
+        'ProEDC builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
+        'Sclintech was established in 2015 and has experience across clinical research services. ProEDC represents the technology-focused evolution of that experience.',
       ],
       expertise: [
         'Clinical Operations',
@@ -25,10 +25,10 @@ export const company = {
     },
     platformStory: {
       title: 'One platform for the clinical trial journey.',
-      sub: 'SclinNexus brings essential clinical trial workflows together.',
+      sub: 'ProEDC brings essential clinical trial workflows together.',
     },
     why: {
-      title: 'Why Choose SclinNexus?',
+      title: 'Why Choose ProEDC?',
       sub: 'One platform. Simpler clinical trials.',
       items: [
         {
@@ -61,17 +61,17 @@ export const company = {
     },
     relationship: {
       parent: { name: 'Sclintech', caption: 'Clinical Research Experience' },
-      child: { name: 'SclinNexus', caption: 'Clinical Research Technology Platform' },
-      note: 'SclinNexus is the clinical research technology platform from Sclintech.',
+      child: { name: 'ProEDC', caption: 'Clinical Research Technology Platform' },
+      note: 'ProEDC is the clinical research technology platform from Sclintech.',
     },
   },
 
   story: {
-    meta: 'SclinNexus Our Story | Clinical Research Technology',
+    meta: 'ProEDC Our Story | Clinical Research Technology',
     hero: {
       eyebrow: 'Our Story',
       title: 'Built on clinical research experience. Designed for connected trials.',
-      sub: 'SclinNexus builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
+      sub: 'ProEDC builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
     },
     milestones: [
       {
@@ -91,14 +91,14 @@ export const company = {
       },
       {
         marker: '·',
-        title: 'SclinNexus',
+        title: 'ProEDC',
         body: 'Evolution toward a connected clinical research technology platform.',
       },
     ],
   },
 
   leadership: {
-    meta: 'SclinNexus Leadership',
+    meta: 'ProEDC Leadership',
     hero: {
       eyebrow: 'Leadership',
       title: 'Experienced people. One focus: better clinical research.',
@@ -111,11 +111,11 @@ export const company = {
   },
 
   careers: {
-    meta: 'Careers at SclinNexus',
+    meta: 'Careers at ProEDC',
     hero: {
       eyebrow: 'Careers',
       title: 'Build technology that moves clinical research forward.',
-      sub: 'At SclinNexus, we’re building technology for one of the world’s most important industries—clinical research.',
+      sub: 'At ProEDC, we’re building technology for one of the world’s most important industries—clinical research.',
     },
     values: [
       {
@@ -145,10 +145,10 @@ export const company = {
   },
 
   news: {
-    meta: 'SclinNexus News',
+    meta: 'ProEDC News',
     hero: {
-      eyebrow: 'SclinNexus News',
-      title: 'What’s happening at SclinNexus.',
+      eyebrow: 'ProEDC News',
+      title: 'What’s happening at ProEDC.',
       sub: 'Product updates, company announcements and perspectives from the world of clinical research technology.',
     },
     categories: ['All', 'Product Updates', 'Company News', 'Clinical Research', 'Events'],
@@ -158,12 +158,12 @@ export const company = {
   },
 
   contact: {
-    meta: 'Contact SclinNexus | Clinical Trial Technology',
-    email: 'support@sclinnexus.com',
+    meta: 'Contact ProEDC | Clinical Trial Technology',
+    email: 'support@proedc.com',
     hero: {
       eyebrow: 'Contact',
       title: 'Let’s talk about your clinical study.',
-      sub: 'Have questions about SclinNexus or want to learn more about the platform? Tell us a little about your needs and our team can follow up.',
+      sub: 'Have questions about ProEDC or want to learn more about the platform? Tell us a little about your needs and our team can follow up.',
     },
     interests: [
       { value: 'edc', label: 'EDC' },
@@ -172,7 +172,7 @@ export const company = {
       { value: 'epro', label: 'ePRO' },
       { value: 'econsent', label: 'eConsent' },
       { value: 'rsdv', label: 'rSDV' },
-      { value: 'platform', label: 'SclinNexus Platform' },
+      { value: 'platform', label: 'ProEDC Platform' },
       { value: 'other', label: 'Other' },
     ],
     privacyNote:

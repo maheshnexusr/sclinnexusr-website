@@ -82,8 +82,8 @@ function EnrollmentChart() {
         { y: 130, label: '0' },
       ].map(({ y, label }) => (
         <g key={y}>
-          <line x1="30" x2="432" y1={y} y2={y} stroke="#E7EBEE" strokeWidth="1" />
-          <text x="24" y={y + 3} textAnchor="end" fontSize="8.5" fill="#74909F">
+          <line x1="30" x2="432" y1={y} y2={y} stroke="#E8F1FA" strokeWidth="1" />
+          <text x="24" y={y + 3} textAnchor="end" fontSize="8.5" fill="#7C97B5">
             {label}
           </text>
         </g>
@@ -92,18 +92,18 @@ function EnrollmentChart() {
       <path
         d="M30 128 C120 116 200 100 280 78 C330 64 390 40 428 22"
         fill="none"
-        stroke="#A2B5C1"
+        stroke="#A9C2DB"
         strokeWidth="1.5"
         strokeDasharray="5 4"
       />
       {/* actual */}
-      <path d={path} fill="none" stroke="#1DBF61" strokeWidth="2.5" strokeLinejoin="round" />
+      <path d={path} fill="none" stroke="#0878F9" strokeWidth="2.5" strokeLinejoin="round" />
       {points.map(([x, y]) => (
-        <circle key={x} cx={x} cy={y} r="3" fill="#fff" stroke="#1DBF61" strokeWidth="2" />
+        <circle key={x} cx={x} cy={y} r="3" fill="#fff" stroke="#0878F9" strokeWidth="2" />
       ))}
       {/* x labels */}
       {months.map((m, i) => (
-        <text key={m} x={30 + i * 78} y="148" fontSize="8.5" fill="#74909F">
+        <text key={m} x={30 + i * 78} y="148" fontSize="8.5" fill="#7C97B5">
           {m}
         </text>
       ))}
@@ -116,13 +116,13 @@ function QualityRing() {
   const c = 2 * Math.PI * r
   return (
     <svg viewBox="0 0 76 76" className="h-20 w-20 shrink-0">
-      <circle cx="38" cy="38" r={r} fill="none" stroke="#E7EBEE" strokeWidth="8" />
+      <circle cx="38" cy="38" r={r} fill="none" stroke="#E8F1FA" strokeWidth="8" />
       <circle
         cx="38"
         cy="38"
         r={r}
         fill="none"
-        stroke="#1DBF61"
+        stroke="#0878F9"
         strokeWidth="8"
         strokeLinecap="round"
         strokeDasharray={`${c * 0.946} ${c}`}
@@ -136,27 +136,27 @@ function QualityRing() {
 }
 
 /**
- * Illustrative render of the SclinNexus EDC study dashboard.
+ * Illustrative render of the ProEDC EDC study dashboard.
  * Purely presentational — values are sample data, not production claims.
  */
 export function DashboardPreview({ className }) {
   return (
     <div
       role="img"
-      aria-label="Preview of the SclinNexus EDC study dashboard showing enrollment progress, site performance, data quality and study activity for a sample study"
+      aria-label="Preview of the ProEDC EDC study dashboard showing enrollment progress, site performance, data quality and study activity for a sample study"
       className={cn(
-        'overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-[0_32px_96px_-32px_rgba(17,27,34,0.35)]',
+        'overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-[0_32px_96px_-32px_rgba(6,18,38,0.35)]',
         className,
       )}
     >
-      {/* Mobile brand bar — keeps SclinNexus visible when the sidebar is hidden */}
-      <div className="flex items-center bg-[#1A2831] px-4 py-2.5 md:hidden">
+      {/* Mobile brand bar — keeps ProEDC visible when the sidebar is hidden */}
+      <div className="flex items-center bg-[#091A33] px-4 py-2.5 md:hidden">
         <Logo tone="light" compact />
       </div>
 
       <div className="flex">
         {/* Sidebar */}
-        <aside className="hidden w-48 shrink-0 flex-col rounded-l-2xl bg-[#1A2831] px-3 py-4 md:flex">
+        <aside className="hidden w-48 shrink-0 flex-col rounded-l-2xl bg-[#091A33] px-3 py-4 md:flex">
           <div className="px-2 pb-4">
             <Logo tone="light" compact />
           </div>
@@ -166,7 +166,7 @@ export function DashboardPreview({ className }) {
                 key={label}
                 className={cn(
                   'flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium',
-                  active ? 'bg-primary-600 text-white' : 'text-[#A2B5C1]',
+                  active ? 'bg-primary-600 text-white' : 'text-[#A9C2DB]',
                 )}
               >
                 <Icon className="h-3.5 w-3.5" />

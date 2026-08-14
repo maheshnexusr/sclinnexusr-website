@@ -5,7 +5,7 @@ export function CookiePolicyPage() {
   return (
     <LegalDoc
       md={cookieMd}
-      pageTitle="Cookie Policy | SclinNexus"
+      pageTitle="Cookie Policy | ProEDC"
       breadcrumbLabel="Cookie Policy"
     />
   )

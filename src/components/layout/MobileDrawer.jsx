@@ -15,7 +15,7 @@ function Group({ label, open, onToggle, children }) {
         type="button"
         aria-expanded={open}
         onClick={onToggle}
-        className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#1A2831] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+        className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#0B1730] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
       >
         {label}
         <ChevronDown
@@ -140,7 +140,7 @@ export function MobileDrawer({ open, onClose }) {
               <Link
                 to="/contact"
                 onClick={onClose}
-                className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#1A2831] hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+                className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-sm font-semibold text-[#0B1730] hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
               >
                 Contact
               </Link>

@@ -35,11 +35,11 @@ function buildContactEmail(form) {
   const interestLabel =
     contact.interests.find((option) => option.value === form.interest)?.label ?? form.interest
 
-  const subject = `SclinNexus Contact Request - ${form.firstName.trim()} ${form.lastName.trim()}`
+  const subject = `ProEDC Contact Request - ${form.firstName.trim()} ${form.lastName.trim()}`
   const body = [
-    'Hello SclinNexus Team,',
+    'Hello ProEDC Team,',
     '',
-    'I would like to get in touch regarding SclinNexus.',
+    'I would like to get in touch regarding ProEDC.',
     '',
     'Contact Details:',
     '',
@@ -114,14 +114,14 @@ export function ContactPage() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary-50/70 via-white to-primary-50/40">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(29,191,97,0.07),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(8,120,249,0.07),transparent_70%)]"
       />
       <div className="relative mx-auto grid max-w-content gap-12 px-6 py-14 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
             {contact.hero.eyebrow}
           </p>
-          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-[#1A2831] sm:text-4xl lg:text-5xl">
+          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-[#0B1730] sm:text-4xl lg:text-5xl">
             {contact.hero.title}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-stone-600">
@@ -134,7 +134,7 @@ export function ContactPage() {
             </p>
             <a
               href={`mailto:${contact.email}`}
-              className="mt-3 inline-flex items-center gap-3 rounded font-semibold text-[#1A2831] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
+              className="mt-3 inline-flex items-center gap-3 rounded font-semibold text-[#0B1730] transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-600/10 text-primary-700">
                 <Mail className="h-4 w-4" aria-hidden="true" />
@@ -151,7 +151,7 @@ export function ContactPage() {
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-700">
                   <MailCheck className="h-7 w-7" aria-hidden="true" />
                 </span>
-                <h2 className="mt-4 text-xl font-semibold text-[#1A2831]">Message Prepared</h2>
+                <h2 className="mt-4 text-xl font-semibold text-[#0B1730]">Message Prepared</h2>
                 <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-stone-600">
                   Your message has been prepared successfully. Please review the opened email
                   and click Send to complete your inquiry.
@@ -182,7 +182,7 @@ export function ContactPage() {
               </div>
             ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-4">
-              <h2 className="text-xl font-semibold text-[#1A2831]">Send us a message</h2>
+              <h2 className="text-xl font-semibold text-[#0B1730]">Send us a message</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Input
                   label="First Name"

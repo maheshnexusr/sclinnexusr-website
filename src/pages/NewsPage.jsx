@@ -56,7 +56,7 @@ export function NewsPage() {
                     <p className="text-xs font-semibold uppercase tracking-wider text-primary-700">
                       {article.category}
                     </p>
-                    <h2 className="mt-2 font-semibold text-[#1A2831]">{article.title}</h2>
+                    <h2 className="mt-2 font-semibold text-[#0B1730]">{article.title}</h2>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-600">
                       {article.excerpt}
                     </p>

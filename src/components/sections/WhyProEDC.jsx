@@ -2,9 +2,9 @@ import { ArrowRight } from 'lucide-react'
 import { getIcon } from '../../utils/icons'
 import { Reveal } from '../ui/Reveal'
 import { cn } from '../../utils/cn'
-import logoSrc from '../../assets/logo/SclinNexus_color_logo.png'
+import logoSrc from '../../assets/logo/proedc-mark.png'
 
-/** Central hub: the connected SclinNexus study record. */
+/** Central hub: the connected ProEDC study record. */
 function Hub({ content }) {
   return (
     <div className="relative mx-auto w-full max-w-sm">
@@ -13,7 +13,7 @@ function Hub({ content }) {
         aria-hidden="true"
         className="absolute -inset-8 rounded-full bg-primary-600/10 blur-3xl"
       />
-      <div className="relative rounded-3xl border border-navy-800 bg-navy-900 p-8 text-center shadow-[0_0_0_8px_rgba(29,191,97,0.08),0_24px_64px_-24px_rgba(17,27,34,0.5)]">
+      <div className="relative rounded-3xl border border-navy-800 bg-navy-900 p-8 text-center shadow-[0_0_0_8px_rgba(8,120,249,0.08),0_24px_64px_-24px_rgba(6,18,38,0.5)]">
         <img src={logoSrc} alt="" aria-hidden="true" className="mx-auto h-14 w-14 object-contain" />
         <p className="mt-4 text-lg font-semibold tracking-tight text-white">{content.title}</p>
         <p className="mt-1 text-sm text-navy-300">{content.caption}</p>
@@ -77,19 +77,19 @@ function ValueItem({ item, side }) {
 }
 
 /**
- * Editorial "Why SclinNexus?" section: a central connected study record with
+ * Editorial "Why ProEDC?" section: a central connected study record with
  * six value propositions radiating from it. Vertical sequence on mobile.
  */
-export function WhySclinNexus({ content }) {
+export function WhyProEDC({ content }) {
   const left = content.items.slice(0, 3)
   const right = content.items.slice(3)
 
   return (
     <section className="relative overflow-hidden bg-white py-14 lg:py-16">
-      {/* very subtle green background shape */}
+      {/* very subtle blue background shape */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_50%_45%,rgba(29,191,97,0.05),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_50%_45%,rgba(8,120,249,0.05),transparent_70%)]"
       />
 
       <div className="relative mx-auto max-w-content px-6 lg:px-8">

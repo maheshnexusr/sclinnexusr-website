@@ -8,7 +8,7 @@ function renderInline(text) {
   return tokens.map((token, i) => {
     if (token.startsWith('**') && token.endsWith('**')) {
       return (
-        <strong key={i} className="font-semibold text-[#1A2831]">
+        <strong key={i} className="font-semibold text-[#0B1730]">
           {token.slice(2, -2)}
         </strong>
       )
@@ -34,14 +34,14 @@ function renderMarkdown(md) {
   return blocks.map((block, i) => {
     if (block.startsWith('# ')) {
       return (
-        <h1 key={i} className="text-3xl font-bold tracking-tight text-[#1A2831] sm:text-4xl">
+        <h1 key={i} className="text-3xl font-bold tracking-tight text-[#0B1730] sm:text-4xl">
           {renderInline(block.slice(2))}
         </h1>
       )
     }
     if (block.startsWith('## ')) {
       return (
-        <h2 key={i} className="mt-10 text-xl font-bold tracking-tight text-[#1A2831] sm:text-2xl">
+        <h2 key={i} className="mt-10 text-xl font-bold tracking-tight text-[#0B1730] sm:text-2xl">
           {renderInline(block.slice(3))}
         </h2>
       )

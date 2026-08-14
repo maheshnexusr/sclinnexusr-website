@@ -4,11 +4,11 @@ Last updated: 06-Jun-2026
 
 ## 1. Introduction
 
-This Cookie Policy explains how SclinNexus ("Company," "we," "our," "us") uses cookies and similar tracking technologies (e.g., pixels, web beacons, local storage) when you visit our website or use our Clinical Trial Management System (CTMS) Platform (collectively, the "Platform").
+This Cookie Policy explains how ProEDC ("Company," "we," "our," "us") uses cookies and similar tracking technologies (e.g., pixels, web beacons, local storage) when you visit our website or use our Clinical Trial Management System (CTMS) Platform (collectively, the "Platform").
 
 By continuing to browse or use the Platform, you consent to our use of cookies as described in this policy, subject to your cookie preferences and applicable law.
 
-**Important Note on Clinical Trial Data:** SclinNexus is designed with patient privacy as a priority. Our cookies are used strictly for operational and analytical purposes related to the functionality of the Platform and User experience. We do not use cookies to collect or track Protected Health Information (PHI) or identifiable Trial Subject data belonging to our Sponsor and CRO clients.
+**Important Note on Clinical Trial Data:** ProEDC is designed with patient privacy as a priority. Our cookies are used strictly for operational and analytical purposes related to the functionality of the Platform and User experience. We do not use cookies to collect or track Protected Health Information (PHI) or identifiable Trial Subject data belonging to our Sponsor and CRO clients.
 
 ## 2. What Are Cookies?
 
@@ -19,7 +19,7 @@ Cookies are small text files that are placed on your computer or mobile device b
 
 ## 3. Why Do We Use Cookies?
 
-We use cookies for several reasons, primarily to ensure the security and functionality of our Platform. Because SclinNexus is a professional tool for Sponsors, CROs, and clinical research sites, our use of cookies is limited compared to standard marketing websites. We use cookies to:
+We use cookies for several reasons, primarily to ensure the security and functionality of our Platform. Because ProEDC is a professional tool for Sponsors, CROs, and clinical research sites, our use of cookies is limited compared to standard marketing websites. We use cookies to:
 
 - **Essential/Strictly Necessary Cookies:** Enable core Platform functionality such as user authentication (for Sponsor, CRO, and Site staff), session management, and security. The Platform cannot function properly without these cookies.
 - **Functional Cookies:** Remember your preferences (e.g., language, dashboard layout) to provide a personalized experience.
@@ -29,7 +29,7 @@ We do not use targeting or advertising cookies. We do not allow third-party adve
 
 ## 4. Types of Cookies We Use
 
-The specific types of cookies used on SclinNexus are detailed below:
+The specific types of cookies used on ProEDC are detailed below:
 
 - **Strictly Necessary Cookies** — Essential for you to move around the Platform and use its features, such as accessing secure areas of the CTMS designated for specific Sponsor or CRO trials. Examples: session_id, csrf_token, auth_token (first-party). Duration: session / persistent.
 - **Functional Cookies** — Allow the Platform to remember choices you make (such as your Sponsor/CRO-specific dashboard, language, or region) and provide enhanced, more personal features. Examples: user_preferences, table_settings (first-party). Duration: persistent.
@@ -52,4 +52,4 @@ We may update this Cookie Policy from time to time to reflect changes in technol
 
 ## 7. Contact Us
 
-If you have any questions about our use of cookies or this policy, please contact us at SclinNexus, Data Protection Officer — [privacy@sclinnexus.com](mailto:privacy@sclinnexus.com).
+If you have any questions about our use of cookies or this policy, please contact us at ProEDC, Data Protection Officer — [privacy@proedc.com](mailto:privacy@proedc.com).

@@ -20,7 +20,7 @@ function StorySection() {
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
             Our Story
           </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#1A2831] sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#0B1730] sm:text-4xl">
             {story.title}
           </h2>
           {story.body.map((paragraph) => (
@@ -41,7 +41,7 @@ function StorySection() {
         </Reveal>
         <Reveal delay={0.1}>
           <Card className="p-7">
-            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A2831]">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[#0B1730]">
               Experience across
             </p>
             <ul className="mt-4 space-y-3">
@@ -68,7 +68,7 @@ function PlatformStorySection() {
     <section className="border-y border-stone-200 bg-stone-50 py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 text-center lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight text-[#1A2831] sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#0B1730] sm:text-4xl">
             {platformStory.title}
           </h2>
           <p className="mt-4 text-lg text-stone-600">{platformStory.sub}</p>
@@ -81,7 +81,7 @@ function PlatformStorySection() {
                 <span className="flex items-center gap-2.5 rounded-xl border border-stone-200 bg-white px-4 py-2.5 transition-colors hover:border-primary-600">
                   <Icon className="h-4 w-4 text-primary-700" aria-hidden="true" />
                   <span className="text-left">
-                    <span className="block text-sm font-semibold text-[#1A2831]">
+                    <span className="block text-sm font-semibold text-[#0B1730]">
                       {solution.name}
                     </span>
                     <span className="block text-[11px] text-stone-500">{solution.short}</span>
@@ -124,7 +124,7 @@ function WhySection() {
     <section className="bg-white py-14 lg:py-16">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-[#1A2831] sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#0B1730] sm:text-4xl">
             {why.title}
           </h2>
           <p className="mt-3 text-lg text-stone-600">{why.sub}</p>
@@ -136,7 +136,7 @@ function WhySection() {
                 <p className="text-xs font-bold tracking-[0.2em] text-primary-600">
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <h3 className="mt-3 text-sm font-bold uppercase tracking-wide text-[#1A2831]">
+                <h3 className="mt-3 text-sm font-bold uppercase tracking-wide text-[#0B1730]">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
@@ -159,7 +159,7 @@ function MissionVisionSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
                 {block.title}
               </p>
-              <p className="mt-4 text-xl font-semibold leading-snug tracking-tight text-[#1A2831] sm:text-2xl">
+              <p className="mt-4 text-xl font-semibold leading-snug tracking-tight text-[#0B1730] sm:text-2xl">
                 {block.statement}
               </p>
               <p className="mt-4 leading-relaxed text-stone-600">{block.body}</p>
@@ -176,7 +176,7 @@ function RelationshipSection() {
   return (
     <section className="bg-white py-14 lg:py-16">
       <Reveal className="mx-auto max-w-xl px-6 text-center">
-        <p className="text-lg font-semibold tracking-tight text-[#1A2831]">
+        <p className="text-lg font-semibold tracking-tight text-[#0B1730]">
           {relationship.parent.name}
         </p>
         <p className="mt-1 text-sm text-stone-500">{relationship.parent.caption}</p>

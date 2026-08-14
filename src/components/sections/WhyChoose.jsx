@@ -2,7 +2,7 @@ import { getIcon } from '../../utils/icons'
 import { Card } from '../ui/Card'
 import { Reveal } from '../ui/Reveal'
 
-/** Compact "Why Choose SclinNexus?" band: four horizontal icon cards. */
+/** Compact "Why Choose ProEDC?" band: four horizontal icon cards. */
 export function WhyChoose({ content }) {
   return (
     <section className="bg-white py-14 lg:py-16">

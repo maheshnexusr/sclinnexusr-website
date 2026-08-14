@@ -1,14 +1,14 @@
 export const econsent = {
   slug: 'econsent',
   meta: {
-    title: 'SclinNexus eConsent | Electronic Informed Consent',
-    description: 'Deliver digital informed consent with version control, signatures and traceability using SclinNexus eConsent.',
+    title: 'ProEDC eConsent | Electronic Informed Consent',
+    description: 'Deliver digital informed consent with version control, signatures and traceability using ProEDC eConsent.',
   },
   breadcrumb: 'eConsent',
   hero: {
     eyebrow: 'Electronic Informed Consent',
     headline: ['Make informed consent simpler,', 'clearer and more connected.'],
-    sub: 'SclinNexus eConsent helps study teams deliver digital consent experiences while maintaining version control, signatures and traceability.',
+    sub: 'ProEDC eConsent helps study teams deliver digital consent experiences while maintaining version control, signatures and traceability.',
     secondaryLabel: 'Explore eConsent',
   },
   why: {

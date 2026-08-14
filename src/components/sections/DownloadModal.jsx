@@ -92,7 +92,7 @@ export function DownloadModal({ resource, onClose }) {
                 className="mt-0.5 h-4 w-4 rounded border-stone-300 text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600"
               />
               <label htmlFor={consentId} className="text-sm text-stone-600">
-                SclinNexus can email me this resource and occasional product updates. Unsubscribe
+                ProEDC can email me this resource and occasional product updates. Unsubscribe
                 any time.
               </label>
             </div>
