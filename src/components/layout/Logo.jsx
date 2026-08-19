@@ -12,7 +12,7 @@ export function Logo({ className, tone = 'dark', compact = false }) {
     <img
       src={tone === 'light' ? logoDark : logoLight}
       alt="ProEDC — One Platform. Every Clinical Trial."
-      className={cn('w-auto object-contain', compact ? 'h-8' : 'h-10', className)}
+      className={cn('w-auto object-contain', compact ? 'h-9' : 'h-12 sm:h-14', className)}
     />
   )
 }
