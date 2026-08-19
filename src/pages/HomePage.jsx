@@ -32,7 +32,7 @@ export function HomePage() {
       <EdcShowcase content={home.edcShowcase} />
 
       {/* Proof and people */}
-      <StatsBand content={home.stats} background="border-y border-primary-100 bg-primary-50/60" />
+      {/* <StatsBand content={home.stats} background="border-y border-primary-100 bg-primary-50/60" /> */}
       <RoleGrid content={home.roles} />
 
       {/* Why teams choose the platform */}

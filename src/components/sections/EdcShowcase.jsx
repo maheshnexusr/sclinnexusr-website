@@ -1,176 +1,58 @@
-import { ArrowRight, Filter, MessageSquareWarning, Search } from 'lucide-react'
+import { ArrowRight, History, MessageSquareWarning, Users } from 'lucide-react'
 import { Badge } from '../ui/Badge'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
-import { Tabs } from '../ui/Tabs'
-import { cn } from '../../utils/cn'
+import { FeaturePanel } from '../mockups/ProductMockups'
 
 /* ---- illustrative sample data (UI representation, not production values) ---- */
 
-const subjects = [
-  { id: 'SUBJ-0142', site: 'S-004 Boston General', visit: 'Cycle 3 Day 1', forms: 92, status: 'Enrolled' },
-  { id: 'SUBJ-0139', site: 'S-011 Charité Berlin', visit: 'Cycle 2 Day 15', forms: 100, status: 'Completed' },
-  { id: 'SUBJ-0151', site: 'S-002 Apollo Hyderabad', visit: 'Screening', forms: 34, status: 'Screening' },
-  { id: 'SUBJ-0147', site: 'S-017 Seoul St. Mary’s', visit: 'Cycle 1 Day 8', forms: 78, status: 'Enrolled' },
-  { id: 'SUBJ-0128', site: 'S-004 Boston General', visit: 'End of Treatment', forms: 96, status: 'Enrolled' },
+const capabilities = [
+  {
+    icon: Users,
+    name: 'Subject Management',
+    panel: {
+      title: 'Subjects · ONC-2026-01',
+      badge: { text: '1,248 enrolled', tone: 'navy' },
+      rows: [
+        { label: 'SUBJ-0142', sub: 'S-004 Boston General · Cycle 3 Day 1', badge: { text: 'Enrolled', tone: 'green' } },
+        { label: 'SUBJ-0139', sub: 'S-011 Charité Berlin · Cycle 2 Day 15', badge: { text: 'Completed', tone: 'navy' } },
+        { label: 'SUBJ-0151', sub: 'S-002 Apollo Hyderabad · Screening', badge: { text: 'Screening', tone: 'gray' } },
+        { label: 'SUBJ-0147', sub: 'S-017 Seoul St. Mary’s · Cycle 1 Day 8', badge: { text: 'Enrolled', tone: 'green' } },
+      ],
+      footer: 'Enrolled across 24 active sites',
+    },
+  },
+  {
+    icon: MessageSquareWarning,
+    name: 'Query Management',
+    panel: {
+      title: 'Query Manager',
+      badge: { text: '37 open', tone: 'amber' },
+      rows: [
+        { label: 'Weight change flagged', sub: 'Vitals · SUBJ-0142 · C3D1', badge: { text: 'Open', tone: 'gray' } },
+        { label: 'ConMed dates inconsistent', sub: 'ConMeds · SUBJ-0151 · Screening', badge: { text: 'Open', tone: 'gray' } },
+        { label: 'AE severity missing', sub: 'Adverse Events · SUBJ-0139 · C2D15', badge: { text: 'Answered', tone: 'green' } },
+        { label: 'Lab value out of range', sub: 'Local Labs · SUBJ-0147 · C1D8', badge: { text: 'Answered', tone: 'green' } },
+      ],
+      footer: 'Median resolution time · 2.1 days',
+    },
+  },
+  {
+    icon: History,
+    name: 'Audit Trail',
+    panel: {
+      title: 'Audit Trail',
+      badge: { text: 'Part 11', tone: 'navy' },
+      rows: [
+        { label: 'Value changed', sub: 'Systolic BP: 181 → 118 · j.moreau', value: '14:32' },
+        { label: 'Query answered', sub: 'Vitals · SUBJ-0142', value: '14:31' },
+        { label: 'Query raised', sub: 'Edit check EC-204', value: '13:05' },
+        { label: 'Form signed', sub: 'Cycle 2 Day 15 · SUBJ-0139', value: '11:48' },
+      ],
+      footer: 'Every action recorded with reason for change',
+    },
+  },
 ]
-
-const queries = [
-  { text: 'Weight decreased >10% since baseline — please confirm value.', ref: 'Vitals · SUBJ-0142 · C3D1', age: '2d', status: 'Open' },
-  { text: 'Concomitant medication end date is before start date.', ref: 'ConMeds · SUBJ-0151 · Screening', age: '1d', status: 'Open' },
-  { text: 'AE severity grade missing for reported event.', ref: 'Adverse Events · SUBJ-0139 · C2D15', age: '4h', status: 'Answered' },
-  { text: 'Lab value outside expected range — verify units.', ref: 'Local Labs · SUBJ-0147 · C1D8', age: '3d', status: 'Answered' },
-]
-
-const auditRows = [
-  { time: '14:32:08', user: 'j.moreau (CRC)', action: 'Value changed', detail: 'Systolic BP: 181 → 118', reason: 'Transcription error' },
-  { time: '14:31:52', user: 'j.moreau (CRC)', action: 'Query answered', detail: 'Vitals · SUBJ-0142', reason: 'Source verified' },
-  { time: '13:05:17', user: 'a.rivera (DM)', action: 'Query raised', detail: 'Weight change >10% since baseline', reason: 'Edit check EC-204' },
-  { time: '11:48:33', user: 'system', action: 'Form signed', detail: 'Cycle 2 Day 15 · SUBJ-0139', reason: 'E-signature (21 CFR Part 11)' },
-]
-
-const statusStyles = {
-  Enrolled: 'bg-primary-50 text-primary-800 ring-primary-600/25',
-  Completed: 'bg-navy-100 text-navy-800 ring-navy-400/30',
-  Screening: 'bg-stone-100 text-stone-600 ring-stone-300',
-}
-
-function PanelShell({ title, meta, children }) {
-  return (
-    <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-card">
-      <div className="flex flex-wrap items-center gap-3 border-b border-stone-100 px-4 py-3 sm:px-5">
-        <p className="text-sm font-semibold text-navy-900">{title}</p>
-        <p className="hidden text-xs text-stone-400 sm:block">{meta}</p>
-        <span className="ml-auto flex items-center gap-2">
-          <span className="hidden items-center gap-1.5 rounded-lg border border-stone-200 px-2.5 py-1.5 text-xs text-stone-400 sm:flex">
-            <Search className="h-3.5 w-3.5" aria-hidden="true" /> Search
-          </span>
-          <span className="flex items-center gap-1.5 rounded-lg border border-stone-200 px-2.5 py-1.5 text-xs text-stone-400">
-            <Filter className="h-3.5 w-3.5" aria-hidden="true" /> Filter
-          </span>
-        </span>
-      </div>
-      <div className="overflow-x-auto">{children}</div>
-    </div>
-  )
-}
-
-function SubjectsPanel() {
-  return (
-    <PanelShell title="Subjects" meta="Study ONC-2026-01 · 1,248 enrolled">
-      <table className="w-full min-w-[560px] text-left text-sm">
-        <thead>
-          <tr className="border-b border-stone-100 text-xs uppercase tracking-wide text-stone-400">
-            <th className="px-5 py-2.5 font-medium">Subject</th>
-            <th className="px-3 py-2.5 font-medium">Site</th>
-            <th className="px-3 py-2.5 font-medium">Current visit</th>
-            <th className="px-3 py-2.5 font-medium">Forms</th>
-            <th className="px-5 py-2.5 font-medium">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {subjects.map((s) => (
-            <tr key={s.id} className="border-b border-stone-50 last:border-0">
-              <td className="px-5 py-3 font-mono text-xs font-medium text-navy-900">{s.id}</td>
-              <td className="px-3 py-3 text-xs text-stone-500">{s.site}</td>
-              <td className="px-3 py-3 text-xs text-stone-600">{s.visit}</td>
-              <td className="px-3 py-3">
-                <span className="flex items-center gap-2">
-                  <span className="h-1.5 w-16 overflow-hidden rounded-full bg-stone-100">
-                    <span
-                      className="block h-full rounded-full bg-primary-600"
-                      style={{ width: `${s.forms}%` }}
-                    />
-                  </span>
-                  <span className="text-xs text-stone-500">{s.forms}%</span>
-                </span>
-              </td>
-              <td className="px-5 py-3">
-                <span
-                  className={cn(
-                    'rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ring-inset',
-                    statusStyles[s.status],
-                  )}
-                >
-                  {s.status}
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </PanelShell>
-  )
-}
-
-function QueriesPanel() {
-  return (
-    <PanelShell title="Query Manager" meta="37 open · median age 2.1 days">
-      <ul className="min-w-[560px] divide-y divide-stone-50">
-        {queries.map((q) => (
-          <li key={q.text} className="flex items-center gap-4 px-5 py-3.5">
-            <span
-              className={cn(
-                'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg',
-                q.status === 'Open' ? 'bg-primary-50 text-primary-700' : 'bg-stone-100 text-stone-400',
-              )}
-            >
-              <MessageSquareWarning className="h-4 w-4" aria-hidden="true" />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block truncate text-sm font-medium text-navy-900">{q.text}</span>
-              <span className="mt-0.5 block text-xs text-stone-400">{q.ref}</span>
-            </span>
-            <span className="shrink-0 text-xs text-stone-400">{q.age}</span>
-            <span
-              className={cn(
-                'shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ring-inset',
-                q.status === 'Open'
-                  ? 'bg-white text-navy-700 ring-stone-300'
-                  : 'bg-primary-50 text-primary-800 ring-primary-600/25',
-              )}
-            >
-              {q.status}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </PanelShell>
-  )
-}
-
-function AuditPanel() {
-  return (
-    <PanelShell title="Audit Trail" meta="Every action recorded with reason for change">
-      <table className="w-full min-w-[560px] text-left text-sm">
-        <thead>
-          <tr className="border-b border-stone-100 text-xs uppercase tracking-wide text-stone-400">
-            <th className="px-5 py-2.5 font-medium">Time</th>
-            <th className="px-3 py-2.5 font-medium">User</th>
-            <th className="px-3 py-2.5 font-medium">Action</th>
-            <th className="px-3 py-2.5 font-medium">Detail</th>
-            <th className="px-5 py-2.5 font-medium">Reason</th>
-          </tr>
-        </thead>
-        <tbody>
-          {auditRows.map((row) => (
-            <tr key={row.time} className="border-b border-stone-50 last:border-0">
-              <td className="px-5 py-3 font-mono text-xs text-stone-400">{row.time}</td>
-              <td className="px-3 py-3 text-xs font-medium text-navy-800">{row.user}</td>
-              <td className="px-3 py-3">
-                <span className="rounded-full bg-primary-50 px-2.5 py-0.5 text-[11px] font-semibold text-primary-800 ring-1 ring-inset ring-primary-600/25">
-                  {row.action}
-                </span>
-              </td>
-              <td className="px-3 py-3 text-xs text-stone-600">{row.detail}</td>
-              <td className="px-5 py-3 text-xs text-stone-400">{row.reason}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </PanelShell>
-  )
-}
 
 export function EdcShowcase({ content }) {
   return (
@@ -197,18 +79,22 @@ export function EdcShowcase({ content }) {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-10">
-          <Tabs
-            items={[
-              { id: 'subjects', label: 'Subject List', panel: <SubjectsPanel /> },
-              { id: 'queries', label: 'Query Management', panel: <QueriesPanel /> },
-              { id: 'audit', label: 'Audit Trail', panel: <AuditPanel /> },
-            ]}
-          />
-          <p className="mt-4 text-xs text-stone-400">
-            Interface shown with illustrative sample data.
-          </p>
-        </Reveal>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {capabilities.map((capability, i) => (
+            <Reveal key={capability.name} delay={i * 0.08}>
+              <div className="mb-3 flex items-center gap-2.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600/10 text-primary-700">
+                  <capability.icon className="h-4 w-4" aria-hidden="true" />
+                </span>
+                <p className="text-sm font-semibold text-navy-900">{capability.name}</p>
+              </div>
+              <FeaturePanel panel={capability.panel} />
+            </Reveal>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-stone-400">
+          Interface shown with illustrative sample data.
+        </p>
       </div>
     </section>
   )

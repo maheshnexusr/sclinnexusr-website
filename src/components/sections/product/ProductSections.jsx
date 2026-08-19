@@ -68,13 +68,13 @@ export function ProductHero({ content, slug }) {
             </div>
           </div>
         </Reveal>
-        {Mock && (
+        {/* {Mock && (
           <Reveal delay={0.15}>
             <div className="mx-auto mt-12 max-w-4xl">
               <Mock />
             </div>
           </Reveal>
-        )}
+        )} */}
       </div>
     </section>
   )
