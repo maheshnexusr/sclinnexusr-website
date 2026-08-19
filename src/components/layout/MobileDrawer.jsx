@@ -122,6 +122,22 @@ export function MobileDrawer({ open, onClose }) {
               </Group>
 
               <Group
+                label="Solutions"
+                open={openGroup === 'solutions'}
+                onToggle={() => setOpenGroup((g) => (g === 'solutions' ? null : 'solutions'))}
+              >
+                {site.solutionsMenu.map((entry) => (
+                  <DrawerLink
+                    key={entry.name}
+                    to={entry.to}
+                    icon={entry.icon}
+                    label={entry.name}
+                    onClose={onClose}
+                  />
+                ))}
+              </Group>
+
+              <Group
                 label="Company"
                 open={openGroup === 'company'}
                 onToggle={() => setOpenGroup((g) => (g === 'company' ? null : 'company'))}

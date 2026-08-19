@@ -1,10 +1,11 @@
 export const site = {
   name: 'ProEDC',
-  appUrl: 'https://sandbox.proedc.com/',
+  appUrl: 'https://app.proedc.com/',
   supportEmail: 'support@proedc.com',
   contactEmail: 'hello@proedc.com',
   nav: [
     { label: 'Platform', menu: 'platform' },
+    { label: 'Solutions', menu: 'solutions' },
     { label: 'Company', menu: 'company' },
     { label: 'Contact', href: '/contact' },
   ],
@@ -52,6 +53,36 @@ export const site = {
       tagline: 'Remote source data verification without shipping binders.',
     },
   ],
+  solutionsMenu: [
+    {
+      name: 'For Sponsors',
+      to: '/solutions/sponsors',
+      icon: 'briefcase',
+      short: 'Clinical trial oversight',
+      tags: ['Study oversight', 'Data visibility', 'Compliance'],
+    },
+    {
+      name: 'For CROs',
+      to: '/solutions/cros',
+      icon: 'network',
+      short: 'Run more studies, less friction',
+      tags: ['Study operations', 'Site management', 'Multi-study visibility'],
+    },
+    {
+      name: 'For Sites',
+      to: '/solutions/sites',
+      icon: 'stethoscope',
+      short: 'Simple site workflows',
+      tags: ['Site workflows', 'Subject management', 'Visit workflows'],
+    },
+    {
+      name: 'For Data Managers',
+      to: '/solutions/data-managers',
+      icon: 'clipboardList',
+      short: 'Clean, query-ready data',
+      tags: ['Data quality', 'Query management', 'Audit trail'],
+    },
+  ],
   companyMenu: [
     {
       label: 'About ProEDC',
@@ -83,10 +114,18 @@ export const site = {
       {
         heading: 'Solutions',
         links: [
-          { label: 'For Sponsors', to: '#' },
-          { label: 'For CROs', to: '#' },
-          { label: 'For Sites', to: '#' },
-          { label: 'For Biotech', to: '#' },
+          { label: 'For Sponsors', to: '/solutions/sponsors' },
+          { label: 'For CROs', to: '/solutions/cros' },
+          { label: 'For Sites', to: '/solutions/sites' },
+          { label: 'For Data Managers', to: '/solutions/data-managers' },
+        ],
+      },
+      {
+        heading: 'Company',
+        links: [
+          { label: 'About ProEDC', to: '/company' },
+          { label: 'Contact', to: '/contact' },
+          { label: 'Request a Demo', to: '/request-demo' },
         ],
       },
       {

@@ -31,7 +31,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[#142642] bg-[#061226]">
       <div className="mx-auto max-w-content px-6 py-16 lg:px-8">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_2.2fr]">
           <div>
             <Logo tone="light" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#A9C2DB]">
@@ -52,20 +52,22 @@ export function Footer() {
             </ul>
           </div>
 
-          {footer.columns.map((column) => (
-            <nav key={column.heading} aria-label={column.heading}>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white">
-                {column.heading}
-              </p>
-              <ul className="mt-4 space-y-2.5">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <FooterLink to={link.to}>{link.label}</FooterLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            {footer.columns.map((column) => (
+              <nav key={column.heading} aria-label={column.heading}>
+                <p className="text-sm font-semibold uppercase tracking-wider text-white">
+                  {column.heading}
+                </p>
+                <ul className="mt-4 space-y-2.5">
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <FooterLink to={link.to}>{link.label}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#142642] pt-6 sm:flex-row">

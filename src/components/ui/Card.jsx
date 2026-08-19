@@ -1,12 +1,12 @@
 import { cn } from '../../utils/cn'
 
-export function Card({ className, children, ...rest }) {
+export function Card({ as: Tag = 'div', className, children, ...rest }) {
   return (
-    <div
+    <Tag
       className={cn('rounded-xl border border-stone-200 bg-white shadow-card', className)}
       {...rest}
     >
       {children}
-    </div>
+    </Tag>
   )
 }

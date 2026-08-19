@@ -1,8 +1,9 @@
-import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom'
+import { Outlet, Route, Routes } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { HomePage } from './pages/HomePage'
 import { ProductPage } from './pages/ProductPage'
+import { SolutionPage } from './pages/SolutionPage'
 import { RequestDemoPage } from './pages/RequestDemoPage'
 import { SignInPage } from './pages/SignInPage'
 import { CompanyPage } from './pages/CompanyPage'
@@ -15,11 +16,6 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
 import { TermsOfServicePage } from './pages/TermsOfServicePage'
 import { CookiePolicyPage } from './pages/CookiePolicyPage'
 import { NotFoundPage } from './pages/NotFoundPage'
-
-function SolutionsRedirect() {
-  const { slug } = useParams()
-  return <Navigate to={`/platform/${slug}`} replace />
-}
 
 function MarketingLayout() {
   return (
@@ -39,7 +35,7 @@ export function App() {
       <Route element={<MarketingLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/platform/:slug" element={<ProductPage />} />
-        <Route path="/solutions/:slug" element={<SolutionsRedirect />} />
+        <Route path="/solutions/:slug" element={<SolutionPage />} />
         <Route path="/request-demo" element={<RequestDemoPage />} />
         <Route path="/company" element={<CompanyPage />} />
         <Route path="/company/our-story" element={<OurStoryPage />} />

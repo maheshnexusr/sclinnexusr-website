@@ -343,7 +343,7 @@ export function HomeHero({ content }) {
         </Reveal>
 
         {/* Product visual anchors the hero */}
-        <Reveal delay={0.15} className="relative mt-12 lg:mt-14">
+        {/* <Reveal delay={0.15} className="relative mt-12 lg:mt-14">
           <div className="relative mx-auto max-w-[1100px]">
             <div
               aria-hidden="true"
@@ -351,7 +351,7 @@ export function HomeHero({ content }) {
             />
             <DashboardPreview className="relative" />
           </div>
-        </Reveal>
+        </Reveal> */}
 
         {/* Connected product strip */}
         <Reveal delay={0.25}>

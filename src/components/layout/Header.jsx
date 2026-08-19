@@ -133,6 +133,25 @@ export function Header() {
                         </div>
                       </DropdownPanel>
                     )}
+                    {openMenu === item.menu && item.menu === 'solutions' && (
+                      <DropdownPanel>
+                        <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-widest text-stone-400">
+                          Solutions
+                        </p>
+                        <div>
+                          {site.solutionsMenu.map((entry) => (
+                            <MenuItem
+                              key={entry.name}
+                              to={entry.to}
+                              icon={entry.icon}
+                              title={entry.name}
+                              desc={entry.short}
+                              onNavigate={close}
+                            />
+                          ))}
+                        </div>
+                      </DropdownPanel>
+                    )}
                     {openMenu === item.menu && item.menu === 'company' && (
                       <DropdownPanel>
                         <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-widest text-stone-400">
