@@ -10,6 +10,10 @@ export const edc = {
     headline: ['Capture clinical data', 'with confidence.'],
     sub: 'ProEDC EDC helps clinical teams design, capture, validate and review study data through a connected electronic data capture workflow.',
     secondaryLabel: 'Explore EDC',
+    photo: {
+      src: 'https://images.unsplash.com/photo-1758206523826-a65d4cf070aa?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+      alt: 'Researcher examining a sample through a microscope in a clinical laboratory',
+    },
   },
   why: {
     heading: 'Built for cleaner clinical data.',

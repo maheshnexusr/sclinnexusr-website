@@ -5,9 +5,29 @@ import { site } from '../../../content/site'
 import { getIcon } from '../../../utils/icons'
 import { Button } from '../../ui/Button'
 import { Reveal } from '../../ui/Reveal'
-import { FeaturePanel, heroMocks } from '../../mockups/ProductMockups'
+import { FeaturePanel } from '../../mockups/ProductMockups'
 
 const NAVY = 'text-[#0B1730]'
+
+/** Real photo anchoring the hero — replaces the old dashboard-style mockup. */
+function ProductPhoto({ src, alt }) {
+  return (
+    <div className="relative mx-auto max-w-2xl">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-8 -z-10 rounded-[3rem] bg-primary-300/25 blur-3xl"
+      />
+      <div className="overflow-hidden rounded-[1.75rem] shadow-xl shadow-stone-900/10 ring-1 ring-stone-200">
+        <img
+          src={src}
+          alt={alt}
+          className="aspect-[16/10] w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  )
+}
 
 function SectionHeading({ eyebrow, heading, sub, center = true }) {
   return (
@@ -24,8 +44,7 @@ function SectionHeading({ eyebrow, heading, sub, center = true }) {
 }
 
 /* 01 — Hero + product UI showcase */
-export function ProductHero({ content, slug }) {
-  const Mock = heroMocks[slug]
+export function ProductHero({ content }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary-50/80 via-white to-white">
       <div
@@ -68,13 +87,13 @@ export function ProductHero({ content, slug }) {
             </div>
           </div>
         </Reveal>
-        {/* {Mock && (
+        {content.photo && (
           <Reveal delay={0.15}>
-            <div className="mx-auto mt-12 max-w-4xl">
-              <Mock />
+            <div className="mx-auto mt-12">
+              <ProductPhoto src={content.photo.src} alt={content.photo.alt} />
             </div>
           </Reveal>
-        )} */}
+        )}
       </div>
     </section>
   )

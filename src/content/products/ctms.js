@@ -10,6 +10,10 @@ export const ctms = {
     headline: ['See the entire study.', 'Manage every milestone.'],
     sub: 'ProEDC CTMS gives sponsors, CROs and study teams a centralized view of study operations, sites, milestones, visits and activities.',
     secondaryLabel: 'Explore CTMS',
+    photo: {
+      src: 'https://images.unsplash.com/photo-1758518729908-d4220a678d81?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+      alt: 'Two clinical operations colleagues reviewing study documents together',
+    },
   },
   why: {
     heading: 'Clinical operations, connected.',

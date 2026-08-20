@@ -10,6 +10,10 @@ export const rtsm = {
     headline: ['Randomize subjects.', 'Keep trial supply in control.'],
     sub: 'ProEDC IWRS / RTSM helps study teams manage subject randomization and investigational product supply through a controlled, traceable workflow.',
     secondaryLabel: 'Explore IWRS / RTSM',
+    photo: {
+      src: 'https://images.unsplash.com/photo-1577401132921-cb39bb0adcff?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+      alt: 'Blister packs of investigational product ready for trial supply',
+    },
   },
   why: {
     heading: 'Randomization and supply, on the same record.',

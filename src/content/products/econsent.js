@@ -10,6 +10,10 @@ export const econsent = {
     headline: ['Make informed consent simpler,', 'clearer and more connected.'],
     sub: 'ProEDC eConsent helps study teams deliver digital consent experiences while maintaining version control, signatures and traceability.',
     secondaryLabel: 'Explore eConsent',
+    photo: {
+      src: 'https://images.unsplash.com/photo-1670852714979-f73d21652a83?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+      alt: 'Signing an informed consent form electronically on a tablet',
+    },
   },
   why: {
     heading: 'Consent participants actually understand.',
