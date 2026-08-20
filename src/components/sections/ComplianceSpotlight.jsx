@@ -25,20 +25,25 @@ function TraceabilityVisual({ satellites }) {
         </div>
       </div>
 
-      {/* satellites */}
+      {/* satellites -- each settles into its orbit position on its own beat */}
       {satellites.map((item, index) => {
         const Icon = getIcon(item.icon)
         return (
-          <div
+          <Reveal
             key={item.title}
-            className={`absolute ${positions[index]} w-40 rounded-xl border border-stone-200 bg-white px-3.5 py-3 shadow-card`}
+            delay={0.2 + index * 0.12}
+            scale={0.7}
+            duration={0.45}
+            className={`absolute ${positions[index]} w-40`}
           >
-            <p className="flex items-center gap-2 text-sm font-semibold text-navy-900">
-              <Icon className="h-4 w-4 shrink-0 text-primary-700" />
-              {item.title}
-            </p>
-            <p className="mt-0.5 pl-6 text-xs text-stone-500">{item.body}</p>
-          </div>
+            <div className="rounded-xl border border-stone-200 bg-white px-3.5 py-3 shadow-card">
+              <p className="flex items-center gap-2 text-sm font-semibold text-navy-900">
+                <Icon className="h-4 w-4 shrink-0 text-primary-700" />
+                {item.title}
+              </p>
+              <p className="mt-0.5 pl-6 text-xs text-stone-500">{item.body}</p>
+            </div>
+          </Reveal>
         )
       })}
     </div>
@@ -49,7 +54,7 @@ export function ComplianceSpotlight({ content }) {
   return (
     <section className="border-y border-primary-100 bg-primary-50/60 py-14 lg:py-16">
       <div className="mx-auto grid max-w-content items-center gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
-        <Reveal className="order-2 lg:order-1">
+        <Reveal className="order-2 lg:order-1" scale={0.92} duration={0.6}>
           <TraceabilityVisual satellites={content.satellites} />
           {/* accessible summary of the visual */}
           <ul className="sr-only">

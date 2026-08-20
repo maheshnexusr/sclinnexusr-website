@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowDown, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { company } from '../content/company'
 import { site } from '../content/site'
 import { getIcon } from '../utils/icons'
 import { Card } from '../components/ui/Card'
 import { Reveal } from '../components/ui/Reveal'
 import { PageHero } from '../components/sections/PageHero'
-import { Logo } from '../components/layout/Logo'
 
 const { about } = company
 
@@ -171,26 +170,6 @@ function MissionVisionSection() {
   )
 }
 
-function RelationshipSection() {
-  const { relationship } = about
-  return (
-    <section className="bg-white py-14 lg:py-16">
-      <Reveal className="mx-auto max-w-xl px-6 text-center">
-        <p className="text-lg font-semibold tracking-tight text-[#0B1730]">
-          {relationship.parent.name}
-        </p>
-        <p className="mt-1 text-sm text-stone-500">{relationship.parent.caption}</p>
-        <ArrowDown className="mx-auto mt-4 h-5 w-5 text-primary-600" aria-hidden="true" />
-        <div className="mt-4 inline-flex flex-col items-center rounded-2xl border border-primary-200 bg-primary-50/60 px-10 py-6">
-          <Logo />
-          <p className="mt-2 text-sm text-stone-500">{relationship.child.caption}</p>
-        </div>
-        <p className="mt-6 text-sm text-stone-500">{relationship.note}</p>
-      </Reveal>
-    </section>
-  )
-}
-
 export function CompanyPage() {
   useEffect(() => {
     document.title = about.meta
@@ -210,7 +189,6 @@ export function CompanyPage() {
       <PlatformStorySection />
       <WhySection />
       <MissionVisionSection />
-      <RelationshipSection />
     </>
   )
 }

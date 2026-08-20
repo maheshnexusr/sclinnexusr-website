@@ -1,8 +1,8 @@
 export const site = {
   name: 'ProEDC',
   appUrl: 'https://app.proedc.com/',
-  supportEmail: 'support@proedc.com',
-  contactEmail: 'hello@proedc.com',
+  supportEmail: 'help@proedc.com',
+  contactEmail: 'help@proedc.com',
   nav: [
     { label: 'Platform', menu: 'platform' },
     { label: 'Solutions', menu: 'solutions' },
@@ -129,6 +129,14 @@ export const site = {
         ],
       },
       {
+        heading: 'Resources',
+        links: [
+          { label: 'Sandbox', to: 'https://sandbox.proedc.com', external: true },
+          { label: 'Documentation', to: 'https://docs.proedc.com', external: true },
+          { label: 'Help Center', to: 'https://help.proedc.com', external: true },
+        ],
+      },
+      {
         heading: 'Legal',
         links: [
           { label: 'Privacy Policy', to: '/privacy-policy' },
@@ -138,7 +146,7 @@ export const site = {
       },
     ],
     contact: {
-      email: 'hello@proedc.com',
+      email: 'help@proedc.com',
     },
     legal: [
       { label: 'Privacy Policy', to: '/privacy-policy' },

@@ -41,7 +41,7 @@ We reserve the right to modify, update, or discontinue features of the Platform 
 
 - Not share your password or account access with anyone else.
 - Not permit any third party to access the Platform using your credentials.
-- Notify us immediately of any unauthorized use of your account or any other breach of security at [security@proedc.com](mailto:security@proedc.com).
+- Notify us immediately of any unauthorized use of your account or any other breach of security at [help@proedc.com](mailto:help@proedc.com).
 
 **4.3 Account Types and Roles** — We offer different account types to reflect the hierarchical nature of clinical research:
 
@@ -133,4 +133,4 @@ These Terms shall be governed by the applicable laws of the jurisdiction in whic
 
 ## 16. Contact Information
 
-For questions about these Terms, please contact us at ProEDC, Legal Department — [legal@proedc.com](mailto:legal@proedc.com).
+For questions about these Terms, please contact us at ProEDC, Legal Department — [help@proedc.com](mailto:help@proedc.com).

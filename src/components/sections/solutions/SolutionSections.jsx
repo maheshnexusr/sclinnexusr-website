@@ -1,10 +1,14 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { motion, useReducedMotion, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { site } from '../../../content/site'
 import { getIcon } from '../../../utils/icons'
 import { getIllustration } from '../../../utils/illustrations'
+import { useScrollProgress } from '../../../hooks/useScrollProgress'
 import { Button } from '../../ui/Button'
 import { Reveal } from '../../ui/Reveal'
+import { ScrollGrowLine } from '../../ui/ScrollGrowLine'
 
 const NAVY = 'text-[#0B1730]'
 
@@ -17,21 +21,31 @@ function SectionHeading({ heading, sub }) {
   )
 }
 
-/** Original editorial illustration anchoring the hero — no card frame, no glow. */
+/** Original editorial illustration anchoring the hero — no card frame, no glow.
+ * Decorative dots drift at roughly twice the illustration's parallax rate, for
+ * a layered, depth-aware feel as the page scrolls. */
 function SolutionIllustration({ name }) {
   const Illustration = getIllustration(name)
+  const reduced = useReducedMotion()
+  const { ref, scrollYProgress } = useScrollProgress()
+  const mainY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [14, -14])
+  const decorY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [26, -26])
   if (!Illustration) return null
   return (
-    <div className="relative mx-auto max-w-md lg:mx-0">
-      <span
+    <div ref={ref} className="relative mx-auto max-w-md lg:mx-0">
+      <motion.span
         aria-hidden="true"
+        style={{ y: decorY }}
         className="pe-float absolute -left-4 top-4 h-3 w-3 rounded-full bg-primary-300/70"
       />
-      <span
+      <motion.span
         aria-hidden="true"
+        style={{ y: decorY }}
         className="pe-float-delay absolute -right-2 bottom-8 h-2.5 w-2.5 rounded-full bg-primary-600/50"
       />
-      <Illustration className="h-auto w-full" />
+      <motion.div style={{ y: mainY }}>
+        <Illustration className="h-auto w-full" />
+      </motion.div>
     </div>
   )
 }
@@ -45,7 +59,7 @@ export function SolutionHero({ content }) {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_55%_at_50%_0%,rgba(8,120,249,0.08),transparent_70%)]"
       />
       <div className="relative mx-auto grid max-w-content items-center gap-12 px-6 py-14 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-20">
-        <Reveal>
+        <Reveal direction="left" distance={28}>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
             {content.eyebrow}
           </p>
@@ -81,7 +95,7 @@ export function SolutionHero({ content }) {
             </Button>
           </div>
         </Reveal>
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} direction="right" distance={28} className="relative">
           <SolutionIllustration name={content.illustration} />
         </Reveal>
       </div>
@@ -122,13 +136,14 @@ export function SolutionCapabilities({ content }) {
  * a single stacked column on mobile. */
 export function SolutionWorkflow({ content }) {
   const steps = content.steps
+  const containerRef = useRef(null)
   return (
     <section className="bg-stone-50/60 py-16 lg:py-20">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <Reveal>
           <SectionHeading heading={content.heading} sub={content.sub} />
         </Reveal>
-        <div className="relative mt-12" style={{ '--sol-steps': steps.length }}>
+        <div ref={containerRef} className="relative mt-12" style={{ '--sol-steps': steps.length }}>
           <style>{`
             .sol-workflow-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
             @media (min-width: 1024px) {
@@ -138,9 +153,9 @@ export function SolutionWorkflow({ content }) {
               }
             }
           `}</style>
-          <div
-            aria-hidden="true"
-            className="absolute left-[19px] top-0 h-full w-0.5 bg-primary-600/15 lg:left-0 lg:top-[19px] lg:h-0.5 lg:w-full"
+          <ScrollGrowLine
+            containerRef={containerRef}
+            className="absolute left-[19px] top-0 h-full w-0.5 overflow-hidden lg:left-0 lg:top-[19px] lg:h-0.5 lg:w-full"
           />
           <ol className="sol-workflow-grid relative">
             {steps.map((step, i) => (

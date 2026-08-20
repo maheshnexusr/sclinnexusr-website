@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { motion, useReducedMotion, useTransform } from 'framer-motion'
 import { Activity, ArrowRight } from 'lucide-react'
 import { getIcon } from '../../utils/icons'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { cn } from '../../utils/cn'
@@ -161,6 +163,9 @@ function RisingParticles() {
 function HeroBackdrop() {
   const glowRef = useRef(null)
   const gridRef = useRef(null)
+  const reduced = useReducedMotion()
+  const { ref: scrollRef, scrollYProgress } = useScrollProgress()
+  const meshY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [-24, 24])
 
   /* Slight parallax on mouse move (skipped for reduced-motion users). */
   useEffect(() => {
@@ -178,7 +183,11 @@ function HeroBackdrop() {
   }, [])
 
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      ref={scrollRef}
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+    >
       <style>{`
         @keyframes sn-grid-drift-kf { from { transform: translateX(0); } to { transform: translateX(-${WAVELEN}px); } }
         .sn-grid-drift { animation: sn-grid-drift-kf 10s linear infinite; }
@@ -196,8 +205,11 @@ function HeroBackdrop() {
         }
       `}</style>
 
-      {/* gradient mesh base: soft washes of the logo blue */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-50/90 via-primary-50/40 to-primary-50/80" />
+      {/* gradient mesh base: soft washes of the logo blue -- drifts slowly on scroll, distinct from the mouse-parallax layers below */}
+      <motion.div
+        style={{ y: meshY }}
+        className="absolute inset-0 bg-gradient-to-b from-primary-50/90 via-primary-50/40 to-primary-50/80"
+      />
       <div ref={glowRef} className="absolute inset-0 will-change-transform">
         <div className="absolute -top-44 left-[12%] h-[480px] w-[640px] rounded-full bg-primary-300/30 blur-[120px]" />
         <div className="absolute -top-32 right-[-8%] h-[440px] w-[600px] rounded-full bg-primary-200/40 blur-[110px]" />
@@ -290,7 +302,7 @@ export function HomeHero({ content }) {
       <HeroBackdrop />
 
       <div className="relative mx-auto max-w-content px-6 pb-16 pt-14 text-center sm:pt-16 lg:px-8 lg:pt-20">
-        <Reveal>
+        <Reveal scale={0.97} duration={0.7}>
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
             <Activity className="h-4 w-4 text-primary-600" aria-hidden="true" />
             {content.eyebrow}

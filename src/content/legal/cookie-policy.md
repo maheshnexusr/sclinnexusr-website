@@ -52,4 +52,4 @@ We may update this Cookie Policy from time to time to reflect changes in technol
 
 ## 7. Contact Us
 
-If you have any questions about our use of cookies or this policy, please contact us at ProEDC, Data Protection Officer — [privacy@proedc.com](mailto:privacy@proedc.com).
+If you have any questions about our use of cookies or this policy, please contact us at ProEDC, Data Protection Officer — [help@proedc.com](mailto:help@proedc.com).

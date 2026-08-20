@@ -270,7 +270,7 @@ export const home = {
   support: {
     title: 'Have questions about ProEDC?',
     sub: 'Our team is here to help.',
-    email: 'support@proedc.com',
+    email: 'help@proedc.com',
     cta: { label: 'Contact Support' },
   },
 }

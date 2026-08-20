@@ -4,15 +4,15 @@ export const company = {
     hero: {
       eyebrow: 'About ProEDC',
       title: 'Clinical research, connected.',
-      sub: 'ProEDC is the clinical research technology platform from Sclintech, bringing connected digital workflows together to help sponsors, CROs and research teams manage clinical studies with greater clarity, control and confidence.',
+      sub: 'ProEDC is a clinical research technology platform, bringing connected digital workflows together to help sponsors, CROs and research teams manage clinical studies with greater clarity, control and confidence.',
       primaryCta: { label: 'Explore the Platform', href: '/' },
       secondaryCta: { label: 'Contact Us', href: '/contact' },
     },
     story: {
       title: 'From clinical expertise to connected technology.',
       body: [
-        'ProEDC builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
-        'Sclintech was established in 2015 and has experience across clinical research services. ProEDC represents the technology-focused evolution of that experience.',
+        'ProEDC was built on deep experience in clinical research and technology, bringing connected digital workflows to modern clinical trials.',
+        'Our team has worked across clinical research services, and ProEDC represents the technology-focused evolution of that experience.',
       ],
       expertise: [
         'Clinical Operations',
@@ -59,11 +59,6 @@ export const company = {
       statement: 'A connected digital foundation for every clinical trial.',
       body: 'We envision a clinical research environment where study data, teams and workflows work together seamlessly—from study setup through database lock.',
     },
-    relationship: {
-      parent: { name: 'Sclintech', caption: 'Clinical Research Experience' },
-      child: { name: 'ProEDC', caption: 'Clinical Research Technology Platform' },
-      note: 'ProEDC is the clinical research technology platform from Sclintech.',
-    },
   },
 
   story: {
@@ -71,13 +66,13 @@ export const company = {
     hero: {
       eyebrow: 'Our Story',
       title: 'Built on clinical research experience. Designed for connected trials.',
-      sub: 'ProEDC builds on Sclintech’s experience in clinical research and technology to bring connected digital workflows to modern clinical trials.',
+      sub: 'ProEDC builds on deep experience in clinical research and technology, bringing connected digital workflows to modern clinical trials.',
     },
     milestones: [
       {
-        marker: '2015',
-        title: 'Sclintech established',
-        body: 'Sclintech is established, building experience in clinical research services.',
+        marker: '·',
+        title: 'Clinical research experience begins',
+        body: 'Our team begins building experience across clinical research services.',
       },
       {
         marker: '·',
@@ -159,7 +154,7 @@ export const company = {
 
   contact: {
     meta: 'Contact ProEDC | Clinical Trial Technology',
-    email: 'support@proedc.com',
+    email: 'help@proedc.com',
     hero: {
       eyebrow: 'Contact',
       title: 'Let’s talk about your clinical study.',

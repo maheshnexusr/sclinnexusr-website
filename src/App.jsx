@@ -1,6 +1,7 @@
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
+import { AnimatedOutlet } from './components/layout/PageTransition'
 import { HomePage } from './pages/HomePage'
 import { ProductPage } from './pages/ProductPage'
 import { SolutionPage } from './pages/SolutionPage'
@@ -21,8 +22,8 @@ function MarketingLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
-        <Outlet />
+      <main className="flex-1 overflow-x-hidden">
+        <AnimatedOutlet />
       </main>
       <Footer />
     </div>

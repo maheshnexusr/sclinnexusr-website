@@ -9,9 +9,16 @@ const socials = [
   { label: 'YouTube', icon: Youtube, href: '#' },
 ]
 
-function FooterLink({ to, children }) {
+function FooterLink({ to, external, children }) {
   const cls =
     'text-sm text-[#A9C2DB] transition-colors hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 rounded'
+  if (external) {
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer" className={cls}>
+        {children}
+      </a>
+    )
+  }
   if (to && to !== '#') {
     return (
       <Link to={to} className={cls}>
@@ -52,7 +59,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
             {footer.columns.map((column) => (
               <nav key={column.heading} aria-label={column.heading}>
                 <p className="text-sm font-semibold uppercase tracking-wider text-white">
@@ -61,7 +68,9 @@ export function Footer() {
                 <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <FooterLink to={link.to}>{link.label}</FooterLink>
+                      <FooterLink to={link.to} external={link.external}>
+                        {link.label}
+                      </FooterLink>
                     </li>
                   ))}
                 </ul>

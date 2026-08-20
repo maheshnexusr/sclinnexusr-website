@@ -115,7 +115,7 @@ Depending on your jurisdiction (e.g., EU/UK under GDPR, California under CCPA), 
 
 **For Trial Subjects:** If you are a Trial Subject and wish to exercise any of these rights regarding your clinical trial data, you must contact the clinical trial site, the CRO managing the trial, or the study Sponsor directly. As a Data Processor, ProEDC cannot modify or delete clinical trial data without instructions from the Controller (Sponsor or CRO). We will assist our Clients in responding to such requests where legally required.
 
-To exercise your rights regarding your Account Data, please contact us at [privacy@proedc.com](mailto:privacy@proedc.com).
+To exercise your rights regarding your Account Data, please contact us at [help@proedc.com](mailto:help@proedc.com).
 
 ## 11. Children's Privacy
 
@@ -127,4 +127,4 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 
 ## 13. Contact Us
 
-If you have any questions about this Privacy Policy or our privacy practices, please contact our Data Protection Officer (DPO) at ProEDC, Data Protection Officer — [privacy@proedc.com](mailto:privacy@proedc.com).
+If you have any questions about this Privacy Policy or our privacy practices, please contact our Data Protection Officer (DPO) at ProEDC, Data Protection Officer — [help@proedc.com](mailto:help@proedc.com).
