@@ -4,7 +4,6 @@ import { getIcon } from '../../utils/icons'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { cn } from '../../utils/cn'
-import { DashboardPreview } from './DashboardPreview'
 
 /* ------------------------------------------------------------------ */
 /* "Gradient Mesh + Grid Flow" hero background                         */
@@ -341,17 +340,6 @@ export function HomeHero({ content }) {
             </Button>
           </div>
         </Reveal>
-
-        {/* Product visual anchors the hero */}
-        {/* <Reveal delay={0.15} className="relative mt-12 lg:mt-14">
-          <div className="relative mx-auto max-w-[1100px]">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-x-6 bottom-6 top-16 rounded-[40px] bg-primary-600/10 blur-3xl"
-            />
-            <DashboardPreview className="relative" />
-          </div>
-        </Reveal> */}
 
         {/* Connected product strip */}
         <Reveal delay={0.25}>

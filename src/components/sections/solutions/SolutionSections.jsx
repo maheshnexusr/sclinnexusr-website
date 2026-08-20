@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { site } from '../../../content/site'
 import { getIcon } from '../../../utils/icons'
+import { getIllustration } from '../../../utils/illustrations'
 import { Button } from '../../ui/Button'
 import { Reveal } from '../../ui/Reveal'
-import { FeaturePanel } from '../../mockups/ProductMockups'
 
 const NAVY = 'text-[#0B1730]'
 
@@ -13,6 +13,25 @@ function SectionHeading({ heading, sub }) {
     <div className="mx-auto max-w-2xl text-center">
       <h2 className={`text-2xl font-bold tracking-tight sm:text-3xl ${NAVY}`}>{heading}</h2>
       {sub && <p className="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">{sub}</p>}
+    </div>
+  )
+}
+
+/** Original editorial illustration anchoring the hero — no card frame, no glow. */
+function SolutionIllustration({ name }) {
+  const Illustration = getIllustration(name)
+  if (!Illustration) return null
+  return (
+    <div className="relative mx-auto max-w-md lg:mx-0">
+      <span
+        aria-hidden="true"
+        className="pe-float absolute -left-4 top-4 h-3 w-3 rounded-full bg-primary-300/70"
+      />
+      <span
+        aria-hidden="true"
+        className="pe-float-delay absolute -right-2 bottom-8 h-2.5 w-2.5 rounded-full bg-primary-600/50"
+      />
+      <Illustration className="h-auto w-full" />
     </div>
   )
 }
@@ -63,13 +82,7 @@ export function SolutionHero({ content }) {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="relative mx-auto max-w-md lg:mx-0">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary-600/10 blur-2xl"
-            />
-            <FeaturePanel panel={content.panel} />
-          </div>
+          <SolutionIllustration name={content.illustration} />
         </Reveal>
       </div>
     </section>
@@ -131,13 +144,15 @@ export function SolutionWorkflow({ content }) {
           />
           <ol className="sol-workflow-grid relative">
             {steps.map((step, i) => (
-              <li key={step.title} className="relative flex gap-4 lg:block">
-                <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white ring-4 ring-stone-50 lg:ring-white">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className="lg:mt-4">
-                  <p className={`text-sm font-semibold ${NAVY}`}>{step.title}</p>
-                </div>
+              <li key={step.title} className="relative">
+                <Reveal delay={i * 0.08} className="flex gap-4 lg:block">
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white ring-4 ring-stone-50 lg:ring-white">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="lg:mt-4">
+                    <p className={`text-sm font-semibold ${NAVY}`}>{step.title}</p>
+                  </div>
+                </Reveal>
               </li>
             ))}
           </ol>

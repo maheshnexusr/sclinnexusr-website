@@ -10,10 +10,7 @@ export const epro = {
     headline: ['Capture the patient perspective,', 'wherever the study takes place.'],
     sub: 'ProEDC ePRO enables participants to complete digital questionnaires and report outcomes through a simple, study-focused experience.',
     secondaryLabel: 'Explore ePRO',
-    photo: {
-      src: 'https://images.unsplash.com/photo-1712232420830-4a44967ba8d6?fm=jpg&q=80&w=1600&auto=format&fit=crop',
-      alt: 'Study participant reporting outcomes on a personal device',
-    },
+    illustration: 'survey',
   },
   why: {
     heading: 'Designed around the participant.',

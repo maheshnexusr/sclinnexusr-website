@@ -12,16 +12,7 @@ export const sites = {
     sub: 'ProEDC helps site teams capture data, manage visits, respond to queries, and keep study activities moving without unnecessary complexity.',
     primaryCta: { label: 'Request a Demo', to: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', to: '/platform/edc' },
-    panel: {
-      title: 'Site Workspace · Coordinator View',
-      badge: { text: 'Today', tone: 'navy' },
-      rows: [
-        { label: 'Upcoming Visits', value: '5' },
-        { label: 'Forms Due', sub: 'This week', value: '9' },
-        { label: 'Open Queries', value: '2', badge: { text: 'Action needed', tone: 'amber' } },
-        { label: 'Last Sync', value: 'Just now' },
-      ],
-    },
+    illustration: 'siteVisit',
   },
   capabilities: {
     heading: 'Designed around the work sites actually do.',

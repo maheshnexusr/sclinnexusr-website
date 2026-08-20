@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  /* Global typography system: single family (Titillium Web) for headings, body and UI alike */
+  :root {
+    --font-family-primary: 'Titillium Web', ui-sans-serif, system-ui, sans-serif;
+    --font-family-display: 'Titillium Web', ui-sans-serif, system-ui, sans-serif;
+    --font-family-body: 'Titillium Web', ui-sans-serif, system-ui, sans-serif;
+    --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
   /* Marketing theme: ProEDC blue/cyan, derived from the brand logo (default) */
   :root {
     --c-primary-50: 245 250 255; /* #F5FAFF */
@@ -51,6 +59,30 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
+    animation: none;
+  }
+}
+
+/* Gentle independent float for small decorative shapes near hero illustrations. */
+@keyframes pe-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.pe-float {
+  animation: pe-float 5s ease-in-out infinite;
+}
+.pe-float-delay {
+  animation: pe-float 5s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pe-float,
+  .pe-float-delay {
     animation: none;
   }
 }

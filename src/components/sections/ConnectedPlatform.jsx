@@ -134,7 +134,7 @@ export function ConnectedPlatform({ content, solutions }) {
                 </>
               )
               const cardCls =
-                'group block h-full rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary-600 hover:shadow-card'
+                'group block h-full rounded-xl border border-transparent p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary-600 hover:bg-white hover:shadow-card'
               return (
                 <li key={solution.name} className="h-full">
                   {solution.to !== '#' ? (

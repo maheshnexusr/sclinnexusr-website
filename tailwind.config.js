@@ -29,7 +29,16 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-family-body)', 'sans-serif'],
+        display: ['var(--font-family-display)', 'sans-serif'],
+        body: ['var(--font-family-body)', 'sans-serif'],
+        mono: ['var(--font-family-mono)', 'monospace'],
+      },
+      fontWeight: {
+        // Titillium Web ships 400/600/700 only (no 500) — map the "medium" step
+        // to 600 so `font-medium` renders a real weight instead of silently
+        // falling back to 400 under CSS font-weight matching.
+        medium: '600',
       },
       boxShadow: {
         card: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06)',

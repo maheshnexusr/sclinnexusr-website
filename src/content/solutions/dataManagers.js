@@ -12,16 +12,7 @@ export const dataManagers = {
     sub: 'ProEDC gives data managers the tools to design, validate, review, query, and maintain high-quality clinical data throughout the study lifecycle.',
     primaryCta: { label: 'Request a Demo', to: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', to: '/platform/edc' },
-    panel: {
-      title: 'Data Review · Study PRX-204',
-      badge: { text: 'Week 12', tone: 'navy' },
-      rows: [
-        { label: 'Forms Complete', value: '18 / 19', badge: { text: '95%', tone: 'green' } },
-        { label: 'Open Queries', value: '3' },
-        { label: 'Validation Rules', sub: 'Applied at entry', value: '87 rules' },
-        { label: 'Audit Trail', badge: { text: 'Up to date', tone: 'green' } },
-      ],
-    },
+    illustration: 'cleanData',
   },
   capabilities: {
     heading: 'Built for the details behind reliable clinical data.',

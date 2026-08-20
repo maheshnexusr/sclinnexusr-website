@@ -12,16 +12,7 @@ export const sponsors = {
     sub: 'ProEDC gives sponsors one connected platform to manage clinical data, study operations, sites, and oversight across the entire trial lifecycle.',
     primaryCta: { label: 'Request a Demo', to: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', to: '/platform/edc' },
-    panel: {
-      title: 'Study Overview · Sponsor View',
-      badge: { text: 'Live', tone: 'green' },
-      rows: [
-        { label: 'Active Studies', value: '6', badge: { text: 'On Track', tone: 'green' } },
-        { label: 'Open Queries', sub: 'Across all sites', value: '14' },
-        { label: 'Data Quality', value: '98%', badge: { text: 'Clean', tone: 'green' } },
-        { label: 'Compliance', sub: 'Audit trail complete', badge: { text: 'Up to date', tone: 'navy' } },
-      ],
-    },
+    illustration: 'oversight',
   },
   capabilities: {
     heading: 'See the study. Understand the data. Act earlier.',

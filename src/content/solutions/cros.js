@@ -12,16 +12,7 @@ export const cros = {
     sub: 'ProEDC connects study operations, sites, subjects, clinical data, and oversight so CRO teams can manage studies efficiently from startup through database lock.',
     primaryCta: { label: 'Request a Demo', to: '/request-demo' },
     secondaryCta: { label: 'Explore the Platform', to: '/platform/edc' },
-    panel: {
-      title: 'Study Operations · CRO View',
-      badge: { text: 'Live', tone: 'green' },
-      rows: [
-        { label: 'Studies Managed', value: '12' },
-        { label: 'Active Sites', sub: 'Across all studies', value: '84' },
-        { label: 'Open Queries', value: '23', badge: { text: '6 due', tone: 'amber' } },
-        { label: 'Audit Trail', badge: { text: 'Complete', tone: 'green' } },
-      ],
-    },
+    illustration: 'operations',
   },
   capabilities: {
     heading: 'Everything your study team needs, connected.',

@@ -10,10 +10,7 @@ export const rsdv = {
     headline: ['Review source data without', 'unnecessary site visits.'],
     sub: 'ProEDC rSDV helps authorized study teams review source information remotely while maintaining controlled access, traceability and study oversight.',
     secondaryLabel: 'Explore rSDV',
-    photo: {
-      src: 'https://images.unsplash.com/photo-1758691462743-f9fc9e430d39?fm=jpg&q=80&w=1600&auto=format&fit=crop',
-      alt: 'Clinician reviewing source data remotely with a study participant via video call',
-    },
+    illustration: 'review',
   },
   why: {
     heading: 'Verification without the travel overhead.',

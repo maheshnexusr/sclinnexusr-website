@@ -64,6 +64,7 @@ export function Header() {
   const [openMenu, setOpenMenu] = useState(null) // 'platform' | 'company' | null
   const [drawerOpen, setDrawerOpen] = useState(false)
   const headerRef = useRef(null)
+  const reduced = useReducedMotion()
 
   useClickOutside(headerRef, () => setOpenMenu(null))
 
@@ -78,8 +79,11 @@ export function Header() {
   const close = () => setOpenMenu(null)
 
   return (
-    <header
+    <motion.header
       ref={headerRef}
+      initial={reduced ? false : { opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className="sticky top-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur"
     >
       <div className="mx-auto flex h-[72px] max-w-content items-center gap-4 px-6 lg:px-8">
@@ -207,6 +211,6 @@ export function Header() {
       </div>
 
       <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
-    </header>
+    </motion.header>
   )
 }

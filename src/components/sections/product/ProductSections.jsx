@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown } from 'lucide-react'
 import { site } from '../../../content/site'
 import { getIcon } from '../../../utils/icons'
+import { getIllustration } from '../../../utils/illustrations'
 import { Button } from '../../ui/Button'
 import { Reveal } from '../../ui/Reveal'
 import { FeaturePanel } from '../../mockups/ProductMockups'
 
 const NAVY = 'text-[#0B1730]'
 
-/** Real photo anchoring the hero — replaces the old dashboard-style mockup. */
-function ProductPhoto({ src, alt }) {
+/** Original editorial illustration anchoring the hero — no card frame, no glow. */
+function ProductIllustration({ name }) {
+  const Illustration = getIllustration(name)
+  if (!Illustration) return null
   return (
-    <div className="relative mx-auto max-w-2xl">
-      <div
+    <div className="relative mx-auto max-w-md lg:mx-0">
+      <span
         aria-hidden="true"
-        className="absolute -inset-8 -z-10 rounded-[3rem] bg-primary-300/25 blur-3xl"
+        className="pe-float absolute -left-4 top-4 h-3 w-3 rounded-full bg-primary-300/70"
       />
-      <div className="overflow-hidden rounded-[1.75rem] shadow-xl shadow-stone-900/10 ring-1 ring-stone-200">
-        <img
-          src={src}
-          alt={alt}
-          className="aspect-[16/10] w-full object-cover"
-          loading="lazy"
-        />
-      </div>
+      <span
+        aria-hidden="true"
+        className="pe-float-delay absolute -right-2 bottom-8 h-2.5 w-2.5 rounded-full bg-primary-600/50"
+      />
+      <Illustration className="h-auto w-full" />
     </div>
   )
 }
@@ -51,47 +51,41 @@ export function ProductHero({ content }) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_0%,rgba(8,120,249,0.08),transparent_70%)]"
       />
-      <div className="relative mx-auto max-w-content px-6 pb-14 pt-14 lg:px-8 lg:pt-16">
+      <div className="relative mx-auto grid max-w-content items-center gap-12 px-6 py-14 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
-              {content.eyebrow}
-            </p>
-            <h1
-              className={`mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${NAVY}`}
-            >
-              {content.headline.map((line, i) => (
-                <span key={i} className="block">
-                  {line}
-                </span>
-              ))}
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-stone-600">
-              {content.sub}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Button to="/request-demo" size="lg" className="group">
-                Request a Demo
-                <ArrowRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden="true"
-                />
-              </Button>
-              <Button href="#capabilities" variant="secondary" size="lg" className="group">
-                {content.secondaryLabel}
-                <ArrowRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-                  aria-hidden="true"
-                />
-              </Button>
-            </div>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-700">
+            {content.eyebrow}
+          </p>
+          <h1
+            className={`mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl ${NAVY}`}
+          >
+            {content.headline.map((line, i) => (
+              <span key={i} className="block">
+                {line}
+              </span>
+            ))}
+          </h1>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-stone-600">{content.sub}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Button to="/request-demo" size="lg" className="group">
+              Request a Demo
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Button>
+            <Button href="#capabilities" variant="secondary" size="lg" className="group bg-white">
+              {content.secondaryLabel}
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Button>
           </div>
         </Reveal>
-        {content.photo && (
+        {content.illustration && (
           <Reveal delay={0.15}>
-            <div className="mx-auto mt-12">
-              <ProductPhoto src={content.photo.src} alt={content.photo.alt} />
-            </div>
+            <ProductIllustration name={content.illustration} />
           </Reveal>
         )}
       </div>
@@ -206,16 +200,18 @@ export function WorkflowTimeline({ content }) {
           />
           <ol className="grid gap-8 lg:grid-cols-6 lg:gap-4">
             {content.steps.map((step, i) => (
-              <li key={step.title} className="relative flex gap-4 lg:block">
-                <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white ring-4 ring-white">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div className="lg:mt-4">
-                  <p className={`text-sm font-semibold ${NAVY}`}>{step.title}</p>
-                  {step.desc && (
-                    <p className="mt-1 text-xs leading-relaxed text-stone-500">{step.desc}</p>
-                  )}
-                </div>
+              <li key={step.title} className="relative">
+                <Reveal delay={i * 0.08} className="flex gap-4 lg:block">
+                  <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white ring-4 ring-white">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="lg:mt-4">
+                    <p className={`text-sm font-semibold ${NAVY}`}>{step.title}</p>
+                    {step.desc && (
+                      <p className="mt-1 text-xs leading-relaxed text-stone-500">{step.desc}</p>
+                    )}
+                  </div>
+                </Reveal>
               </li>
             ))}
           </ol>
